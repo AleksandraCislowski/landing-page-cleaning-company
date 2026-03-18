@@ -1,0 +1,41 @@
+{
+  "hero": {
+    "title": "Professional Cleaning Services",
+    "subtitle": "We make your space sparkle and shine",
+    "cta": "Get a Quote"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "phone": "Phone"
+  },
+  "services": {
+    "title": "Our Services",
+    "residential": "Residential Cleaning",
+    "residential_desc": "Complete home cleaning services",
+    "commercial": "Commercial Cleaning",
+    "commercial_desc": "Office and business space cleaning",
+    "deep_clean": "Deep Cleaning",
+    "deep_clean_desc": "Thorough deep cleaning",
+    "move": "Move In/Out Cleaning",
+    "move_desc": "Cleaning for moving"
+  },
+  "about": {
+    "title": "About Us",
+    "text": "We are a professional cleaning company dedicated to providing exceptional cleaning services. Our team of trained professionals uses eco-friendly products and methods to ensure your space is spotless.",
+    "why_choose": "Why Choose Us?",
+    "trained": "Trained Staff",
+    "eco": "Eco-Friendly",
+    "reliable": "Reliable",
+    "insured": "Insured"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "hours": "Business Hours"
+  }
+}

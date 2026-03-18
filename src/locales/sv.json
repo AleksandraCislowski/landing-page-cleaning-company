@@ -1,0 +1,41 @@
+{
+  "hero": {
+    "title": "Professionella Städtjänster222",
+    "subtitle": "Vi gör ditt utrymme glittrande och skinande",
+    "cta": "Få en offert"
+  },
+  "nav": {
+    "home": "Hem",
+    "services": "Tjänster",
+    "about": "Om oss",
+    "contact": "Kontakt",
+    "phone": "Telefon"
+  },
+  "services": {
+    "title": "Våra Tjänster",
+    "residential": "Hemstädning",
+    "residential_desc": "Kompletta hemstädtjänster",
+    "commercial": "Kommersiell Städning",
+    "commercial_desc": "Kontors- och affärsrumsstädning",
+    "deep_clean": "Djupstädning",
+    "deep_clean_desc": "Grundlig djupstädning",
+    "move": "Inflyttnings-/Utflyttningsstädning",
+    "move_desc": "Städning för flytt"
+  },
+  "about": {
+    "title": "Om Oss",
+    "text": "Vi är ett professionellt städföretag dedikerade till att tillhandahålla exceptionella städtjänster. Vårt team av utbildade proffs använder miljövänliga produkter och metoder för att säkerställa att ditt utrymme är fläckfritt.",
+    "why_choose": "Varför Välja Oss?",
+    "trained": "Utbildad Personal",
+    "eco": "Miljövänlig",
+    "reliable": "Pålitlig",
+    "insured": "Försäkrad"
+  },
+  "contact": {
+    "title": "Kontakta Oss",
+    "phone": "Telefon",
+    "email": "E-post",
+    "address": "Adress",
+    "hours": "Öppettider"
+  }
+}
