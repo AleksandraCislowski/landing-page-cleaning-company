@@ -9,10 +9,10 @@ import Footer from './components/Footer';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#3f0252',
+      main: '#2d0054',
     },
     secondary: {
-      main: '#d234cd',
+      main: '#ed00c5',
     },
     background: {
       default: '#ffffff',
@@ -20,6 +20,19 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+  },
+  components: {
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          '&:hover': {
+            color: '#0aa11e',
+            backgroundColor: '#f0f0f0',
+            opacity: 0.8,
+          },
+        },
+      },
+    },
   },
 });
 
