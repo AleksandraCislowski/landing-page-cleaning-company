@@ -1,16 +1,17 @@
 import { Box, Container, Typography, Stack, IconButton } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import InstagramIcon from '@mui/icons-material/Instagram';
 import logo from '../assets/logo.png';
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useTranslation();
 
   return (
     <Box
       sx={{
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+        background: (theme) =>
+          `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
         color: 'white',
         py: 4,
       }}
@@ -27,7 +28,13 @@ export default function Footer() {
               flexDirection: 'column',
             }}
           >
-            <Box sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
+            <Box
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                mb: 1,
+              }}
+            >
               <img
                 src={logo}
                 alt='Logo'
@@ -38,7 +45,7 @@ export default function Footer() {
               </Typography>
             </Box>
             <Typography variant='body2' sx={{ opacity: 0.7 }}>
-              © {currentYear} Aleksandra Cislowski. All rights reserved.
+              © {currentYear} Aleksandra Cislowski. {t('footer.rights')}
             </Typography>
           </Box>
 
@@ -50,22 +57,6 @@ export default function Footer() {
               }}
             >
               <FacebookIcon />
-            </IconButton>
-            <IconButton
-              sx={{
-                color: 'white',
-                '&:hover': { background: 'rgba(255,255,255,0.1)' },
-              }}
-            >
-              <LinkedInIcon />
-            </IconButton>
-            <IconButton
-              sx={{
-                color: 'white',
-                '&:hover': { background: 'rgba(255,255,255,0.1)' },
-              }}
-            >
-              <InstagramIcon />
             </IconButton>
           </Stack>
         </Stack>
