@@ -26,9 +26,8 @@ const theme = createTheme({
       styleOverrides: {
         root: {
           '&:hover': {
-            color: '#0aa11e',
-            backgroundColor: '#f0f0f0',
-            opacity: 0.8,
+            color: '#ffffff',
+            backgroundColor: '#ed00c5',
           },
         },
       },
