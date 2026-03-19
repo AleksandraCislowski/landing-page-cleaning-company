@@ -37,5 +37,8 @@
     "email": "E-post",
     "address": "Adress",
     "hours": "Öppettider"
+  },
+  "footer": {
+    "rights": "Alla rättigheter förbehållna."
   }
 }

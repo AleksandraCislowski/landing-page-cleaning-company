@@ -37,5 +37,8 @@
     "email": "Email",
     "address": "Address",
     "hours": "Business Hours"
+  },
+  "footer": {
+    "rights": "All rights reserved."
   }
 }
