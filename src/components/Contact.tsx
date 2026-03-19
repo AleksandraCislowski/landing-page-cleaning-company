@@ -12,6 +12,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { useState } from 'react';
+import ImagePlaceholder from './ImagePlaceholder';
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -46,7 +47,6 @@ export default function Contact() {
         </Typography>
 
         <Grid container spacing={4}>
-          {/* Contact Info */}
           <Grid item xs={12} md={5}>
             <Card
               sx={{
@@ -56,6 +56,9 @@ export default function Contact() {
                 height: '100%',
               }}
             >
+              <Box sx={{ mb: 3 }}>
+                <ImagePlaceholder height={200} />
+              </Box>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                 <PhoneIcon sx={{ mr: 2, color: '#667eea', fontSize: 28 }} />
                 <Box>

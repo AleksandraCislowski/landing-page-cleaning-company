@@ -12,12 +12,12 @@ export default function LanguageSwitcher() {
   };
 
   return (
-    <Box sx={{ ml: 2 }}>
+    <Box>
       <Button
         variant='contained'
         size='small'
         onClick={toggleLanguage}
-        sx={{ minWidth: 'auto', px: 1 }}
+        sx={{ minWidth: 'auto' }}
       >
         {language === 'en' ? 'Svenska' : 'English'}
       </Button>
