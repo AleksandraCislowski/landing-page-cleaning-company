@@ -1,6 +1,6 @@
 {
   "hero": {
-    "title": "Professionella Städtjänster222",
+    "title": "Professionella Städtjänster",
     "subtitle": "Vi gör ditt utrymme glittrande och skinande",
     "cta": "Få en offert"
   },
@@ -24,7 +24,12 @@
   },
   "about": {
     "title": "Om Oss",
-    "text": "Vi är ett professionellt städföretag dedikerade till att tillhandahålla exceptionella städtjänster. Vårt team av utbildade proffs använder miljövänliga produkter och metoder för att säkerställa att ditt utrymme är fläckfritt.",
+    "text1": "Jag heter Aleksandra och har över ",
+    "text2": " års erfarenhet som professionell städare. De senaste ",
+    "text3": " åren har jag drivit mitt eget städföretag i Stockholm och byggt upp ett rykte för pålitlighet, kvalitet och noggrannhet.",
+    "text4": "Jag specialiserar mig på högkvalitativa städtjänster för hem, anpassade efter varje kunds behov, inklusive regelbunden städning och storstädning. Mitt mål är att skapa rena, bekväma och välskötta bostäder som mina kunder verkligen kan trivas i.",
+    "text5": "Kundernas förtroende och trygghet är mina högsta prioriteringar. Därför samarbetar jag med Trygg-Hansa. Det innebär att i det osannolika fallet att något skulle skadas under mitt arbete, eller om nycklar skulle komma bort, täcks ersättning fullt ut.",
+    "text6": "Om du söker en pålitlig och erfaren städare i Stockholm finns jag här för att hjälpa dig att hålla ditt hem skinande rent och stressfritt.",
     "why_choose": "Varför Välja Oss?",
     "trained": "Utbildad Personal",
     "eco": "Miljövänlig",
