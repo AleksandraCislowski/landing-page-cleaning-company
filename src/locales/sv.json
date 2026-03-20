@@ -40,6 +40,27 @@
     "rut": "RUT Avdrag",
     "trygghansa": "Försäkring"
   },
+  "gallery": {
+    "title": "Vårt Arbete",
+    "subtitle": "En snabb inblick i kvaliteten och konsekvensen du kan förvänta dig.",
+    "placeholder": "BILD",
+    "previous": "Föregående bild",
+    "next": "Nästa bild"
+  },
+  "faq": {
+    "title": "Vanliga Frågor",
+    "subtitle": "Det som kunder oftast undrar innan bokning.",
+    "q1": "Tar ni med egna städprodukter?",
+    "a1": "Ja. Vi kan ta med professionella produkter och utrustning. Om du föredrar egna produkter i hemmet använder vi gärna dem.",
+    "q2": "Hur lång tid tar en vanlig hemstädning?",
+    "a2": "Det beror på bostadens storlek och skick. De flesta regelbundna städningar tar mellan 2 och 4 timmar.",
+    "q3": "Kan jag boka återkommande städning?",
+    "a3": "Absolut. Vi erbjuder engångsstädning samt veckovis, varannan vecka och månadsvis upplägg beroende på behov.",
+    "q4": "Har ni försäkring?",
+    "a4": "Ja. Vi samarbetar med Trygg-Hansa, vilket hjälper till att täcka eventuella skador under arbetet enligt försäkringsvillkoren.",
+    "q5": "Hur fungerar RUT-avdraget?",
+    "a5": "Om du är berättigad i Sverige hanterar vi RUT direkt på fakturan så att avdraget tillämpas automatiskt."
+  },
   "contact": {
     "title": "Kontakta Oss",
     "phone": "Telefon",
