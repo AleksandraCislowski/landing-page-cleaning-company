@@ -49,8 +49,8 @@ function App() {
       <Header />
       <Hero />
       <Services />
-      <GalleryCarousel />
       <About />
+      <GalleryCarousel />
       <Faq />
       <Contact />
       <Footer />

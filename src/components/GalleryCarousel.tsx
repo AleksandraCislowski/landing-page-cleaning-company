@@ -9,44 +9,40 @@ import {
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useTranslation } from 'react-i18next';
-import ImagePlaceholder from './ImagePlaceholder';
-import picture1 from '../assets/pic1.jpg';
-import picture2 from '../assets/pic2.jpg';
-import picture3 from '../assets/pic3.jpg';
-import picture4 from '../assets/pic4.jpg';
-import picture5 from '../assets/pic5.jpg';
-import picture6 from '../assets/pic6.jpg';
-import picture7 from '../assets/pic7.jpg';
-import picture8 from '../assets/pic8.jpg';
-import picture9 from '../assets/pic9.jpg';
-import picture10 from '../assets/pic10.jpg';
-import picture11 from '../assets/pic11.jpg';
-import picture12 from '../assets/pic12.jpg';
-import picture13 from '../assets/pic13.jpg';
-import picture14 from '../assets/pic14.jpg';
-import picture15 from '../assets/pic15.jpg';
-import picture16 from '../assets/pic16.jpg';
+import carouselpic1 from '../assets/carousel1.jpg';
+import carouselpic2 from '../assets/carousel2.jpg';
+import carouselpic3 from '../assets/carousel3.jpg';
+import carouselpic4 from '../assets/carousel4.jpg';
+import carouselpic5 from '../assets/carousel5.jpg';
+import carouselpic6 from '../assets/carousel6.jpg';
+import carouselpic7 from '../assets/carousel7.jpg';
+import carouselpic8 from '../assets/carousel8.jpg';
+import carouselpic9 from '../assets/carousel9.jpg';
+import carouselpic10 from '../assets/carousel10.jpg';
+import carouselpic11 from '../assets/carousel11.jpg';
+import carouselpic12 from '../assets/carousel12.jpg';
 
-type Slide = { src?: string; key: string; label: string };
+type Slide = {
+  src: string;
+  key: string;
+  label: string;
+};
 
 const slides: Slide[] = [
-  { src: picture1, key: 'fresh-home', label: '01' },
-  { src: picture2, key: 'kitchen-detail', label: '02' },
-  { src: picture3, key: 'bathroom-shine', label: '03' },
-  { src: picture4, key: 'weekly-care', label: '04' },
-  { src: picture5, key: 'move-out-finish', label: '05' },
-  { src: picture6, key: 'office-clean', label: '06' },
-  { src: picture7, key: 'window-sparkle', label: '07' },
-  { src: picture8, key: 'floor-polish', label: '08' },
-  { src: picture9, key: 'carpet-refresh', label: '09' },
-  { src: picture10, key: 'post-renovation', label: '10' },
-  { src: picture11, key: 'deep-clean', label: '11' },
-  { src: picture12, key: 'eco-friendly', label: '12' },
-  { src: picture13, key: 'team-effort', label: '13' },
-  { src: picture14, key: 'before-after', label: '14' },
-  { src: picture15, key: 'satisfaction', label: '15' },
-  { src: picture16, key: 'sparkling-results', label: '16' },
+  { src: carouselpic1, key: 'fresh-home', label: '01' },
+  { src: carouselpic2, key: 'kitchen-detail', label: '02' },
+  { src: carouselpic3, key: 'bathroom-shine', label: '03' },
+  { src: carouselpic4, key: 'weekly-care', label: '04' },
+  { src: carouselpic5, key: 'move-out-finish', label: '05' },
+  { src: carouselpic6, key: 'office-clean', label: '06' },
+  { src: carouselpic7, key: 'window-sparkle', label: '07' },
+  { src: carouselpic8, key: 'floor-polish', label: '08' },
+  { src: carouselpic9, key: 'deep-clean', label: '09' },
+  { src: carouselpic10, key: 'post-construction', label: '10' },
+  { src: carouselpic11, key: 'carpet-care', label: '11' },
+  { src: carouselpic12, key: 'exterior-shine', label: '12' },
 ];
+
 const AUTOPLAY_INTERVAL_MS = 4500;
 const loopedSlides = [slides[slides.length - 1], ...slides, slides[0]];
 
@@ -106,7 +102,7 @@ export default function GalleryCarousel() {
           'linear-gradient(180deg, rgba(45, 0, 84, 0.03) 0%, rgba(255, 255, 255, 1) 100%)',
       }}
     >
-      <Container maxWidth='lg'>
+      <Container maxWidth='md'>
         <Box
           sx={{
             display: 'flex',
@@ -152,10 +148,10 @@ export default function GalleryCarousel() {
         <Box
           sx={{
             overflow: 'hidden',
-            borderRadius: 6,
-            border: '1px solid rgba(45, 0, 84, 0.1)',
-            backgroundColor: '#fff',
-            boxShadow: '0 14px 34px rgba(0, 0, 0, 0.08)',
+            borderRadius: 0,
+            border: 'none',
+            backgroundColor: 'transparent',
+            boxShadow: 'none',
           }}
         >
           <Box
@@ -163,107 +159,103 @@ export default function GalleryCarousel() {
               display: 'flex',
               width: `${loopedSlides.length * 100}%`,
               transform: `translateX(-${activeIndex * (100 / loopedSlides.length)}%)`,
-              transition: isTransitioning ? 'transform 0.45s ease' : 'none',
+              transition: isTransitioning ? 'transform 1s ease' : 'none',
             }}
             onTransitionEnd={handleTransitionEnd}
           >
             {loopedSlides.map((slide, index) => (
               <Box
                 key={`${slide.label}-${index}`}
-                sx={{ width: `${100 / loopedSlides.length}%`, p: 2 }}
+                sx={{
+                  width: `${100 / loopedSlides.length}%`,
+                  p: 0,
+                }}
               >
-                <ImagePlaceholder
-                  height={600}
-                  borderRadius={15}
-                  src={slide.src}
-                  alt={
-                    slide.src ? t(`gallery.items.${slide.key}.alt`) : undefined
-                  }
+                <Box
+                  sx={{
+                    position: 'relative',
+                    width: { xs: '90%', sm: '80%', md: '70%' },
+                    mx: 'auto',
+                    aspectRatio: '1 / 1',
+                    overflow: 'hidden',
+                    borderRadius: { xs: 3, md: 2 },
+                    isolation: 'isolate',
+                    '&::before': {
+                      content: '""',
+                      position: 'absolute',
+                      inset: 0,
+                      background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+                      opacity: 0.7,
+                      zIndex: 0,
+                    },
+                  }}
                 >
-                  {!slide.src && (
-                    <Box
-                      sx={{
-                        position: 'absolute',
-                        inset: 0,
-                        width: '100%',
-                        height: '100%',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        background:
-                          'linear-gradient(135deg, rgba(45, 0, 84, 0.14), rgba(237, 0, 197, 0.15))',
-                      }}
-                    >
-                      <Typography
-                        variant='h4'
-                        sx={{
-                          color: '#2d0054',
-                          fontWeight: 700,
-                          letterSpacing: '0.08em',
-                        }}
-                      >
-                        {t('gallery.placeholder')} {slide.label}
-                      </Typography>
-                    </Box>
-                  )}
+                  <Box
+                    component='img'
+                    src={slide.src}
+                    alt={t(`gallery.items.${slide.key}.alt`)}
+                    sx={{
+                      position: 'absolute',
+                      borderRadius: 5,
+                      inset: 0,
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                      objectPosition: 'center bottom',
+                      p: { xs: 1, sm: 1.25, md: 1.5 },
+                      zIndex: 1,
+                    }}
+                  />
 
                   <Box
                     sx={{
                       position: 'absolute',
-                      inset: 0,
-                      display: 'flex',
-                      alignItems: 'flex-end',
-                      background:
-                        'linear-gradient(180deg, rgba(13, 19, 33, 0) 30%, rgba(13, 19, 33, 0.76) 100%)',
-                      p: { xs: 2.5, md: 3.5 },
+                      bottom: 20,
+                      left: 20,
+                      color: '#fff',
+                      zIndex: 10,
+                      textShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
                     }}
                   >
-                    <Box
+                    <Typography
+                      variant='overline'
                       sx={{
-                        maxWidth: 360,
-                        color: '#fff',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        px: 1.25,
+                        py: 0.5,
+                        mb: 1,
+                        borderRadius: 999,
+                        fontWeight: 700,
+                        letterSpacing: '0.14em',
+                        backgroundColor: 'rgba(255, 255, 255, 0.16)',
+                        backdropFilter: 'blur(10px)',
                       }}
                     >
-                      <Typography
-                        variant='overline'
-                        sx={{
-                          display: 'inline-flex',
-                          alignItems: 'center',
-                          px: 1.25,
-                          py: 0.5,
-                          mb: 1,
-                          borderRadius: 999,
-                          fontWeight: 700,
-                          letterSpacing: '0.14em',
-                          backgroundColor: 'rgba(255, 255, 255, 0.16)',
-                          backdropFilter: 'blur(10px)',
-                        }}
-                      >
-                        {slide.label}
-                      </Typography>
-                      <Typography
-                        variant='h4'
-                        sx={{
-                          fontWeight: 700,
-                          lineHeight: 1.1,
-                          fontSize: { xs: '1.6rem', md: '2.15rem' },
-                        }}
-                      >
-                        {t(`gallery.items.${slide.key}.title`)}
-                      </Typography>
-                      <Typography
-                        variant='body1'
-                        sx={{
-                          mt: 1,
-                          color: 'rgba(255, 255, 255, 0.86)',
-                          maxWidth: 320,
-                        }}
-                      >
-                        {t(`gallery.items.${slide.key}.description`)}
-                      </Typography>
-                    </Box>
+                      {slide.label}
+                    </Typography>
+                    <Typography
+                      variant='h4'
+                      sx={{
+                        fontWeight: 700,
+                        lineHeight: 1.1,
+                        fontSize: { xs: '1.4rem', md: '1.8rem' },
+                        mb: 0.5,
+                      }}
+                    >
+                      {t(`gallery.items.${slide.key}.title`)}
+                    </Typography>
+                    <Typography
+                      variant='body2'
+                      sx={{
+                        color: 'rgba(255, 255, 255, 0.86)',
+                        maxWidth: 280,
+                      }}
+                    >
+                      {t(`gallery.items.${slide.key}.description`)}
+                    </Typography>
                   </Box>
-                </ImagePlaceholder>
+                </Box>
               </Box>
             ))}
           </Box>
