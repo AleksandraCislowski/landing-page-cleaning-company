@@ -67,7 +67,34 @@
     "subtitle": "A quick look at the quality and consistency you can expect.",
     "placeholder": "PHOTO",
     "previous": "Previous slide",
-    "next": "Next slide"
+    "next": "Next slide",
+    "items": {
+      "fresh-home": {
+        "alt": "Happy client in a freshly cleaned home",
+        "title": "Fresh home, happy client",
+        "description": "Bright finishes, tidy surfaces, and a result you can feel the moment you walk in."
+      },
+      "kitchen-detail": {
+        "alt": "Clean kitchen details",
+        "title": "Kitchen details handled",
+        "description": "Counters, fronts, and high-touch areas cleaned with the same consistent finish every visit."
+      },
+      "bathroom-shine": {
+        "alt": "Sparkling bathroom surfaces",
+        "title": "Bathroom shine restored",
+        "description": "Polished fittings, scrubbed tiles, and a clean that leaves the room feeling fresh again."
+      },
+      "weekly-care": {
+        "alt": "Recurring home cleaning result",
+        "title": "Weekly care that stays visible",
+        "description": "Regular cleaning keeps your home settled, calm, and ready for everyday life."
+      },
+      "move-out-finish": {
+        "alt": "Move-out cleaning result",
+        "title": "Ready for the next handover",
+        "description": "A thorough final pass for moving days, viewings, or that one big reset your space needs."
+      }
+    }
   },
   "faq": {
     "title": "Frequently Asked Questions",

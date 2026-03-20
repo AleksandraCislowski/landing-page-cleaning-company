@@ -43,9 +43,9 @@ export default function ImagePlaceholder({
             objectFit: 'cover',
           }}
         />
-      ) : (
-        children
-      )}
+      ) : null}
+
+      {children}
     </Box>
   );
 }

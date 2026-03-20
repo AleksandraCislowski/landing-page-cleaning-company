@@ -67,7 +67,34 @@
     "subtitle": "En snabb inblick i kvaliteten och konsekvensen du kan förvänta dig.",
     "placeholder": "BILD",
     "previous": "Föregående bild",
-    "next": "Nästa bild"
+    "next": "Nästa bild",
+    "items": {
+      "fresh-home": {
+        "alt": "Nöjd kund i ett nystädat hem",
+        "title": "Nystädat hem, nöjd kund",
+        "description": "Ljusa ytor, ordning i rummen och en känsla av rent så fort du kliver in."
+      },
+      "kitchen-detail": {
+        "alt": "Rena detaljer i köket",
+        "title": "Köksdetaljer på plats",
+        "description": "Bänkar, luckor och kontaktytor rengörs med samma noggranna resultat vid varje besök."
+      },
+      "bathroom-shine": {
+        "alt": "Skinande ytor i badrummet",
+        "title": "Glansen tillbaka i badrummet",
+        "description": "Blanka detaljer, rena kakelytor och en fräsch känsla som märks direkt."
+      },
+      "weekly-care": {
+        "alt": "Resultat efter återkommande hemstädning",
+        "title": "Veckostädning som syns",
+        "description": "Regelbunden städning håller hemmet lugnt, välordnat och redo för vardagen."
+      },
+      "move-out-finish": {
+        "alt": "Resultat efter flyttstädning",
+        "title": "Redo för nästa överlämning",
+        "description": "En noggrann slutstädning inför flytt, visning eller när bostaden behöver en ordentlig nystart."
+      }
+    }
   },
   "faq": {
     "title": "Vanliga Frågor",

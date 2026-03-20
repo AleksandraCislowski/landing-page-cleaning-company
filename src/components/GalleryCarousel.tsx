@@ -10,16 +10,42 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useTranslation } from 'react-i18next';
 import ImagePlaceholder from './ImagePlaceholder';
-import happyperson from '../assets/happy-person.jpg';
+import picture1 from '../assets/pic1.jpg';
+import picture2 from '../assets/pic2.jpg';
+import picture3 from '../assets/pic3.jpg';
+import picture4 from '../assets/pic4.jpg';
+import picture5 from '../assets/pic5.jpg';
+import picture6 from '../assets/pic6.jpg';
+import picture7 from '../assets/pic7.jpg';
+import picture8 from '../assets/pic8.jpg';
+import picture9 from '../assets/pic9.jpg';
+import picture10 from '../assets/pic10.jpg';
+import picture11 from '../assets/pic11.jpg';
+import picture12 from '../assets/pic12.jpg';
+import picture13 from '../assets/pic13.jpg';
+import picture14 from '../assets/pic14.jpg';
+import picture15 from '../assets/pic15.jpg';
+import picture16 from '../assets/pic16.jpg';
 
-type Slide = { src?: string; alt?: string; label: string };
+type Slide = { src?: string; key: string; label: string };
 
 const slides: Slide[] = [
-  { src: happyperson, alt: 'Happy person after cleaning', label: '01' },
-  { label: '02' },
-  { label: '03' },
-  { label: '04' },
-  { label: '05' },
+  { src: picture1, key: 'fresh-home', label: '01' },
+  { src: picture2, key: 'kitchen-detail', label: '02' },
+  { src: picture3, key: 'bathroom-shine', label: '03' },
+  { src: picture4, key: 'weekly-care', label: '04' },
+  { src: picture5, key: 'move-out-finish', label: '05' },
+  { src: picture6, key: 'office-clean', label: '06' },
+  { src: picture7, key: 'window-sparkle', label: '07' },
+  { src: picture8, key: 'floor-polish', label: '08' },
+  { src: picture9, key: 'carpet-refresh', label: '09' },
+  { src: picture10, key: 'post-renovation', label: '10' },
+  { src: picture11, key: 'deep-clean', label: '11' },
+  { src: picture12, key: 'eco-friendly', label: '12' },
+  { src: picture13, key: 'team-effort', label: '13' },
+  { src: picture14, key: 'before-after', label: '14' },
+  { src: picture15, key: 'satisfaction', label: '15' },
+  { src: picture16, key: 'sparkling-results', label: '16' },
 ];
 const AUTOPLAY_INTERVAL_MS = 4500;
 const loopedSlides = [slides[slides.length - 1], ...slides, slides[0]];
@@ -148,13 +174,17 @@ export default function GalleryCarousel() {
               >
                 <ImagePlaceholder
                   height={600}
-                  borderRadius={20}
+                  borderRadius={15}
                   src={slide.src}
-                  alt={slide.alt}
+                  alt={
+                    slide.src ? t(`gallery.items.${slide.key}.alt`) : undefined
+                  }
                 >
                   {!slide.src && (
                     <Box
                       sx={{
+                        position: 'absolute',
+                        inset: 0,
                         width: '100%',
                         height: '100%',
                         display: 'flex',
@@ -176,6 +206,63 @@ export default function GalleryCarousel() {
                       </Typography>
                     </Box>
                   )}
+
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      inset: 0,
+                      display: 'flex',
+                      alignItems: 'flex-end',
+                      background:
+                        'linear-gradient(180deg, rgba(13, 19, 33, 0) 30%, rgba(13, 19, 33, 0.76) 100%)',
+                      p: { xs: 2.5, md: 3.5 },
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        maxWidth: 360,
+                        color: '#fff',
+                      }}
+                    >
+                      <Typography
+                        variant='overline'
+                        sx={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          px: 1.25,
+                          py: 0.5,
+                          mb: 1,
+                          borderRadius: 999,
+                          fontWeight: 700,
+                          letterSpacing: '0.14em',
+                          backgroundColor: 'rgba(255, 255, 255, 0.16)',
+                          backdropFilter: 'blur(10px)',
+                        }}
+                      >
+                        {slide.label}
+                      </Typography>
+                      <Typography
+                        variant='h4'
+                        sx={{
+                          fontWeight: 700,
+                          lineHeight: 1.1,
+                          fontSize: { xs: '1.6rem', md: '2.15rem' },
+                        }}
+                      >
+                        {t(`gallery.items.${slide.key}.title`)}
+                      </Typography>
+                      <Typography
+                        variant='body1'
+                        sx={{
+                          mt: 1,
+                          color: 'rgba(255, 255, 255, 0.86)',
+                          maxWidth: 320,
+                        }}
+                      >
+                        {t(`gallery.items.${slide.key}.description`)}
+                      </Typography>
+                    </Box>
+                  </Box>
                 </ImagePlaceholder>
               </Box>
             ))}
