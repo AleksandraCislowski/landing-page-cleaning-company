@@ -34,7 +34,11 @@
     "trained": "Trained Staff",
     "eco": "Eco-Friendly",
     "reliable": "Reliable",
-    "insured": "Insured"
+    "quickservice": "Quick Service",
+    "noticeperiod": "No Notice Period",
+    "permanentpersonnel": "Same personnel every cleaning",
+    "rut": "RUT Deduction",
+    "trygghansa": "Insurance"
   },
   "contact": {
     "title": "Contact Us",

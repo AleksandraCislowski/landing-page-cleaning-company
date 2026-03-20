@@ -34,7 +34,11 @@
     "trained": "Utbildad Personal",
     "eco": "Miljövänlig",
     "reliable": "Pålitlig",
-    "insured": "Försäkrad"
+    "quickservice": "Snabb Service",
+    "noticeperiod": "Ingen Uppsägningstid",
+    "permanentpersonnel": "Samma personal vid varje städning",
+    "rut": "RUT Avdrag",
+    "trygghansa": "Försäkring"
   },
   "contact": {
     "title": "Kontakta Oss",
