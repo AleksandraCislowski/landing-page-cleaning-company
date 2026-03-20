@@ -78,9 +78,12 @@ export default function Hero() {
                 size={isXs ? 'small' : 'medium'}
                 sx={{
                   background: 'white',
-                  color: '#667eea',
+                  color: theme.palette.primary.main,
                   fontWeight: 'bold',
-                  '&:hover': { background: '#f0f0f0' },
+                  '&:hover': {
+                    background: theme.palette.secondary.main,
+                    color: 'white',
+                  },
                 }}
                 onClick={scrollToContact}
               >
@@ -94,7 +97,10 @@ export default function Hero() {
                 sx={{
                   borderColor: 'white',
                   color: 'white',
-                  '&:hover': { background: 'rgba(255,255,255,0.1)' },
+                  '&:hover': {
+                    background: 'rgba(255, 255, 255, 0.275)',
+                    color: theme.palette.secondary.main,
+                  },
                   textDecoration: 'none',
                 }}
               >
