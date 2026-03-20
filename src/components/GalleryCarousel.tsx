@@ -10,8 +10,17 @@ import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useTranslation } from 'react-i18next';
 import ImagePlaceholder from './ImagePlaceholder';
+import happyperson from '../assets/happy-person.jpg';
 
-const slides = ['01', '02', '03', '04'];
+type Slide = { src?: string; alt?: string; label: string };
+
+const slides: Slide[] = [
+  { src: happyperson, alt: 'Happy person after cleaning', label: '01' },
+  { label: '02' },
+  { label: '03' },
+  { label: '04' },
+  { label: '05' },
+];
 const AUTOPLAY_INTERVAL_MS = 4500;
 const loopedSlides = [slides[slides.length - 1], ...slides, slides[0]];
 
@@ -132,34 +141,41 @@ export default function GalleryCarousel() {
             }}
             onTransitionEnd={handleTransitionEnd}
           >
-            {loopedSlides.map((slideNumber, index) => (
+            {loopedSlides.map((slide, index) => (
               <Box
-                key={`${slideNumber}-${index}`}
+                key={`${slide.label}-${index}`}
                 sx={{ width: `${100 / loopedSlides.length}%`, p: 2 }}
               >
-                <ImagePlaceholder height={420} borderRadius={20}>
-                  <Box
-                    sx={{
-                      width: '100%',
-                      height: '100%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      background:
-                        'linear-gradient(135deg, rgba(45, 0, 84, 0.14), rgba(237, 0, 197, 0.15))',
-                    }}
-                  >
-                    <Typography
-                      variant='h4'
+                <ImagePlaceholder
+                  height={600}
+                  borderRadius={20}
+                  src={slide.src}
+                  alt={slide.alt}
+                >
+                  {!slide.src && (
+                    <Box
                       sx={{
-                        color: '#2d0054',
-                        fontWeight: 700,
-                        letterSpacing: '0.08em',
+                        width: '100%',
+                        height: '100%',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        background:
+                          'linear-gradient(135deg, rgba(45, 0, 84, 0.14), rgba(237, 0, 197, 0.15))',
                       }}
                     >
-                      {t('gallery.placeholder')} {slideNumber}
-                    </Typography>
-                  </Box>
+                      <Typography
+                        variant='h4'
+                        sx={{
+                          color: '#2d0054',
+                          fontWeight: 700,
+                          letterSpacing: '0.08em',
+                        }}
+                      >
+                        {t('gallery.placeholder')} {slide.label}
+                      </Typography>
+                    </Box>
+                  )}
                 </ImagePlaceholder>
               </Box>
             ))}
