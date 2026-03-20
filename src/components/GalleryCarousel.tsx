@@ -21,6 +21,8 @@ import carouselpic9 from '../assets/carousel9.jpg';
 import carouselpic10 from '../assets/carousel10.jpg';
 import carouselpic11 from '../assets/carousel11.jpg';
 import carouselpic12 from '../assets/carousel12.jpg';
+import carouselpic13 from '../assets/carousel13.jpg';
+import carouselpic14 from '../assets/carousel14.jpg';
 
 type Slide = {
   src: string;
@@ -41,9 +43,11 @@ const slides: Slide[] = [
   { src: carouselpic10, key: 'post-construction', label: '10' },
   { src: carouselpic11, key: 'carpet-care', label: '11' },
   { src: carouselpic12, key: 'exterior-shine', label: '12' },
+  { src: carouselpic13, key: 'green-clean', label: '13' },
+  { src: carouselpic14, key: 'custom-solution', label: '14' },
 ];
 
-const AUTOPLAY_INTERVAL_MS = 4500;
+const AUTOPLAY_INTERVAL_MS = 10000;
 const loopedSlides = [slides[slides.length - 1], ...slides, slides[0]];
 
 export default function GalleryCarousel() {
@@ -51,17 +55,20 @@ export default function GalleryCarousel() {
   const theme = useTheme();
   const [activeIndex, setActiveIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
+  const [autoplayKey, setAutoplayKey] = useState(0);
 
   const currentSlide = (activeIndex - 1 + slides.length) % slides.length;
 
   const handleNext = () => {
     setIsTransitioning(true);
     setActiveIndex((prev) => prev + 1);
+    setAutoplayKey((prev) => prev + 1);
   };
 
   const handlePrevious = () => {
     setIsTransitioning(true);
     setActiveIndex((prev) => prev - 1);
+    setAutoplayKey((prev) => prev + 1);
   };
 
   const resetWithoutAnimation = (targetIndex: number) => {
@@ -87,11 +94,13 @@ export default function GalleryCarousel() {
 
   useEffect(() => {
     const autoplayTimer = window.setInterval(() => {
-      handleNext();
+      setIsTransitioning(true);
+      setActiveIndex((prev) => prev + 1);
     }, AUTOPLAY_INTERVAL_MS);
 
     return () => window.clearInterval(autoplayTimer);
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [autoplayKey]);
 
   return (
     <Box
@@ -176,7 +185,6 @@ export default function GalleryCarousel() {
                     position: 'relative',
                     width: { xs: '90%', sm: '80%', md: '70%' },
                     mx: 'auto',
-                    aspectRatio: '1 / 1',
                     overflow: 'hidden',
                     borderRadius: { xs: 3, md: 2 },
                     isolation: 'isolate',
@@ -191,69 +199,63 @@ export default function GalleryCarousel() {
                   }}
                 >
                   <Box
-                    component='img'
-                    src={slide.src}
-                    alt={t(`gallery.items.${slide.key}.alt`)}
                     sx={{
-                      position: 'absolute',
-                      borderRadius: 5,
-                      inset: 0,
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      objectPosition: 'center bottom',
-                      p: { xs: 1, sm: 1.25, md: 1.5 },
                       zIndex: 1,
-                    }}
-                  />
-
-                  <Box
-                    sx={{
-                      position: 'absolute',
-                      bottom: 20,
-                      left: 20,
-                      color: '#fff',
-                      zIndex: 10,
-                      textShadow: '0 2px 8px rgba(0, 0, 0, 0.4)',
+                      position: 'relative',
+                      p: { xs: 1, sm: 1.25, md: 1.5 },
+                      pb: { xs: 1.5, md: 2 },
                     }}
                   >
-                    <Typography
-                      variant='overline'
+                    <Box
                       sx={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        px: 1.25,
-                        py: 0.5,
-                        mb: 1,
-                        borderRadius: 999,
-                        fontWeight: 700,
-                        letterSpacing: '0.14em',
-                        backgroundColor: 'rgba(255, 255, 255, 0.16)',
-                        backdropFilter: 'blur(10px)',
+                        position: 'relative',
+                        aspectRatio: '1 / 1',
+                        overflow: 'hidden',
+                        borderRadius: { xs: 2.5, sm: 3, md: 3.5 },
+                        mb: { xs: 1.25, md: 1.5 },
                       }}
                     >
-                      {slide.label}
-                    </Typography>
-                    <Typography
-                      variant='h4'
+                      <Box
+                        component='img'
+                        src={slide.src}
+                        alt={t(`gallery.items.${slide.key}.alt`)}
+                        sx={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover',
+                          objectPosition: 'center bottom',
+                          display: 'block',
+                        }}
+                      />
+                    </Box>
+
+                    <Box
                       sx={{
-                        fontWeight: 700,
-                        lineHeight: 1.1,
-                        fontSize: { xs: '1.4rem', md: '1.8rem' },
-                        mb: 0.5,
+                        color: '#fff',
+                        px: { xs: 0.25, md: 0.5 },
+                        textShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
                       }}
                     >
-                      {t(`gallery.items.${slide.key}.title`)}
-                    </Typography>
-                    <Typography
-                      variant='body2'
-                      sx={{
-                        color: 'rgba(255, 255, 255, 0.86)',
-                        maxWidth: 280,
-                      }}
-                    >
-                      {t(`gallery.items.${slide.key}.description`)}
-                    </Typography>
+                      <Typography
+                        variant='h4'
+                        sx={{
+                          fontWeight: 700,
+                          lineHeight: 1.1,
+                          fontSize: { xs: '1.25rem', md: '1.8rem' },
+                          mb: 0.75,
+                        }}
+                      >
+                        {t(`gallery.items.${slide.key}.title`)}
+                      </Typography>
+                      <Typography
+                        variant='body2'
+                        sx={{
+                          color: 'rgba(255, 255, 255, 0.92)',
+                        }}
+                      >
+                        {t(`gallery.items.${slide.key}.description`)}
+                      </Typography>
+                    </Box>
                   </Box>
                 </Box>
               </Box>
