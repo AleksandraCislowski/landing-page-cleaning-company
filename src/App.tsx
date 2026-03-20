@@ -2,7 +2,9 @@ import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
+import GalleryCarousel from './components/GalleryCarousel';
 import About from './components/About';
+import Faq from './components/Faq';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -47,7 +49,9 @@ function App() {
       <Header />
       <Hero />
       <Services />
+      <GalleryCarousel />
       <About />
+      <Faq />
       <Contact />
       <Footer />
     </ThemeProvider>
