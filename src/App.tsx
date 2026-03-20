@@ -20,6 +20,10 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
+    h3: {
+      fontWeight: 'bold',
+      color: '#2d0054',
+    },
   },
   components: {
     MuiButton: {

@@ -48,7 +48,10 @@ export default function Services() {
       <Container maxWidth='lg'>
         <Typography
           variant='h3'
-          sx={{ textAlign: 'center', mb: 6, fontWeight: 'bold', color: '#333' }}
+          sx={{
+            textAlign: 'center',
+            mb: 6,
+          }}
         >
           {t('services.title')}
         </Typography>

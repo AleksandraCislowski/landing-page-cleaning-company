@@ -49,10 +49,7 @@ export default function About() {
             />
           </Grid>
           <Grid item xs={12} md={6}>
-            <Typography
-              variant='h3'
-              sx={{ mb: 3, fontWeight: 'bold', color: '#333' }}
-            >
+            <Typography variant='h3' sx={{ mb: 3 }}>
               {t('about.title')}
             </Typography>
             <Typography
@@ -74,7 +71,10 @@ export default function About() {
           </Grid>
           <Typography
             variant='h5'
-            sx={{ mb: 3, fontWeight: 'bold', color: '#333' }}
+            sx={{
+              my: 3,
+              color: (theme) => theme.palette.primary.main,
+            }}
           >
             {t('about.why_choose')}
           </Typography>
