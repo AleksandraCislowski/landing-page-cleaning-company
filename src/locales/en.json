@@ -70,29 +70,74 @@
     "next": "Next slide",
     "items": {
       "fresh-home": {
-        "alt": "Happy client in a freshly cleaned home",
-        "title": "Fresh home, happy client",
-        "description": "Bright finishes, tidy surfaces, and a result you can feel the moment you walk in."
+        "alt": "Bright and beautifully maintained home interior",
+        "title": "A Home That Feels Lighter",
+        "description": "Clean, balanced interiors create a calmer atmosphere and a more welcoming home."
       },
       "kitchen-detail": {
-        "alt": "Clean kitchen details",
-        "title": "Kitchen details handled",
-        "description": "Counters, fronts, and high-touch areas cleaned with the same consistent finish every visit."
+        "alt": "Elegant detail in a beautifully prepared home",
+        "title": "Beauty in the Details",
+        "description": "True luxury is felt in the finishing touches that make a home feel intentionally prepared."
       },
       "bathroom-shine": {
-        "alt": "Sparkling bathroom surfaces",
-        "title": "Bathroom shine restored",
-        "description": "Polished fittings, scrubbed tiles, and a clean that leaves the room feeling fresh again."
+        "alt": "Crystal-clear finish and polished surfaces",
+        "title": "Crystal-Clear Finish",
+        "description": "Clean lines, bright rooms, and a fresher atmosphere throughout."
       },
       "weekly-care": {
-        "alt": "Recurring home cleaning result",
-        "title": "Weekly care that stays visible",
-        "description": "Regular cleaning keeps your home settled, calm, and ready for everyday life."
+        "alt": "Fresh and welcoming space prepared with care",
+        "title": "Comfort Starts with Care",
+        "description": "A clean and well-kept space brings ease, calm, and a sense of everyday comfort."
       },
       "move-out-finish": {
-        "alt": "Move-out cleaning result",
-        "title": "Ready for the next handover",
-        "description": "A thorough final pass for moving days, viewings, or that one big reset your space needs."
+        "alt": "Elegant home styling with carefully prepared details",
+        "title": "Elegance in Every Detail",
+        "description": "We care for the smallest elements with the same precision as the room itself."
+      },
+      "office-clean": {
+        "alt": "Clean and pet-friendly home atmosphere",
+        "title": "Pet-Friendly Clean",
+        "description": "Beautifully maintained homes with comfort for both people and pets."
+      },
+      "window-sparkle": {
+        "alt": "Styled home composition prepared with care",
+        "title": "Styled with Intention",
+        "description": "We value presentation, precision, and the subtle details that elevate the feeling of a home."
+      },
+      "floor-polish": {
+        "alt": "Seasonal home styling in a fresh, welcoming space",
+        "title": "A Home for Special Moments",
+        "description": "We help your space feel light, joyful, and beautifully prepared for every occasion."
+      },
+      "deep-clean": {
+        "alt": "Beautifully finished bathroom detail",
+        "title": "Small Details, Big Difference",
+        "description": "When a home is cleaned with real care, even the simplest spaces feel more elevated."
+      },
+      "post-construction": {
+        "alt": "Spotless and neatly arranged kitchen space",
+        "title": "Fresh Kitchen Energy",
+        "description": "Clean surfaces, clear order, and a space ready for daily life."
+      },
+      "carpet-care": {
+        "alt": "Pet-friendly home maintained with care",
+        "title": "Still Wondering If We're Pet-Friendly?",
+        "description": "We thought we made it clear already, but yes, we absolutely are. Clean, comfortable homes should work beautifully for pets too."
+      },
+      "exterior-shine": {
+        "alt": "Elegant living room with a calm and refined atmosphere",
+        "title": "Quiet Luxury at Home",
+        "description": "A cared-for home has a calm beauty that makes every room feel more inviting."
+      },
+      "green-clean": {
+        "alt": "Fresh pet-friendly home interior",
+        "title": "Have We Mentioned We're Pet-Friendly?",
+        "description": "Because we are. Fresh, well-kept spaces can still feel warm, relaxed, and perfectly suited for life with pets."
+      },
+      "custom-solution": {
+        "alt": "Welcoming home designed for real life with pets",
+        "title": "Pet-Friendly. In Case It Needed Saying Again.",
+        "description": "We care for homes in a way that keeps them clean, welcoming, and comfortable for every member of the household."
       }
     }
   },

@@ -70,29 +70,74 @@
     "next": "Nästa bild",
     "items": {
       "fresh-home": {
-        "alt": "Nöjd kund i ett nystädat hem",
-        "title": "Nystädat hem, nöjd kund",
-        "description": "Ljusa ytor, ordning i rummen och en känsla av rent så fort du kliver in."
+        "alt": "Ljust och vackert välskött hem",
+        "title": "Ett hem som känns lättare",
+        "description": "Rena, harmoniska interiörer skapar en lugnare atmosfär och ett mer välkomnande hem."
       },
       "kitchen-detail": {
-        "alt": "Rena detaljer i köket",
-        "title": "Köksdetaljer på plats",
-        "description": "Bänkar, luckor och kontaktytor rengörs med samma noggranna resultat vid varje besök."
+        "alt": "Elegant detalj i ett vackert förberett hem",
+        "title": "Skönheten finns i detaljerna",
+        "description": "Äkta lyx känns i de sista detaljerna som får ett hem att kännas genomtänkt och omsorgsfullt förberett."
       },
       "bathroom-shine": {
-        "alt": "Skinande ytor i badrummet",
-        "title": "Glansen tillbaka i badrummet",
-        "description": "Blanka detaljer, rena kakelytor och en fräsch känsla som märks direkt."
+        "alt": "Kristallklar finish och polerade ytor",
+        "title": "Kristallklar finish",
+        "description": "Rena linjer, ljusare rum och en fräschare känsla i hela hemmet."
       },
       "weekly-care": {
-        "alt": "Resultat efter återkommande hemstädning",
-        "title": "Veckostädning som syns",
-        "description": "Regelbunden städning håller hemmet lugnt, välordnat och redo för vardagen."
+        "alt": "Fräsch och välkomnande miljö som vårdats med omsorg",
+        "title": "Komfort börjar med omtanke",
+        "description": "Ett rent och välskött hem skapar lugn, enkelhet och en känsla av vardaglig komfort."
       },
       "move-out-finish": {
-        "alt": "Resultat efter flyttstädning",
-        "title": "Redo för nästa överlämning",
-        "description": "En noggrann slutstädning inför flytt, visning eller när bostaden behöver en ordentlig nystart."
+        "alt": "Elegant hemstyling med noggrant utvalda detaljer",
+        "title": "Elegans i varje detalj",
+        "description": "Vi tar hand om de minsta detaljerna med samma precision som resten av rummet."
+      },
+      "office-clean": {
+        "alt": "Rent och djurvänligt hem",
+        "title": "Djurvänligt rent",
+        "description": "Vackert välskötta hem med komfort för både människor och husdjur."
+      },
+      "window-sparkle": {
+        "alt": "Stilfull hemkomposition med omsorgsfull känsla",
+        "title": "Stilsatt med intention",
+        "description": "Vi värdesätter presentation, precision och de subtila detaljer som lyfter känslan i ett hem."
+      },
+      "floor-polish": {
+        "alt": "Säsongsbetonad hemstyling i en fräsch och välkomnande miljö",
+        "title": "Ett hem för speciella stunder",
+        "description": "Vi hjälper ditt hem att kännas ljust, glädjefyllt och vackert förberett för varje tillfälle."
+      },
+      "deep-clean": {
+        "alt": "Vackert avslutad badrumsdetalj",
+        "title": "Små detaljer, stor skillnad",
+        "description": "När ett hem städas med verklig omsorg känns även de enklaste ytorna mer exklusiva."
+      },
+      "post-construction": {
+        "alt": "Skinande ren och välordnad köksmiljö",
+        "title": "Fräsch energi i köket",
+        "description": "Rena ytor, tydlig ordning och ett kök som är redo för vardagen."
+      },
+      "carpet-care": {
+        "alt": "Djurvänligt hem skött med omsorg",
+        "title": "Fortfarande osäker på om vi är djurvänliga?",
+        "description": "Vi trodde att vi redan hade gjort det tydligt, men ja, det är vi verkligen. Rena och bekväma hem ska fungera lika bra för husdjur också."
+      },
+      "exterior-shine": {
+        "alt": "Elegant vardagsrum med lugn och sofistikerad känsla",
+        "title": "Tyst lyx hemma",
+        "description": "Ett välskött hem har en stillsam skönhet som gör varje rum mer inbjudande."
+      },
+      "green-clean": {
+        "alt": "Fräscht och djurvänligt hem",
+        "title": "Har vi nämnt att vi är djurvänliga?",
+        "description": "För det är vi. Fräscha och välskötta hem kan fortfarande kännas varma, avslappnade och perfekt anpassade för livet med husdjur."
+      },
+      "custom-solution": {
+        "alt": "Välkomnande hem anpassat för verkliga livet med husdjur",
+        "title": "Djurvänligt. Om det behövde sägas en gång till.",
+        "description": "Vi tar hand om hem på ett sätt som gör dem rena, välkomnande och bekväma för alla i hushållet."
       }
     }
   },
