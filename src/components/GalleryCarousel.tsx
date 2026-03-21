@@ -9,20 +9,20 @@ import {
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useTranslation } from 'react-i18next';
-import carouselpic1 from '../assets/carousel1.jpg';
-import carouselpic2 from '../assets/carousel2.jpg';
-import carouselpic3 from '../assets/carousel3.jpg';
-import carouselpic4 from '../assets/carousel4.jpg';
-import carouselpic5 from '../assets/carousel5.jpg';
-import carouselpic6 from '../assets/carousel6.jpg';
-import carouselpic7 from '../assets/carousel7.jpg';
-import carouselpic8 from '../assets/carousel8.jpg';
-import carouselpic9 from '../assets/carousel9.jpg';
-import carouselpic10 from '../assets/carousel10.jpg';
-import carouselpic11 from '../assets/carousel11.jpg';
-import carouselpic12 from '../assets/carousel12.jpg';
-import carouselpic13 from '../assets/carousel13.jpg';
-import carouselpic14 from '../assets/carousel14.jpg';
+import carouselpic1 from '../assets/carousel photos/carousel1.jpg';
+import carouselpic2 from '../assets/carousel photos/carousel2.jpg';
+import carouselpic3 from '../assets/carousel photos/carousel3.jpg';
+import carouselpic4 from '../assets/carousel photos/carousel4.jpg';
+import carouselpic5 from '../assets/carousel photos/carousel5.jpg';
+import carouselpic6 from '../assets/carousel photos/carousel6.jpg';
+import carouselpic7 from '../assets/carousel photos/carousel7.jpg';
+import carouselpic8 from '../assets/carousel photos/carousel8.jpg';
+import carouselpic9 from '../assets/carousel photos/carousel9.jpg';
+import carouselpic10 from '../assets/carousel photos/carousel10.jpg';
+import carouselpic11 from '../assets/carousel photos/carousel11.jpg';
+import carouselpic12 from '../assets/carousel photos/carousel12.jpg';
+import carouselpic13 from '../assets/carousel photos/carousel13.jpg';
+import carouselpic14 from '../assets/carousel photos/carousel14.jpg';
 
 type Slide = {
   src: string;
