@@ -6,6 +6,7 @@ import {
   Typography,
   useTheme,
 } from '@mui/material';
+import { Link } from 'react-router-dom';
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import { useTranslation } from 'react-i18next';
@@ -126,8 +127,23 @@ export default function GalleryCarousel() {
             <Typography variant='h3' sx={{ mb: 1 }}>
               {t('gallery.title')}
             </Typography>
-            <Typography variant='body1' sx={{ color: '#666' }}>
-              {t('gallery.subtitle')}
+            <Typography variant='body1' sx={{ color: '#666', maxWidth: 700 }}>
+              {t('gallery.subtitle')}{' '}
+              <Box
+                component={Link}
+                to='/gallery'
+                sx={{
+                  color: (theme) => theme.palette.primary.main,
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  '&:hover': {
+                    color: (theme) => theme.palette.secondary.main,
+                    textDecoration: 'underline',
+                  },
+                }}
+              >
+                {t('gallery.here')}
+              </Box>
             </Typography>
           </Box>
           <Box sx={{ display: 'flex', gap: 1 }}>
