@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { Container, Typography, Grid, Box, Button } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import SchoolIcon from '@mui/icons-material/School';
@@ -8,7 +9,7 @@ import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import Face2Icon from '@mui/icons-material/Face2';
 import ImagePlaceholder from './ImagePlaceholder';
 import { FirmaYearCounter, PersonYearCounter } from './YearCounter';
-import RecommendationsBubbles from './RecommendationsBubbles';
+import RecommendationsBubbles from './RecommendationsBubbles.tsx';
 import person from '../assets/person.jpg';
 import happyperson from '../assets/happy-person.jpg';
 import rutLogo from '../assets/rut-avdrag-logo.png';
@@ -90,6 +91,49 @@ const reasons = [
 
 export default function About() {
   const { t } = useTranslation();
+  const ctaTriggerRef = useRef<HTMLButtonElement | null>(null);
+  const [ctaHasAnimated, setCtaHasAnimated] = useState(false);
+  const [ctaAnimateNow, setCtaAnimateNow] = useState(false);
+  const shimmerDurationMs = 1200;
+  const shimmerRepeatCount = 2;
+  const shimmerTotalRuntimeMs = shimmerDurationMs * shimmerRepeatCount + 120;
+
+  useEffect(() => {
+    if (ctaHasAnimated || !ctaTriggerRef.current) {
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        setCtaAnimateNow(true);
+        setCtaHasAnimated(true);
+        observer.disconnect();
+      },
+      {
+        threshold: 0.45,
+      },
+    );
+
+    observer.observe(ctaTriggerRef.current);
+
+    return () => observer.disconnect();
+  }, [ctaHasAnimated]);
+
+  useEffect(() => {
+    if (!ctaAnimateNow) {
+      return;
+    }
+
+    const timeout = window.setTimeout(() => {
+      setCtaAnimateNow(false);
+    }, shimmerTotalRuntimeMs);
+
+    return () => window.clearTimeout(timeout);
+  }, [ctaAnimateNow, shimmerTotalRuntimeMs]);
 
   return (
     <Box id='about' sx={{ py: { xs: 6, md: 10 } }}>
@@ -152,6 +196,7 @@ export default function About() {
                 <RecommendationsBubbles
                   trigger={
                     <Button
+                      ref={ctaTriggerRef}
                       variant='contained'
                       sx={{
                         mb: 3,
@@ -161,9 +206,54 @@ export default function About() {
                         fontWeight: 700,
                         letterSpacing: 0.2,
                         textTransform: 'none',
+                        position: 'relative',
+                        overflow: 'hidden',
+                        isolation: 'isolate',
                         background:
                           'linear-gradient(135deg, #2d0054 0%, #6b1aa0 45%, #ed00c5 100%)',
                         boxShadow: '0 12px 26px rgba(45, 0, 84, 0.35)',
+                        '&::before': {
+                          content: '""',
+                          position: 'absolute',
+                          top: '-55%',
+                          left: '-60%',
+                          width: '48%',
+                          height: '220%',
+                          background:
+                            'linear-gradient(108deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 30%, rgba(255,255,255,0.56) 50%, rgba(255,255,255,0.2) 70%, rgba(255,255,255,0) 100%)',
+                          filter: 'blur(5px)',
+                          opacity: 0,
+                          transform: 'translateX(0) skewX(-14deg)',
+                          animation: ctaAnimateNow
+                            ? `recommendationCtaShimmer ${shimmerDurationMs}ms cubic-bezier(0.23, 1, 0.32, 1) ${shimmerRepeatCount}`
+                            : 'none',
+                          pointerEvents: 'none',
+                          zIndex: 1,
+                        },
+                        '@keyframes recommendationCtaShimmer': {
+                          '0%': {
+                            opacity: 0,
+                            transform: 'translateX(-8%) skewX(-14deg)',
+                          },
+                          '14%': {
+                            opacity: 0.45,
+                          },
+                          '85%': {
+                            opacity: 0.4,
+                          },
+                          '100%': {
+                            opacity: 0,
+                            transform: 'translateX(340%) skewX(-14deg)',
+                          },
+                        },
+                        '@media (prefers-reduced-motion: reduce)': {
+                          animation: 'none',
+                          '&::before': {
+                            opacity: 0,
+                            transform: 'translateX(-8%) skewX(-14deg)',
+                            transition: 'none',
+                          },
+                        },
                         '&:hover': {
                           transform: 'translateY(-1px) scale(1.015)',
                           boxShadow: '0 16px 30px rgba(45, 0, 84, 0.42)',
