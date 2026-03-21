@@ -8,9 +8,68 @@ import pic1 from '../assets/photo gallery/pic1.jpg';
 import pic2 from '../assets/photo gallery/pic2.jpg';
 import pic3 from '../assets/photo gallery/pic3.jpg';
 import pic4 from '../assets/photo gallery/pic4.jpg';
+import pic5 from '../assets/photo gallery/pic5.jpg';
+import pic6 from '../assets/photo gallery/pic6.jpg';
+import pic7 from '../assets/photo gallery/pic7.jpg';
+import pic8 from '../assets/photo gallery/pic8.jpg';
+import pic9 from '../assets/photo gallery/pic9.jpg';
+import pic10 from '../assets/photo gallery/pic10.jpg';
+import pic11 from '../assets/photo gallery/pic11.jpg';
+import pic12 from '../assets/photo gallery/pic12.jpg';
+import pic13 from '../assets/photo gallery/pic13.jpg';
+import pic14 from '../assets/photo gallery/pic14.jpg';
+import pic15 from '../assets/photo gallery/pic15.jpg';
+import pic16 from '../assets/photo gallery/pic16.jpg';
+import pic17 from '../assets/photo gallery/pic17.jpg';
+import pic18 from '../assets/photo gallery/pic18.jpg';
+import pic19 from '../assets/photo gallery/pic19.jpg';
+import pic20 from '../assets/photo gallery/pic20.jpg';
+import pic21 from '../assets/photo gallery/pic21.jpg';
+import pic22 from '../assets/photo gallery/pic22.jpg';
+import pic23 from '../assets/photo gallery/pic23.jpg';
+import pic24 from '../assets/photo gallery/pic24.jpg';
 
-const galleryImages = [pic1, pic2, pic3, pic4];
+const galleryImages = [
+  pic1,
+  pic2,
+  pic3,
+  pic4,
+  pic5,
+  pic6,
+  pic7,
+  pic8,
+  pic9,
+  pic10,
+  pic11,
+  pic12,
+  pic13,
+  pic14,
+  pic15,
+  pic16,
+  pic17,
+  pic18,
+  pic19,
+  pic20,
+  pic21,
+  pic22,
+  pic23,
+  pic24,
+];
 const TOTAL_PAIRS = Math.floor(galleryImages.length / 2);
+const PAIR_SUBTITLE_KEYS = [
+  'photoGallery.pairs.1',
+  'photoGallery.pairs.2',
+  'photoGallery.pairs.3',
+  'photoGallery.pairs.4',
+  'photoGallery.pairs.5',
+  'photoGallery.pairs.6',
+  'photoGallery.pairs.7',
+  'photoGallery.pairs.8',
+  'photoGallery.pairs.9',
+  'photoGallery.pairs.10',
+  'photoGallery.pairs.11',
+  'photoGallery.pairs.12',
+];
 
 export default function GalleryPage() {
   const { t } = useTranslation();
@@ -18,8 +77,6 @@ export default function GalleryPage() {
   return (
     <Box>
       <Header />
-
-      {/* Hero section */}
       <Box
         sx={{
           background: (theme) =>
@@ -47,6 +104,19 @@ export default function GalleryPage() {
             }}
           >
             {t('photoGallery.subtitle')}
+          </Typography>
+          <Typography
+            variant='body2'
+            sx={{
+              mt: 2.5,
+              color: 'rgba(255,255,255,0.65)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 0.8,
+            }}
+          >
+            ↔ {t('photoGallery.hint')}
           </Typography>
         </Container>
       </Box>
@@ -81,7 +151,7 @@ export default function GalleryPage() {
                           display: 'block',
                         }}
                       >
-                        {t('photoGallery.set')} {i + 1}
+                        {t(PAIR_SUBTITLE_KEYS[i])}
                       </Typography>
                       <Box
                         sx={{
@@ -154,6 +224,28 @@ export default function GalleryPage() {
             ))}
           </Box>
         </Container>
+      </Box>
+      <Box
+        sx={{
+          textAlign: 'center',
+          py: { xs: 6, md: 8 },
+          px: 2,
+          backgroundColor: '#fafafa',
+        }}
+      >
+        <Typography
+          variant='h5'
+          sx={{
+            color: (theme) => theme.palette.primary.main,
+            fontWeight: 700,
+            mb: 1,
+          }}
+        >
+          {t('photoGallery.facebookCta')}
+        </Typography>
+        <Typography variant='body1' sx={{ color: '#888', mb: 3 }}>
+          {t('photoGallery.facebookCtaLink')}
+        </Typography>
       </Box>
 
       <Footer />

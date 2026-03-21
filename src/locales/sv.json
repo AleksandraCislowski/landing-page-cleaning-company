@@ -9,7 +9,8 @@
     "services": "Tjänster",
     "about": "Om oss",
     "contact": "Kontakt",
-    "phone": "Telefon"
+    "phone": "Telefon",
+    "gallery": "Galleri"
   },
   "services": {
     "title": "Våra Tjänster",
@@ -54,6 +55,7 @@
     "text6": "Om du söker en pålitlig och erfaren städhjälp i Stockholm hjälper jag dig gärna att hålla ditt hem skinande rent, fräscht och bekymmersfritt.",
     "why_choose": "Varför Välja Oss?",
     "recommendations_cta": "Se våra rekommendationer",
+    "our_work_cta": "Vårt Arbete",
     "recommendations_modal_title": "Kundrekommendationer",
     "recommendations_modal_hint": "Klicka på en bubbla för att öppna hela skärmdumpen av omdömet.",
     "recommendations_backdrop_close": "Klicka utanför för att stänga",
@@ -170,5 +172,29 @@
   },
   "footer": {
     "rights": "Alla rättigheter förbehållna."
+  },
+  "photoGallery": {
+    "title": "Fotogalleri",
+    "subtitle": "Här kan du se verkliga resultat före och efter våra städtjänster. Grundligt, noggrant och med omsorg — varje gång.",
+    "hint": "Dra reglaget åt vänster eller höger för att jämföra före och efter.",
+    "facebookCta": "Vill du se mer av vårt arbete?",
+    "facebookCtaLink": "Följ oss på Facebook för regelbundna uppdateringar och fler före- och efterbilder.",
+    "before": "Före",
+    "after": "Efter",
+    "photoPlaceholder": "Bild kommer snart",
+    "pairs": {
+      "1": "Ugnsluckans glas",
+      "2": "Under badkaret",
+      "3": "Ugnsplåt",
+      "4": "Skåp med hårvårdstillbehör",
+      "5": "Djuprengöring av kakelfogar",
+      "6": "Svåråtkomliga golvytor",
+      "7": "Kafferester borttagna",
+      "8": "Diskbänk och köksbänk",
+      "9": "Papperskorg — rengjord och tömd",
+      "10": "Kristallklar ugnslucka",
+      "11": "Kalkfritt duschdörrglas",
+      "12": "Duschdörrens återställning"
+    }
   }
 }

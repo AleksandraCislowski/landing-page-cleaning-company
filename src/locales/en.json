@@ -9,7 +9,8 @@
     "services": "Services",
     "about": "About",
     "contact": "Contact",
-    "phone": "Phone"
+    "phone": "Phone",
+    "gallery": "Gallery"
   },
   "services": {
     "title": "Our Services",
@@ -54,6 +55,7 @@
     "text6": "If you are looking for a reliable and experienced cleaner in Stockholm, I would be happy to help you keep your home spotless, fresh, and stress-free.",
     "why_choose": "Why Choose Us?",
     "recommendations_cta": "See our recommendations",
+    "our_work_cta": "Our Work",
     "recommendations_modal_title": "Client Recommendations",
     "recommendations_modal_hint": "Click any bubble to open the full review screenshot.",
     "recommendations_backdrop_close": "Click outside to close",
@@ -170,5 +172,29 @@
   },
   "footer": {
     "rights": "All rights reserved."
+  },
+  "photoGallery": {
+    "title": "Photo Gallery",
+    "subtitle": "Here you can see real before and after results from our cleaning services. Fresh, thorough, and done with care — every time.",
+    "hint": "Drag the slider left or right to compare before and after.",
+    "facebookCta": "Want to see more of our work?",
+    "facebookCtaLink": "Follow us on Facebook for regular updates and more before & after results.",
+    "before": "Before",
+    "after": "After",
+    "photoPlaceholder": "Photo coming soon",
+    "pairs": {
+      "1": "Oven Door Glass",
+      "2": "Under the Bathtub",
+      "3": "Oven Baking Tray",
+      "4": "Hair Tools Cabinet",
+      "5": "Tile Grout Deep Clean",
+      "6": "Hard-to-Reach Floor Clean",
+      "7": "Coffee Residue Removal",
+      "8": "Kitchen Sink & Countertop",
+      "9": "Bin Area — Cleaned & Emptied",
+      "10": "Crystal-Clear Oven Door",
+      "11": "Limescale-Free Shower Glass",
+      "12": "Shower Glass Restoration"
+    }
   }
 }
