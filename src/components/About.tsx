@@ -130,44 +130,55 @@ export default function About() {
                 px: { xs: 0, md: 1 },
               }}
             >
-              <Typography
-                variant='h5'
+              <Box
                 sx={{
-                  mb: 3,
-                  color: (theme) => theme.palette.primary.main,
-                  fontWeight: 'bold',
+                  display: 'flex',
+                  gap: 2,
+                  justifyContent: 'flex-start',
+                  alignItems: 'center',
+                  flexWrap: 'wrap',
                 }}
               >
-                {t('about.why_choose')}
-              </Typography>
-              <RecommendationsBubbles
-                trigger={
-                  <Button
-                    variant='contained'
-                    sx={{
-                      mb: 3,
-                      px: 3,
-                      py: 1.2,
-                      borderRadius: 999,
-                      fontWeight: 700,
-                      letterSpacing: 0.2,
-                      textTransform: 'none',
-                      background:
-                        'linear-gradient(135deg, #2d0054 0%, #6b1aa0 45%, #ed00c5 100%)',
-                      boxShadow: '0 12px 26px rgba(45, 0, 84, 0.35)',
-                      '&:hover': {
-                        transform: 'translateY(-1px) scale(1.015)',
-                        boxShadow: '0 16px 30px rgba(45, 0, 84, 0.42)',
+                <Typography
+                  variant='h5'
+                  sx={{
+                    mb: 3,
+                    color: (theme) => theme.palette.primary.main,
+                    fontWeight: 'bold',
+                  }}
+                >
+                  {t('about.why_choose')}
+                </Typography>
+                <RecommendationsBubbles
+                  trigger={
+                    <Button
+                      variant='contained'
+                      sx={{
+                        mb: 3,
+                        px: 3,
+                        py: 1.2,
+                        borderRadius: 999,
+                        fontWeight: 700,
+                        letterSpacing: 0.2,
+                        textTransform: 'none',
                         background:
-                          'linear-gradient(135deg, #3a006e 0%, #7a23b5 45%, #ff22d5 100%)',
-                      },
-                      transition: 'transform 220ms ease, box-shadow 220ms ease',
-                    }}
-                  >
-                    {t('about.recommendations_cta')}
-                  </Button>
-                }
-              />
+                          'linear-gradient(135deg, #2d0054 0%, #6b1aa0 45%, #ed00c5 100%)',
+                        boxShadow: '0 12px 26px rgba(45, 0, 84, 0.35)',
+                        '&:hover': {
+                          transform: 'translateY(-1px) scale(1.015)',
+                          boxShadow: '0 16px 30px rgba(45, 0, 84, 0.42)',
+                          background:
+                            'linear-gradient(135deg, #3a006e 0%, #7a23b5 45%, #ff22d5 100%)',
+                        },
+                        transition:
+                          'transform 220ms ease, box-shadow 220ms ease',
+                      }}
+                    >
+                      {t('about.recommendations_cta')}
+                    </Button>
+                  }
+                />
+              </Box>
               <Box
                 sx={{
                   display: 'grid',
