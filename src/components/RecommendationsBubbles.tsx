@@ -146,7 +146,7 @@ type RecommendationsBubblesProps = {
 export default function RecommendationsBubbles({
   trigger,
 }: RecommendationsBubblesProps) {
-  const bubbleThumbnailPosition = '18% 14%';
+  const bubbleThumbnailPosition = '0% 0%';
   const modalFadeMs = 650;
   const bubbleOpacityMs = 780;
   const bubbleTransformMs = 1250;
