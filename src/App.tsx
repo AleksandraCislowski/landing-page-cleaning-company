@@ -1,4 +1,5 @@
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -7,6 +8,7 @@ import About from './components/About';
 import Faq from './components/Faq';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import GalleryPage from './pages/GalleryPage.tsx';
 
 const theme = createTheme({
   palette: {
@@ -42,10 +44,9 @@ const theme = createTheme({
   },
 });
 
-function App() {
+function MainPage() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <>
       <Header />
       <Hero />
       <Services />
@@ -54,7 +55,21 @@ function App() {
       <Faq />
       <Contact />
       <Footer />
-    </ThemeProvider>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Routes>
+          <Route path='/' element={<MainPage />} />
+          <Route path='/gallery' element={<GalleryPage />} />
+        </Routes>
+      </ThemeProvider>
+    </BrowserRouter>
   );
 }
 
