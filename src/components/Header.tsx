@@ -83,7 +83,7 @@ export default function Header() {
               variant='subtitle1'
               sx={{
                 fontWeight: 'bold',
-                display: { xs: 'none', sm: 'none', md: 'block' },
+                display: { xs: 'none', md: 'block' },
               }}
             >
               Aleksandra Cislowski Städfirma
@@ -93,7 +93,7 @@ export default function Header() {
           {/* Spacer to push hamburger to the right */}
           <Box sx={{ flexGrow: 1 }} />
 
-          <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
+          <Box sx={{ display: { md: 'none' } }}>
             <IconButton
               color='inherit'
               aria-label='menu'
@@ -138,7 +138,7 @@ export default function Header() {
           <Stack
             direction='row'
             spacing={2}
-            sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: 'center' }}
+            sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}
           >
             <Button onClick={() => handleSectionNav('home')}>
               {t('nav.home')}
