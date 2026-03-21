@@ -62,13 +62,13 @@ export default function GalleryCarousel() {
 
   const handleNext = () => {
     setIsTransitioning(true);
-    setActiveIndex((prev) => prev + 1);
+    setActiveIndex((prev) => Math.min(prev + 1, slides.length + 2));
     setAutoplayKey((prev) => prev + 1);
   };
 
   const handlePrevious = () => {
     setIsTransitioning(true);
-    setActiveIndex((prev) => prev - 1);
+    setActiveIndex((prev) => Math.max(prev - 1, -1));
     setAutoplayKey((prev) => prev + 1);
   };
 
@@ -83,12 +83,12 @@ export default function GalleryCarousel() {
   };
 
   const handleTransitionEnd = () => {
-    if (activeIndex === 0) {
+    if (activeIndex <= 0) {
       resetWithoutAnimation(slides.length);
       return;
     }
 
-    if (activeIndex === slides.length + 1) {
+    if (activeIndex >= slides.length + 1) {
       resetWithoutAnimation(1);
     }
   };
@@ -96,7 +96,7 @@ export default function GalleryCarousel() {
   useEffect(() => {
     const autoplayTimer = window.setInterval(() => {
       setIsTransitioning(true);
-      setActiveIndex((prev) => prev + 1);
+      setActiveIndex((prev) => Math.min(prev + 1, slides.length + 2));
     }, AUTOPLAY_INTERVAL_MS);
 
     return () => window.clearInterval(autoplayTimer);
