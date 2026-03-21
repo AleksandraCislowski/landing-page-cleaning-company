@@ -8,7 +8,14 @@ import {
   useTheme,
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import happyPerson from '../assets/happy-person.jpg';
+import recbubble1 from '../assets/recommendation bubbles photos/rec1.png';
+import recbubble2 from '../assets/recommendation bubbles photos/rec2.png';
+import recbubble3 from '../assets/recommendation bubbles photos/rec3.png';
+import recbubble4 from '../assets/recommendation bubbles photos/rec4.png';
+import recbubble5 from '../assets/recommendation bubbles photos/rec5.png';
+import recbubble6 from '../assets/recommendation bubbles photos/rec6.png';
+import recbubble7 from '../assets/recommendation bubbles photos/rec7.png';
+import recbubble8 from '../assets/recommendation bubbles photos/rec8.png';
 
 type BubbleConfig = {
   id: number;
@@ -104,6 +111,17 @@ const bubbleConfig: BubbleConfig[] = [
   },
 ];
 
+const bubbleImages: Record<number, string> = {
+  1: recbubble1,
+  2: recbubble2,
+  3: recbubble3,
+  4: recbubble4,
+  5: recbubble5,
+  6: recbubble6,
+  7: recbubble7,
+  8: recbubble8,
+};
+
 const bubbleResponsiveLayout: Record<
   number,
   {
@@ -128,6 +146,7 @@ type RecommendationsBubblesProps = {
 export default function RecommendationsBubbles({
   trigger,
 }: RecommendationsBubblesProps) {
+  const bubbleThumbnailPosition = '18% 14%';
   const modalFadeMs = 650;
   const bubbleOpacityMs = 780;
   const bubbleTransformMs = 1250;
@@ -298,9 +317,9 @@ export default function RecommendationsBubbles({
                       activeBubbleId === bubble.id
                         ? 'saturate(1.2) brightness(1.04)'
                         : 'none',
-                    backgroundImage: `url(${happyPerson})`,
+                    backgroundImage: `url(${bubbleImages[bubble.id]})`,
                     backgroundSize: 'cover',
-                    backgroundPosition: bubble.focus,
+                    backgroundPosition: bubbleThumbnailPosition,
                     backgroundRepeat: 'no-repeat',
                     '&::before': {
                       content: '""',
@@ -388,7 +407,9 @@ export default function RecommendationsBubbles({
               >
                 <Box
                   component='img'
-                  src={happyPerson}
+                  src={
+                    activeBubble ? bubbleImages[activeBubble.id] : recbubble1
+                  }
                   alt={t('about.recommendations_preview_alt')}
                   onClick={(event) => event.stopPropagation()}
                   sx={{
