@@ -159,12 +159,15 @@ export default function About() {
               {t('about.text2')}
               <FirmaYearCounter />
               {t('about.text3')}
-              <br />
-              {t('about.text4')}
-              <br />
-              {t('about.text5')}
-              <br />
-              {t('about.text6')}
+              <Box component='span' sx={{ display: 'block', mt: 2.2, mb: 1.9 }}>
+                {t('about.text4')}
+              </Box>
+              <Box component='span' sx={{ display: 'block', mb: 1.9 }}>
+                {t('about.text5')}
+              </Box>
+              <Box component='span' sx={{ display: 'block' }}>
+                {t('about.text6')}
+              </Box>
             </Typography>
           </Grid>
           <Grid item xs={12}>
