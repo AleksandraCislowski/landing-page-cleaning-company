@@ -1,4 +1,4 @@
-import { Container, Typography, Grid, Box } from '@mui/material';
+import { Container, Typography, Grid, Box, Button } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import SchoolIcon from '@mui/icons-material/School';
 import RecyclingIcon from '@mui/icons-material/Recycling';
@@ -8,6 +8,7 @@ import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import Face2Icon from '@mui/icons-material/Face2';
 import ImagePlaceholder from './ImagePlaceholder';
 import { FirmaYearCounter, PersonYearCounter } from './YearCounter';
+import RecommendationsBubbles from './RecommendationsBubbles';
 import person from '../assets/person.jpg';
 import happyperson from '../assets/happy-person.jpg';
 import rutLogo from '../assets/rut-avdrag-logo.png';
@@ -139,6 +140,34 @@ export default function About() {
               >
                 {t('about.why_choose')}
               </Typography>
+              <RecommendationsBubbles
+                trigger={
+                  <Button
+                    variant='contained'
+                    sx={{
+                      mb: 3,
+                      px: 3,
+                      py: 1.2,
+                      borderRadius: 999,
+                      fontWeight: 700,
+                      letterSpacing: 0.2,
+                      textTransform: 'none',
+                      background:
+                        'linear-gradient(135deg, #2d0054 0%, #6b1aa0 45%, #ed00c5 100%)',
+                      boxShadow: '0 12px 26px rgba(45, 0, 84, 0.35)',
+                      '&:hover': {
+                        transform: 'translateY(-1px) scale(1.015)',
+                        boxShadow: '0 16px 30px rgba(45, 0, 84, 0.42)',
+                        background:
+                          'linear-gradient(135deg, #3a006e 0%, #7a23b5 45%, #ff22d5 100%)',
+                      },
+                      transition: 'transform 220ms ease, box-shadow 220ms ease',
+                    }}
+                  >
+                    {t('about.recommendations_cta')}
+                  </Button>
+                }
+              />
               <Box
                 sx={{
                   display: 'grid',
