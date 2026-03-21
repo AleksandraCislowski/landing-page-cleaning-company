@@ -1,4 +1,4 @@
-import { ReactNode, useMemo, useState } from 'react';
+import { ReactNode, useEffect, useMemo, useState } from 'react';
 import { Box, Fade, Modal, Typography } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import happyPerson from '../assets/happy-person.jpg';
@@ -104,9 +104,30 @@ type RecommendationsBubblesProps = {
 export default function RecommendationsBubbles({
   trigger,
 }: RecommendationsBubblesProps) {
+  const modalFadeMs = 650;
+  const bubbleOpacityMs = 780;
+  const bubbleTransformMs = 1250;
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+  const [bubblesEntered, setBubblesEntered] = useState(false);
   const [activeBubbleId, setActiveBubbleId] = useState<number | null>(null);
+  const maxBubbleDelay = bubbleConfig.reduce(
+    (maxDelay, bubble) => Math.max(maxDelay, bubble.delay),
+    0,
+  );
+
+  useEffect(() => {
+    if (!open) {
+      setBubblesEntered(false);
+      return;
+    }
+
+    const entryFrame = requestAnimationFrame(() => {
+      setBubblesEntered(true);
+    });
+
+    return () => cancelAnimationFrame(entryFrame);
+  }, [open]);
 
   const activeBubble = useMemo(
     () => bubbleConfig.find((bubble) => bubble.id === activeBubbleId) ?? null,
@@ -129,7 +150,7 @@ export default function RecommendationsBubbles({
       </Box>
 
       <Modal open={open} onClose={handleClose} closeAfterTransition>
-        <Fade in={open} timeout={350}>
+        <Fade in={open} timeout={modalFadeMs}>
           <Box
             onClick={handleClose}
             sx={{
@@ -138,182 +159,171 @@ export default function RecommendationsBubbles({
               p: { xs: 2, md: 3 },
               backgroundColor: 'rgba(18, 20, 26, 0.56)',
               backdropFilter: 'blur(3px) grayscale(0.18)',
-              display: 'grid',
-              placeItems: 'center',
+              overflow: 'hidden',
               zIndex: 1400,
             }}
           >
-            <Box
-              onClick={(event) => event.stopPropagation()}
+            <Typography
+              variant='h6'
               sx={{
-                width: 'min(1080px, 95vw)',
-                height: 'min(760px, 86vh)',
-                borderRadius: { xs: 4, md: 6 },
-                position: 'relative',
-                overflow: 'hidden',
-                border: '1px solid rgba(255, 255, 255, 0.24)',
-                background:
-                  'radial-gradient(circle at 14% 10%, rgba(255,255,255,0.22), rgba(255,255,255,0.04) 42%), linear-gradient(135deg, rgba(38,12,69,0.88), rgba(54,16,96,0.88) 38%, rgba(25,45,98,0.87) 100%)',
-                boxShadow: '0 28px 70px rgba(0, 0, 0, 0.45)',
+                position: 'absolute',
+                top: 20,
+                left: 24,
+                zIndex: 3,
+                color: 'rgba(255, 255, 255, 0.95)',
+                textShadow: '0 2px 10px rgba(0,0,0,0.4)',
+                pr: 2,
               }}
             >
-              <Typography
-                variant='h6'
+              {t('about.recommendations_modal_title')}
+            </Typography>
+
+            <Typography
+              variant='body2'
+              sx={{
+                position: 'absolute',
+                top: 52,
+                left: 24,
+                zIndex: 3,
+                color: 'rgba(255, 255, 255, 0.8)',
+                textShadow: '0 2px 8px rgba(0,0,0,0.3)',
+                pr: 2,
+              }}
+            >
+              {t('about.recommendations_modal_hint')}
+            </Typography>
+
+            {bubbleConfig.map((bubble) => (
+              <Box
+                key={bubble.id}
+                component='button'
+                type='button'
+                onClick={(event) => {
+                  event.stopPropagation();
+                  setActiveBubbleId(bubble.id);
+                }}
+                aria-label={`${t('about.recommendation_bubble')} ${bubble.id}`}
                 sx={{
                   position: 'absolute',
-                  top: 20,
-                  left: 24,
-                  zIndex: 3,
-                  color: 'rgba(255, 255, 255, 0.95)',
-                  textShadow: '0 2px 10px rgba(0,0,0,0.4)',
-                  pr: 2,
-                }}
-              >
-                {t('about.recommendations_modal_title')}
-              </Typography>
-
-              <Typography
-                variant='body2'
-                sx={{
-                  position: 'absolute',
-                  top: 52,
-                  left: 24,
-                  zIndex: 3,
-                  color: 'rgba(255, 255, 255, 0.8)',
-                  textShadow: '0 2px 8px rgba(0,0,0,0.3)',
-                  pr: 2,
-                }}
-              >
-                {t('about.recommendations_modal_hint')}
-              </Typography>
-
-              {bubbleConfig.map((bubble) => (
-                <Box
-                  key={bubble.id}
-                  component='button'
-                  type='button'
-                  onClick={() => setActiveBubbleId(bubble.id)}
-                  aria-label={`${t('about.recommendation_bubble')} ${bubble.id}`}
-                  sx={{
+                  top: bubble.top,
+                  left: bubble.left,
+                  width: bubble.size,
+                  height: bubble.size,
+                  borderRadius: '50%',
+                  border: 'none',
+                  p: 0,
+                  cursor: 'pointer',
+                  overflow: 'hidden',
+                  opacity: bubblesEntered ? 1 : 0,
+                  transform: bubblesEntered
+                    ? 'translate3d(0, 0, 0) scale(1)'
+                    : `translate3d(${bubble.enterX}px, ${bubble.enterY}px, 0) scale(0.72)`,
+                  transition: `opacity ${bubbleOpacityMs}ms ease, transform ${bubbleTransformMs}ms cubic-bezier(0.2, 0.9, 0.22, 1), box-shadow 220ms ease, filter 220ms ease`,
+                  transitionDelay: bubblesEntered
+                    ? `${maxBubbleDelay - bubble.delay}ms`
+                    : `${bubble.delay}ms`,
+                  boxShadow:
+                    activeBubbleId === bubble.id
+                      ? '0 18px 34px rgba(0, 0, 0, 0.56), inset 0 0 0 2px rgba(255,255,255,0.86)'
+                      : '0 12px 26px rgba(0, 0, 0, 0.44), inset 0 0 0 1px rgba(255,255,255,0.55)',
+                  filter:
+                    activeBubbleId === bubble.id
+                      ? 'saturate(1.2) brightness(1.04)'
+                      : 'none',
+                  backgroundImage: `url(${happyPerson})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: bubble.focus,
+                  backgroundRepeat: 'no-repeat',
+                  '&::before': {
+                    content: '""',
                     position: 'absolute',
-                    top: bubble.top,
-                    left: bubble.left,
-                    width: bubble.size,
-                    height: bubble.size,
+                    inset: 0,
                     borderRadius: '50%',
-                    border: 'none',
-                    p: 0,
-                    cursor: 'pointer',
-                    overflow: 'hidden',
-                    opacity: open ? 1 : 0,
-                    transform: open
-                      ? 'translate3d(0, 0, 0) scale(1)'
-                      : `translate3d(${bubble.enterX}px, ${bubble.enterY}px, 0) scale(0.72)`,
-                    transition:
-                      'opacity 460ms ease, transform 700ms cubic-bezier(0.2, 0.9, 0.22, 1), box-shadow 220ms ease, filter 220ms ease',
-                    transitionDelay: `${bubble.delay}ms`,
+                    background:
+                      'radial-gradient(circle at 30% 22%, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.28) 23%, rgba(255,255,255,0.08) 44%, rgba(255,255,255,0.04) 55%, rgba(255,255,255,0.03) 100%)',
+                  },
+                  '&::after': {
+                    content: '""',
+                    position: 'absolute',
+                    inset: 0,
+                    borderRadius: '50%',
                     boxShadow:
-                      activeBubbleId === bubble.id
-                        ? '0 18px 34px rgba(0, 0, 0, 0.56), inset 0 0 0 2px rgba(255,255,255,0.86)'
-                        : '0 12px 26px rgba(0, 0, 0, 0.44), inset 0 0 0 1px rgba(255,255,255,0.55)',
-                    filter:
-                      activeBubbleId === bubble.id
-                        ? 'saturate(1.2) brightness(1.04)'
-                        : 'none',
-                    backgroundImage: `url(${happyPerson})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: bubble.focus,
-                    backgroundRepeat: 'no-repeat',
-                    '&::before': {
-                      content: '""',
-                      position: 'absolute',
-                      inset: 0,
-                      borderRadius: '50%',
-                      background:
-                        'radial-gradient(circle at 30% 22%, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.28) 23%, rgba(255,255,255,0.08) 44%, rgba(255,255,255,0.04) 55%, rgba(255,255,255,0.03) 100%)',
+                      'inset -10px -14px 22px rgba(0, 8, 25, 0.28), inset 10px 10px 26px rgba(255, 255, 255, 0.18)',
+                  },
+                  '&:hover': {
+                    transform: 'translate3d(0, -6px, 0) scale(1.1)',
+                    boxShadow:
+                      '0 20px 38px rgba(0, 0, 0, 0.56), inset 0 0 0 2px rgba(255,255,255,0.95)',
+                  },
+                }}
+              />
+            ))}
+
+            <Box
+              sx={{
+                position: 'absolute',
+                right: { xs: 12, sm: 18 },
+                bottom: { xs: 12, sm: 18 },
+                px: 1.25,
+                py: 0.65,
+                borderRadius: 999,
+                fontSize: 12,
+                color: 'rgba(255, 255, 255, 0.8)',
+                backgroundColor: 'rgba(0, 0, 0, 0.26)',
+                border: '1px solid rgba(255, 255, 255, 0.24)',
+              }}
+            >
+              {t('about.recommendations_backdrop_close')}
+            </Box>
+
+            {activeBubble && (
+              <Box
+                onClick={(event) => event.stopPropagation()}
+                sx={{
+                  position: 'absolute',
+                  zIndex: 4,
+                  left: '50%',
+                  top: '50%',
+                  transform: 'translate(-50%, -50%)',
+                  width: { xs: '92%', sm: '78%', md: '66%' },
+                  maxWidth: 760,
+                  maxHeight: { xs: '62%', md: '74%' },
+                  p: { xs: 1, md: 1.2 },
+                  borderRadius: 4,
+                  background:
+                    'linear-gradient(155deg, rgba(255,255,255,0.97) 0%, rgba(248,252,255,0.97) 100%)',
+                  boxShadow: '0 28px 60px rgba(0,0,0,0.52)',
+                  border: '1px solid rgba(235, 236, 243, 0.9)',
+                  animation:
+                    'previewPop 280ms cubic-bezier(0.15, 0.9, 0.27, 1)',
+                  '@keyframes previewPop': {
+                    '0%': {
+                      opacity: 0,
+                      transform: 'translate(-50%, -46%) scale(0.86)',
                     },
-                    '&::after': {
-                      content: '""',
-                      position: 'absolute',
-                      inset: 0,
-                      borderRadius: '50%',
-                      boxShadow:
-                        'inset -10px -14px 22px rgba(0, 8, 25, 0.28), inset 10px 10px 26px rgba(255, 255, 255, 0.18)',
+                    '100%': {
+                      opacity: 1,
+                      transform: 'translate(-50%, -50%) scale(1)',
                     },
-                    '&:hover': {
-                      transform: 'translate3d(0, -6px, 0) scale(1.1)',
-                      boxShadow:
-                        '0 20px 38px rgba(0, 0, 0, 0.56), inset 0 0 0 2px rgba(255,255,255,0.95)',
-                    },
+                  },
+                }}
+              >
+                <Box
+                  component='img'
+                  src={happyPerson}
+                  alt={t('about.recommendations_preview_alt')}
+                  sx={{
+                    display: 'block',
+                    width: '100%',
+                    height: '100%',
+                    maxHeight: { xs: 340, sm: 430, md: 510 },
+                    objectFit: 'contain',
+                    borderRadius: 3,
+                    backgroundColor: '#f3f4f7',
                   }}
                 />
-              ))}
-
-              <Box
-                sx={{
-                  position: 'absolute',
-                  right: { xs: 12, sm: 18 },
-                  bottom: { xs: 12, sm: 18 },
-                  px: 1.25,
-                  py: 0.65,
-                  borderRadius: 999,
-                  fontSize: 12,
-                  color: 'rgba(255, 255, 255, 0.8)',
-                  backgroundColor: 'rgba(0, 0, 0, 0.26)',
-                  border: '1px solid rgba(255, 255, 255, 0.24)',
-                }}
-              >
-                {t('about.recommendations_backdrop_close')}
               </Box>
-
-              {activeBubble && (
-                <Box
-                  sx={{
-                    position: 'absolute',
-                    zIndex: 4,
-                    left: '50%',
-                    top: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    width: { xs: '92%', sm: '78%', md: '66%' },
-                    maxWidth: 760,
-                    maxHeight: { xs: '62%', md: '74%' },
-                    p: { xs: 1, md: 1.2 },
-                    borderRadius: 4,
-                    background:
-                      'linear-gradient(155deg, rgba(255,255,255,0.97) 0%, rgba(248,252,255,0.97) 100%)',
-                    boxShadow: '0 28px 60px rgba(0,0,0,0.52)',
-                    border: '1px solid rgba(235, 236, 243, 0.9)',
-                    animation:
-                      'previewPop 280ms cubic-bezier(0.15, 0.9, 0.27, 1)',
-                    '@keyframes previewPop': {
-                      '0%': {
-                        opacity: 0,
-                        transform: 'translate(-50%, -46%) scale(0.86)',
-                      },
-                      '100%': {
-                        opacity: 1,
-                        transform: 'translate(-50%, -50%) scale(1)',
-                      },
-                    },
-                  }}
-                >
-                  <Box
-                    component='img'
-                    src={happyPerson}
-                    alt={t('about.recommendations_preview_alt')}
-                    sx={{
-                      display: 'block',
-                      width: '100%',
-                      height: '100%',
-                      maxHeight: { xs: 340, sm: 430, md: 510 },
-                      objectFit: 'contain',
-                      borderRadius: 3,
-                      backgroundColor: '#f3f4f7',
-                    }}
-                  />
-                </Box>
-              )}
-            </Box>
+            )}
           </Box>
         </Fade>
       </Modal>
