@@ -81,9 +81,10 @@ export default function GalleryPage() {
         sx={{
           background: (theme) =>
             `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
-          py: { xs: 8, md: 12 },
+          py: { xs: 4, md: 8 },
           color: 'white',
           textAlign: 'center',
+          opacity: 0.85,
         }}
       >
         <Container maxWidth='md'>
