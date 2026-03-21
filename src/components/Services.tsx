@@ -23,10 +23,14 @@ import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
 import ApartmentIcon from '@mui/icons-material/Apartment';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
-import ImagePlaceholder from './ImagePlaceholder';
+import cardphoto1 from '../assets/card1.png';
+import cardphoto2 from '../assets/card2.png';
+import cardphoto3 from '../assets/card3.png';
+import cardphoto4 from '../assets/card4.png';
 
 type Service = {
   icon: React.ReactElement;
+  image: string;
   nameKey: string;
   descKey: string;
   detailKey: string;
@@ -36,6 +40,7 @@ type Service = {
 const services: Service[] = [
   {
     icon: <LocalLaundryServiceIcon sx={{ fontSize: 48 }} />,
+    image: cardphoto1,
     nameKey: 'services.residential',
     descKey: 'services.residential_desc',
     detailKey: 'services.residential_detail',
@@ -48,6 +53,7 @@ const services: Service[] = [
   },
   {
     icon: <ApartmentIcon sx={{ fontSize: 48 }} />,
+    image: cardphoto2,
     nameKey: 'services.commercial',
     descKey: 'services.commercial_desc',
     detailKey: 'services.commercial_detail',
@@ -60,6 +66,7 @@ const services: Service[] = [
   },
   {
     icon: <AutoAwesomeIcon sx={{ fontSize: 48 }} />,
+    image: cardphoto3,
     nameKey: 'services.deep_clean',
     descKey: 'services.deep_clean_desc',
     detailKey: 'services.deep_clean_detail',
@@ -72,6 +79,7 @@ const services: Service[] = [
   },
   {
     icon: <DirectionsCarIcon sx={{ fontSize: 48 }} />,
+    image: cardphoto4,
     nameKey: 'services.move',
     descKey: 'services.move_desc',
     detailKey: 'services.move_detail',
@@ -115,7 +123,17 @@ export default function Services() {
                   overflow: 'hidden',
                 }}
               >
-                <ImagePlaceholder height={150} borderRadius={0} />
+                <Box
+                  component='img'
+                  src={service.image}
+                  alt=''
+                  sx={{
+                    width: '100%',
+                    height: 150,
+                    objectFit: 'cover',
+                    display: 'block',
+                  }}
+                />
                 <CardContent sx={{ p: 3, flex: 1 }}>
                   <Box sx={{ color: '#667eea', mb: 2 }}>{service.icon}</Box>
                   <Typography
@@ -145,7 +163,6 @@ export default function Services() {
           ))}
         </Grid>
       </Container>
-
       <Dialog
         open={Boolean(selected)}
         onClose={() => setSelected(null)}
@@ -162,7 +179,17 @@ export default function Services() {
         {selected && (
           <>
             <Box sx={{ position: 'relative' }}>
-              <ImagePlaceholder height={200} borderRadius={0} />
+              <Box
+                component='img'
+                src={selected.image}
+                alt=''
+                sx={{
+                  width: '100%',
+                  height: 200,
+                  objectFit: 'cover',
+                  display: 'block',
+                }}
+              />
               <IconButton
                 aria-label='close'
                 onClick={() => setSelected(null)}
