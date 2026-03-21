@@ -12,6 +12,7 @@ import {
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LanguageSwitcher from './LanguageSwitcher';
 import Logo from './Logo';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -20,10 +21,20 @@ export default function Header() {
   const { t } = useTranslation();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const handleSectionNav = (id: string) => {
+    if (location.pathname !== '/') {
+      navigate('/');
+    } else {
+      scrollToSection(id);
+    }
   };
 
   const handleMenuClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -35,7 +46,7 @@ export default function Header() {
   };
 
   const handleMenuItemClick = (sectionId: string) => {
-    scrollToSection(sectionId);
+    handleSectionNav(sectionId);
     handleMenuClose();
   };
 
@@ -99,6 +110,14 @@ export default function Header() {
               <MenuItem onClick={() => handleMenuItemClick('contact')}>
                 {t('nav.contact')}
               </MenuItem>
+              <MenuItem
+                component={Link}
+                to='/gallery'
+                onClick={handleMenuClose}
+                sx={{ color: 'inherit', textDecoration: 'none' }}
+              >
+                {t('nav.gallery')}
+              </MenuItem>
               <MenuItem>
                 <LanguageSwitcher />
               </MenuItem>
@@ -110,17 +129,20 @@ export default function Header() {
             spacing={2}
             sx={{ display: { xs: 'none', sm: 'flex' }, alignItems: 'center' }}
           >
-            <Button onClick={() => scrollToSection('home')}>
+            <Button onClick={() => handleSectionNav('home')}>
               {t('nav.home')}
             </Button>
-            <Button onClick={() => scrollToSection('services')}>
+            <Button onClick={() => handleSectionNav('services')}>
               {t('nav.services')}
             </Button>
-            <Button onClick={() => scrollToSection('about')}>
+            <Button onClick={() => handleSectionNav('about')}>
               {t('nav.about')}
             </Button>
-            <Button onClick={() => scrollToSection('contact')}>
+            <Button onClick={() => handleSectionNav('contact')}>
               {t('nav.contact')}
+            </Button>
+            <Button component={Link} to='/gallery'>
+              {t('nav.gallery')}
             </Button>
             <LanguageSwitcher />
           </Stack>

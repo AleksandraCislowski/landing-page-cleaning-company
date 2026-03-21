@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Typography, Grid, Box, Button } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import SchoolIcon from '@mui/icons-material/School';
@@ -271,6 +272,32 @@ export default function About() {
                     </Button>
                   }
                 />
+                <Button
+                  component={Link}
+                  to='/gallery'
+                  variant='outlined'
+                  sx={{
+                    mb: 3,
+                    px: 3,
+                    py: 1.2,
+                    borderRadius: 999,
+                    fontWeight: 700,
+                    letterSpacing: 0.2,
+                    textTransform: 'none',
+                    borderColor: (theme) => theme.palette.primary.main,
+                    color: (theme) => theme.palette.primary.main,
+                    '&:hover': {
+                      borderColor: (theme) => theme.palette.secondary.main,
+                      color: (theme) => theme.palette.secondary.main,
+                      backgroundColor: 'rgba(237,0,197,0.05)',
+                      transform: 'translateY(-1px) scale(1.015)',
+                    },
+                    transition:
+                      'transform 220ms ease, box-shadow 220ms ease, color 180ms ease, border-color 180ms ease',
+                  }}
+                >
+                  {t('about.our_work_cta')}
+                </Button>
               </Box>
               <Box
                 sx={{
