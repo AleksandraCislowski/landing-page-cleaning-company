@@ -15,6 +15,7 @@ import person from '../assets/person.jpg';
 import happyperson from '../assets/happy-person.jpg';
 import rutLogo from '../assets/rut-avdrag-logo.png';
 import tryggLogo from '../assets/trygghansa-logo.png';
+import ReviewsIcon from '@mui/icons-material/Reviews';
 
 const reasons = [
   {
@@ -268,7 +269,8 @@ export default function About() {
                           'transform 220ms ease, box-shadow 220ms ease',
                       }}
                     >
-                      {t('about.recommendations_cta')}
+                      {t('about.recommendations_cta')}{' '}
+                      <ReviewsIcon sx={{ ml: 1 }} />
                     </Button>
                   }
                 />

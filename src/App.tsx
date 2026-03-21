@@ -1,5 +1,14 @@
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -64,6 +73,7 @@ function App() {
     <BrowserRouter>
       <ThemeProvider theme={theme}>
         <CssBaseline />
+        <ScrollToTop />
         <Routes>
           <Route path='/' element={<MainPage />} />
           <Route path='/gallery' element={<GalleryPage />} />

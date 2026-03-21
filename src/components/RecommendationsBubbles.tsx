@@ -16,6 +16,10 @@ import recbubble5 from '../assets/recommendation bubbles photos/rec5.png';
 import recbubble6 from '../assets/recommendation bubbles photos/rec6.png';
 import recbubble7 from '../assets/recommendation bubbles photos/rec7.png';
 import recbubble8 from '../assets/recommendation bubbles photos/rec8.png';
+import recbubble9 from '../assets/recommendation bubbles photos/rec9.png';
+import recbubble10 from '../assets/recommendation bubbles photos/rec10.png';
+import recbubble11 from '../assets/recommendation bubbles photos/rec11.png';
+import recbubble12 from '../assets/recommendation bubbles photos/rec12.png';
 
 type BubbleConfig = {
   id: number;
@@ -26,7 +30,16 @@ type BubbleConfig = {
   enterX: number;
   enterY: number;
   delay: number;
+  placeholderAccent?: string;
 };
+
+type BubbleSpread = {
+  offsetX: number;
+  offsetY: number;
+  scale: number;
+};
+
+const parsePercent = (value: string) => Number.parseFloat(value);
 
 const bubbleConfig: BubbleConfig[] = [
   {
@@ -109,6 +122,46 @@ const bubbleConfig: BubbleConfig[] = [
     enterY: -20,
     delay: 440,
   },
+  {
+    id: 9,
+    size: 72,
+    top: '9%',
+    left: '43%',
+    focus: '50% 50%',
+    enterX: -40,
+    enterY: -110,
+    delay: 500,
+  },
+  {
+    id: 10,
+    size: 66,
+    top: '47%',
+    left: '16%',
+    focus: '50% 50%',
+    enterX: -150,
+    enterY: 50,
+    delay: 560,
+  },
+  {
+    id: 11,
+    size: 76,
+    top: '49%',
+    left: '78%',
+    focus: '50% 50%',
+    enterX: 145,
+    enterY: 40,
+    delay: 620,
+  },
+  {
+    id: 12,
+    size: 68,
+    top: '83%',
+    left: '44%',
+    focus: '50% 50%',
+    enterX: 15,
+    enterY: 130,
+    delay: 680,
+  },
 ];
 
 const bubbleImages: Record<number, string> = {
@@ -120,6 +173,10 @@ const bubbleImages: Record<number, string> = {
   6: recbubble6,
   7: recbubble7,
   8: recbubble8,
+  9: recbubble9,
+  10: recbubble10,
+  11: recbubble11,
+  12: recbubble12,
 };
 
 const bubbleResponsiveLayout: Record<
@@ -137,6 +194,10 @@ const bubbleResponsiveLayout: Record<
   6: { md: { top: '58%', left: '50%' }, sm: { top: '57%', left: '50%' } },
   7: { md: { top: '73%', left: '76%' }, sm: { top: '73%', left: '70%' } },
   8: { md: { top: '25%', left: '82%' }, sm: { top: '25%', left: '77%' } },
+  9: { md: { top: '10%', left: '46%' }, sm: { top: '11%', left: '48%' } },
+  10: { md: { top: '49%', left: '8%' }, sm: { top: '49%', left: '10%' } },
+  11: { md: { top: '50%', left: '87%' }, sm: { top: '51%', left: '78%' } },
+  12: { md: { top: '83%', left: '47%' }, sm: { top: '84%', left: '48%' } },
 };
 
 type RecommendationsBubblesProps = {
@@ -181,6 +242,118 @@ export default function RecommendationsBubbles({
     () => bubbleConfig.find((bubble) => bubble.id === activeBubbleId) ?? null,
     [activeBubbleId],
   );
+  const activeBubbleImage = activeBubble ? bubbleImages[activeBubble.id] : null;
+
+  const getBubbleSpread = (
+    bubble: BubbleConfig,
+    left: string,
+    top: string,
+  ): BubbleSpread => {
+    if (!activeBubbleImage || activeBubbleId === null) {
+      return { offsetX: 0, offsetY: 0, scale: 1 };
+    }
+
+    const x = parsePercent(left);
+    const y = parsePercent(top);
+    const activeBubbleConfig = activeBubble ?? bubble;
+    const activeLayout = bubbleResponsiveLayout[activeBubbleId];
+    const activeLeft = isSmDown
+      ? activeLayout.sm.left
+      : isMdDown
+        ? activeLayout.md.left
+        : activeBubbleConfig.left;
+    const activeTop = isSmDown
+      ? activeLayout.sm.top
+      : isMdDown
+        ? activeLayout.md.top
+        : activeBubbleConfig.top;
+    const activeX = parsePercent(activeLeft);
+    const activeY = parsePercent(activeTop);
+    const previewZone = isSmDown
+      ? { minX: 18, maxX: 82, minY: 20, maxY: 80 }
+      : isMdDown
+        ? { minX: 19, maxX: 81, minY: 21, maxY: 79 }
+        : { minX: 23, maxX: 77, minY: 19, maxY: 81 };
+    const nearZone = {
+      minX: previewZone.minX - 8,
+      maxX: previewZone.maxX + 8,
+      minY: previewZone.minY - 8,
+      maxY: previewZone.maxY + 8,
+    };
+    const horizontalPush = isSmDown ? 92 : isMdDown ? 148 : 220;
+    const verticalPush = isSmDown ? 84 : isMdDown ? 116 : 156;
+    const spreadBoost = isSmDown ? 1.16 : isMdDown ? 1.24 : 1.34;
+    const lateralSpread = isSmDown ? 7 : isMdDown ? 12 : 18;
+    const seed = ((activeBubbleId * 13 + bubble.id * 7) % 3) - 1;
+    const xDirection = x < 50 ? -1 : 1;
+    const yDirection = y < 50 ? -1 : 1;
+    const activeXDirection = activeX < 50 ? -1 : 1;
+    const activeYDirection = activeY < 50 ? -1 : 1;
+    const insideZone =
+      x > previewZone.minX &&
+      x < previewZone.maxX &&
+      y > previewZone.minY &&
+      y < previewZone.maxY;
+    const nearPreview =
+      x > nearZone.minX &&
+      x < nearZone.maxX &&
+      y > nearZone.minY &&
+      y < nearZone.maxY;
+
+    if (bubble.id === activeBubbleId) {
+      return {
+        offsetX:
+          activeXDirection * (isSmDown ? 48 : isMdDown ? 70 : 92) +
+          seed * lateralSpread,
+        offsetY: activeYDirection * (isSmDown ? 16 : 22),
+        scale: 0.92,
+      };
+    }
+
+    if (insideZone) {
+      const preferVertical =
+        isSmDown || Math.abs(y - 50) <= Math.abs(x - 50) * 0.72;
+
+      if (preferVertical) {
+        return {
+          offsetX:
+            xDirection * (horizontalPush * 0.28 * spreadBoost) +
+            seed * lateralSpread,
+          offsetY:
+            yDirection * verticalPush * spreadBoost +
+            (activeXDirection === xDirection ? 14 : -14),
+          scale: bubble.size <= 80 ? 0.96 : 0.92,
+        };
+      }
+
+      return {
+        offsetX:
+          xDirection * horizontalPush * spreadBoost +
+          (activeYDirection === yDirection ? 18 : -18),
+        offsetY:
+          yDirection * (verticalPush * 0.32) + seed * (lateralSpread - 2),
+        scale: bubble.size <= 80 ? 0.97 : 0.93,
+      };
+    }
+
+    if (nearPreview) {
+      return {
+        offsetX:
+          xDirection * (horizontalPush * 0.52 * spreadBoost) +
+          seed * lateralSpread,
+        offsetY:
+          (y >= activeY ? 1 : -1) * (verticalPush * 0.24) +
+          seed * (lateralSpread - 4),
+        scale: 0.97,
+      };
+    }
+
+    return {
+      offsetX: xDirection * (isSmDown ? 18 : 28) + seed * 4,
+      offsetY: yDirection * (isSmDown ? 10 : 16),
+      scale: 1,
+    };
+  };
 
   const handleClose = () => {
     setOpen(false);
@@ -252,6 +425,8 @@ export default function RecommendationsBubbles({
 
             {bubbleConfig.map((bubble) => {
               const responsivePosition = bubbleResponsiveLayout[bubble.id];
+              const bubbleImage = bubbleImages[bubble.id];
+              const isPlaceholder = !bubbleImage;
               const isMidRange = isLgDown && !isMdDown;
               const midRangeAdjustments: Record<
                 number,
@@ -259,6 +434,8 @@ export default function RecommendationsBubbles({
               > = {
                 6: { top: '55%', left: '42%' },
                 7: { top: '70%', left: '65%' },
+                10: { top: '48%', left: '11%' },
+                11: { top: '50%', left: '84%' },
               };
               const top = isSmDown
                 ? responsivePosition.sm.top
@@ -278,6 +455,35 @@ export default function RecommendationsBubbles({
                 bubble.size * (isSmDown ? 0.72 : isMdDown ? 0.84 : 1),
               );
               const entryOffsetScale = isSmDown ? 0.58 : isMdDown ? 0.78 : 1;
+              const hoverScale = bubble.size <= 80 ? 1.08 : 1.14;
+              const hoverTranslateY = bubble.size <= 80 ? -5 : -8;
+              const isPreviewOpen = Boolean(activeBubbleImage);
+              const rawSpread = getBubbleSpread(bubble, left, top);
+              const vw =
+                typeof window !== 'undefined' ? window.innerWidth : 800;
+              const vh =
+                typeof window !== 'undefined' ? window.innerHeight : 900;
+              const safeMargin = 6;
+              const leftPx = (parsePercent(left) / 100) * vw;
+              const topPx = (parsePercent(top) / 100) * vh;
+              const spread = {
+                offsetX: Math.min(
+                  Math.max(rawSpread.offsetX, safeMargin - leftPx),
+                  vw - leftPx - bubbleSize - safeMargin,
+                ),
+                offsetY: Math.min(
+                  Math.max(rawSpread.offsetY, safeMargin - topPx),
+                  vh - topPx - bubbleSize - safeMargin,
+                ),
+                scale: rawSpread.scale,
+              };
+              const motionDelay = isPreviewOpen
+                ? `${Math.max(0, bubble.delay - 220)}ms`
+                : bubblesEntered
+                  ? `${maxBubbleDelay - bubble.delay}ms`
+                  : `${bubble.delay}ms`;
+              const restingTransform = `translate3d(${spread.offsetX}px, ${spread.offsetY}px, 0) scale(${spread.scale})`;
+              const entryTransform = `translate3d(${Math.round(bubble.enterX * entryOffsetScale) + spread.offsetX}px, ${Math.round(bubble.enterY * entryOffsetScale) + spread.offsetY}px, 0) scale(${(0.72 * spread.scale).toFixed(3)})`;
 
               return (
                 <Box
@@ -286,6 +492,10 @@ export default function RecommendationsBubbles({
                   type='button'
                   onClick={(event) => {
                     event.stopPropagation();
+                    if (!bubbleImage) {
+                      return;
+                    }
+
                     setActiveBubbleId(bubble.id);
                   }}
                   aria-label={`${t('about.recommendation_bubble')} ${bubble.id}`}
@@ -298,17 +508,15 @@ export default function RecommendationsBubbles({
                     borderRadius: '50%',
                     border: 'none',
                     p: 0,
-                    cursor: 'pointer',
+                    cursor: bubbleImage ? 'pointer' : 'default',
                     overflow: 'hidden',
                     willChange: 'transform, box-shadow, filter',
                     opacity: bubblesEntered ? 1 : 0,
                     transform: bubblesEntered
-                      ? 'translate3d(0, 0, 0) scale(1)'
-                      : `translate3d(${Math.round(bubble.enterX * entryOffsetScale)}px, ${Math.round(bubble.enterY * entryOffsetScale)}px, 0) scale(0.72)`,
+                      ? restingTransform
+                      : entryTransform,
                     transition: `opacity ${bubbleOpacityMs}ms ease, transform ${bubbleTransformMs}ms cubic-bezier(0.2, 0.9, 0.22, 1), box-shadow 220ms ease, filter 220ms ease`,
-                    transitionDelay: bubblesEntered
-                      ? `${maxBubbleDelay - bubble.delay}ms`
-                      : `${bubble.delay}ms`,
+                    transitionDelay: motionDelay,
                     boxShadow:
                       activeBubbleId === bubble.id
                         ? '0 18px 34px rgba(0, 0, 0, 0.56), inset 0 0 0 2px rgba(255,255,255,0.86)'
@@ -317,17 +525,22 @@ export default function RecommendationsBubbles({
                       activeBubbleId === bubble.id
                         ? 'saturate(1.2) brightness(1.04)'
                         : 'none',
-                    backgroundImage: `url(${bubbleImages[bubble.id]})`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: bubbleThumbnailPosition,
+                    backgroundImage: bubbleImage
+                      ? `url(${bubbleImage})`
+                      : `radial-gradient(circle at 30% 30%, rgba(255,255,255,0.95) 0%, rgba(255,255,255,0.7) 18%, ${bubble.placeholderAccent ?? 'rgba(155, 189, 212, 0.92)'} 20%, rgba(255,255,255,0.18) 58%, rgba(10,30,48,0.2) 100%)`,
+                    backgroundSize: bubbleImage ? 'cover' : '100% 100%',
+                    backgroundPosition: bubbleImage
+                      ? bubbleThumbnailPosition
+                      : 'center',
                     backgroundRepeat: 'no-repeat',
                     '&::before': {
                       content: '""',
                       position: 'absolute',
                       inset: 0,
                       borderRadius: '50%',
-                      background:
-                        'radial-gradient(circle at 30% 22%, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.28) 23%, rgba(255,255,255,0.08) 44%, rgba(255,255,255,0.04) 55%, rgba(255,255,255,0.03) 100%)',
+                      background: isPlaceholder
+                        ? 'radial-gradient(circle at 30% 22%, rgba(255,255,255,0.86) 0%, rgba(255,255,255,0.34) 24%, rgba(255,255,255,0.1) 46%, rgba(255,255,255,0.04) 66%, rgba(255,255,255,0.02) 100%)'
+                        : 'radial-gradient(circle at 30% 22%, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.28) 23%, rgba(255,255,255,0.08) 44%, rgba(255,255,255,0.04) 55%, rgba(255,255,255,0.03) 100%)',
                     },
                     '&::after': {
                       content: '""',
@@ -336,21 +549,28 @@ export default function RecommendationsBubbles({
                       borderRadius: '50%',
                       boxShadow:
                         'inset -10px -14px 22px rgba(0, 8, 25, 0.28), inset 10px 10px 26px rgba(255, 255, 255, 0.18)',
+                      background: isPlaceholder
+                        ? 'radial-gradient(circle at 66% 68%, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.12) 10%, transparent 11%), radial-gradient(circle at 42% 40%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.08) 12%, transparent 13%), radial-gradient(circle at 60% 28%, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 8%, transparent 9%)'
+                        : 'none',
                     },
-                    '&:hover': {
-                      transition: `transform ${bubbleHoverMs}ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow ${bubbleHoverMs}ms ease, filter ${bubbleHoverMs}ms ease`,
-                      transform: 'translate3d(0, -8px, 0) scale(1.14)',
-                      boxShadow:
-                        '0 24px 40px rgba(0, 0, 0, 0.58), inset 0 0 0 2px rgba(255,255,255,0.97)',
-                      filter: 'saturate(1.22) brightness(1.06)',
-                    },
-                    '&:focus-visible': {
-                      outline: 'none',
-                      transform: 'translate3d(0, -8px, 0) scale(1.14)',
-                      boxShadow:
-                        '0 24px 40px rgba(0, 0, 0, 0.58), inset 0 0 0 2px rgba(255,255,255,0.97), 0 0 0 4px rgba(255,255,255,0.32)',
-                      filter: 'saturate(1.22) brightness(1.06)',
-                    },
+                    ...(bubbleImage && !isPreviewOpen
+                      ? {
+                          '&:hover': {
+                            transition: `transform ${bubbleHoverMs}ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow ${bubbleHoverMs}ms ease, filter ${bubbleHoverMs}ms ease`,
+                            transform: `translate3d(${spread.offsetX}px, ${spread.offsetY + hoverTranslateY}px, 0) scale(${(spread.scale * hoverScale).toFixed(3)})`,
+                            boxShadow:
+                              '0 24px 40px rgba(0, 0, 0, 0.58), inset 0 0 0 2px rgba(255,255,255,0.97)',
+                            filter: 'saturate(1.22) brightness(1.06)',
+                          },
+                          '&:focus-visible': {
+                            outline: 'none',
+                            transform: `translate3d(${spread.offsetX}px, ${spread.offsetY + hoverTranslateY}px, 0) scale(${(spread.scale * hoverScale).toFixed(3)})`,
+                            boxShadow:
+                              '0 24px 40px rgba(0, 0, 0, 0.58), inset 0 0 0 2px rgba(255,255,255,0.97), 0 0 0 4px rgba(255,255,255,0.32)',
+                            filter: 'saturate(1.22) brightness(1.06)',
+                          },
+                        }
+                      : {}),
                   }}
                 />
               );
@@ -373,7 +593,7 @@ export default function RecommendationsBubbles({
               {t('about.recommendations_backdrop_close')}
             </Box>
 
-            {activeBubble && (
+            {activeBubble && activeBubbleImage && (
               <Box
                 sx={{
                   position: 'absolute',
@@ -407,9 +627,7 @@ export default function RecommendationsBubbles({
               >
                 <Box
                   component='img'
-                  src={
-                    activeBubble ? bubbleImages[activeBubble.id] : recbubble1
-                  }
+                  src={activeBubbleImage}
                   alt={t('about.recommendations_preview_alt')}
                   onClick={(event) => event.stopPropagation()}
                   sx={{
