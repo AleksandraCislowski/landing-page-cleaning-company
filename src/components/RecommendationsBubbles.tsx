@@ -107,6 +107,7 @@ export default function RecommendationsBubbles({
   const modalFadeMs = 650;
   const bubbleOpacityMs = 780;
   const bubbleTransformMs = 1250;
+  const bubbleHoverMs = 220;
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [bubblesEntered, setBubblesEntered] = useState(false);
@@ -214,6 +215,7 @@ export default function RecommendationsBubbles({
                   p: 0,
                   cursor: 'pointer',
                   overflow: 'hidden',
+                  willChange: 'transform, box-shadow, filter',
                   opacity: bubblesEntered ? 1 : 0,
                   transform: bubblesEntered
                     ? 'translate3d(0, 0, 0) scale(1)'
@@ -251,9 +253,18 @@ export default function RecommendationsBubbles({
                       'inset -10px -14px 22px rgba(0, 8, 25, 0.28), inset 10px 10px 26px rgba(255, 255, 255, 0.18)',
                   },
                   '&:hover': {
-                    transform: 'translate3d(0, -6px, 0) scale(1.1)',
+                    transition: `transform ${bubbleHoverMs}ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow ${bubbleHoverMs}ms ease, filter ${bubbleHoverMs}ms ease`,
+                    transform: 'translate3d(0, -8px, 0) scale(1.14)',
                     boxShadow:
-                      '0 20px 38px rgba(0, 0, 0, 0.56), inset 0 0 0 2px rgba(255,255,255,0.95)',
+                      '0 24px 40px rgba(0, 0, 0, 0.58), inset 0 0 0 2px rgba(255,255,255,0.97)',
+                    filter: 'saturate(1.22) brightness(1.06)',
+                  },
+                  '&:focus-visible': {
+                    outline: 'none',
+                    transform: 'translate3d(0, -8px, 0) scale(1.14)',
+                    boxShadow:
+                      '0 24px 40px rgba(0, 0, 0, 0.58), inset 0 0 0 2px rgba(255,255,255,0.97), 0 0 0 4px rgba(255,255,255,0.32)',
+                    filter: 'saturate(1.22) brightness(1.06)',
                   },
                 }}
               />
