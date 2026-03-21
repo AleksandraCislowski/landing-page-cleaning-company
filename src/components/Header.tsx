@@ -11,7 +11,7 @@ import {
   MenuItem,
 } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import LanguageSwitcher from './LanguageSwitcher';
 import Logo from './Logo';
@@ -29,9 +29,20 @@ export default function Header() {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  useEffect(() => {
+    if (location.pathname !== '/' || !location.hash) {
+      return;
+    }
+
+    const sectionId = location.hash.replace('#', '');
+    window.requestAnimationFrame(() => {
+      scrollToSection(sectionId);
+    });
+  }, [location.pathname, location.hash]);
+
   const handleSectionNav = (id: string) => {
     if (location.pathname !== '/') {
-      navigate('/');
+      navigate(`/#${id}`);
     } else {
       scrollToSection(id);
     }
@@ -67,7 +78,7 @@ export default function Header() {
               flexShrink: 0,
             }}
           >
-            <Logo onClick={() => scrollToSection('home')} />
+            <Logo onClick={() => handleSectionNav('home')} />
             <Typography
               variant='subtitle1'
               sx={{
