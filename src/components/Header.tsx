@@ -82,6 +82,7 @@ export default function Header() {
             <Typography
               variant='subtitle1'
               sx={{
+                color: 'inherit',
                 fontWeight: 'bold',
                 display: { xs: 'none', md: 'block' },
               }}
