@@ -2,11 +2,19 @@ import { Box, Container, Typography, Stack, IconButton } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import logo from '../assets/logo.png';
 import { useTranslation } from 'react-i18next';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
   const { t } = useTranslation();
+  const location = useLocation();
+
+  const handleResidentialGuideClick = (event: React.MouseEvent) => {
+    if (location.pathname === '/residential-guide') {
+      event.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   return (
     <Box
@@ -51,6 +59,7 @@ export default function Footer() {
             <Typography
               component={RouterLink}
               to='/residential-guide'
+              onClick={handleResidentialGuideClick}
               variant='body2'
               sx={{
                 mt: 0.6,

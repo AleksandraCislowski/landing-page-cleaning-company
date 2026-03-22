@@ -179,7 +179,20 @@ export default function ResidentialGuidePage() {
               <Button variant='contained' component='a' href='/#contact'>
                 {t('residentialGuide.contact_cta')}
               </Button>
-              <Button variant='outlined' component='a' href='/'>
+              <Button
+                variant='outlined'
+                component='a'
+                href='/'
+                sx={{
+                  color: 'primary.main',
+                  borderColor: 'primary.main',
+                  '&:hover': {
+                    color: 'secondary.main',
+                    borderColor: 'secondary.main',
+                    backgroundColor: 'rgba(237, 0, 197, 0.08)',
+                  },
+                }}
+              >
                 {t('residentialGuide.back_home_cta')}
               </Button>
             </Stack>

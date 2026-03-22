@@ -26,7 +26,24 @@ export default function Header() {
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    element?.scrollIntoView({ behavior: 'smooth' });
+    if (!element) {
+      return;
+    }
+
+    const appBar = document.querySelector(
+      'header.MuiAppBar-root',
+    ) as HTMLElement | null;
+    const headerOffset = appBar ? appBar.offsetHeight : 64;
+    const targetTop =
+      element.getBoundingClientRect().top +
+      window.pageYOffset -
+      headerOffset -
+      8;
+
+    window.scrollTo({
+      top: Math.max(0, targetTop),
+      behavior: 'smooth',
+    });
   };
 
   useEffect(() => {
@@ -131,7 +148,7 @@ export default function Header() {
                 {t('nav.gallery')}
               </MenuItem>
               <MenuItem>
-                <LanguageSwitcher />
+                <LanguageSwitcher onLanguageChange={handleMenuClose} />
               </MenuItem>
             </Menu>
           </Box>
