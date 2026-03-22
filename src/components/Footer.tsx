@@ -2,6 +2,7 @@ import { Box, Container, Typography, Stack, IconButton } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import logo from '../assets/logo.png';
 import { useTranslation } from 'react-i18next';
+import { Link as RouterLink } from 'react-router-dom';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -46,6 +47,21 @@ export default function Footer() {
             </Box>
             <Typography variant='body2' sx={{ opacity: 0.7 }}>
               © {currentYear} Aleksandra Cislowski. {t('footer.rights')}
+            </Typography>
+            <Typography
+              component={RouterLink}
+              to='/residential-guide'
+              variant='body2'
+              sx={{
+                mt: 0.6,
+                color: 'white',
+                opacity: 0.85,
+                textDecoration: 'underline',
+                textUnderlineOffset: '2px',
+                '&:hover': { opacity: 1 },
+              }}
+            >
+              {t('footer.residential_guide')}
             </Typography>
           </Box>
 

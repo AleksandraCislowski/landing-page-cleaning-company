@@ -15,6 +15,7 @@
   "services": {
     "title": "Our Services",
     "learn_more": "Learn more",
+    "residential_guide_cta": "Full house cleaning guide",
     "residential": "Residential Cleaning",
     "residential_desc": "Complete home cleaning services",
     "residential_detail": "Our residential cleaning is tailored to your home and schedule. We clean every room with care, using products that are safe for your family and pets.",
@@ -222,7 +223,117 @@
     "hours": "Business Hours"
   },
   "footer": {
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "residential_guide": "House Cleaning Guide"
+  },
+  "residentialGuide": {
+    "title": "House Cleaning Guide",
+    "subtitle": "Everything you should know about our regular residential cleaning service.",
+    "intro": "This guide explains what is included in regular house cleaning and which limitations apply, so expectations stay clear for both sides.",
+    "section_a": {
+      "title": "What is included in our house cleaning",
+      "general_info": {
+        "title": "General information",
+        "items": [
+          "We clean all surfaces and equipment that are easily accessible from floor level.",
+          "For safety reasons, we do not use ladders or step stools.",
+          "Cleaning above reachable height is included in deep cleaning, which is offered as an additional service.",
+          "We kindly ask that all cleaning equipment is fully functional (e.g. vacuum cleaner, mop). We do not work with damaged or non-functioning equipment.",
+          "If the necessary cleaning supplies are not provided, we reserve the right to skip certain tasks or leave specific areas uncleaned.",
+          "For safety reasons, we do not perform cleaning if a dog is left unsupervised in the home. Small household pets (such as cats, fish, or caged animals) may remain during the cleaning, provided they are secured and do not interfere with the service.",
+          "For safety and legal reasons, our staff cannot stay alone in the home with minors without a responsible adult present.",
+          "Please note that regular home cleaning is designed to maintain cleanliness, not restore heavily worn or neglected surfaces.",
+          "While we always work carefully and thoroughly, we are not able to make worn items look new."
+        ]
+      },
+      "kitchen": {
+        "title": "Kitchen",
+        "items": [
+          "Cleaning of sink, countertops, and taps",
+          "Wiping tiles above the sink",
+          "Exterior cleaning of kitchen cabinet doors",
+          "Cleaning of all accessible surfaces (tables, chairs, windowsills, etc.)",
+          "Vacuuming skirting boards and edges",
+          "Spot cleaning of doors (removing visible stains)",
+          "Vacuuming and mopping floors",
+          "Cleaning the waste area under the sink",
+          "Emptying coffee machine (grounds/capsules) and rinsing the coffee pot",
+          "Cleaning the microwave (inside and outside), if easily accessible",
+          "Loading the dishwasher and unloading it once per visit",
+          "Disposal of garbage"
+        ]
+      },
+      "bathroom_toilet": {
+        "title": "Bathroom & Toilet",
+        "items": [
+          "Cleaning of shower, shower cabin, and bathtub",
+          "Cleaning of sink and toilet",
+          "Cleaning of accessible taps and pipes",
+          "Spot cleaning of walls and tiles (visible stains only)",
+          "Polishing mirrors",
+          "Exterior dusting of bathroom furniture and appliances",
+          "Vacuuming and mopping floors",
+          "Disposal of garbage"
+        ]
+      },
+      "living_bedrooms": {
+        "title": "Living room & Bedrooms",
+        "items": [
+          "Vacuuming floors, carpets, and skirting boards",
+          "Mopping floors",
+          "Dusting of furniture, lamps, windowsills, radiators, doors, frames, moldings, and accessible surfaces",
+          "Bed making (linen change available upon request)",
+          "Disposal of garbage"
+        ]
+      }
+    },
+    "section_b": {
+      "title": "House Cleaning - Additional Guidelines",
+      "not_included": {
+        "title": "What is not included",
+        "items": [
+          "We do not clean lamps unless they are easily accessible from floor level.",
+          "Crystal lamps and chandeliers are not cleaned under any circumstances.",
+          "We do not wash large amounts of dishes by hand (maximum approx. 15 minutes per visit).",
+          "Watering plants is not included in standard home cleaning. If you are away for a longer holiday and leave us a reminder, we can water your plants so they stay in good condition.",
+          "Laundry is not included in standard home cleaning. It can be booked as an additional service for an extra fee.",
+          "We do not provide household maintenance tasks, such as changing curtains, replacing light bulbs, or removing candle wax stains.",
+          "Need help with wardrobes and closets? Organization is available as an additional service for an extra fee."
+        ]
+      },
+      "pets": {
+        "title": "Pets",
+        "items": [
+          "We do not clean after pets (e.g. litter boxes, cages, aquariums).",
+          "We do not feed animals or change their water.",
+          "We do not walk dogs."
+        ]
+      },
+      "furniture_handling": {
+        "title": "Furniture & handling",
+        "items": [
+          "We do not move furniture or large appliances (e.g. refrigerators, washing machines).",
+          "We do not lift, shake, or beat carpets."
+        ]
+      },
+      "sensitive_surfaces": {
+        "title": "Sensitive surfaces",
+        "items": [
+          "TV screens and other screens are cleaned using dry methods only.",
+          "Special cleaning products can be used only if provided by the customer and at the customer's responsibility."
+        ]
+      },
+      "additional_notes": {
+        "title": "Additional notes",
+        "items": [
+          "When cleaning the fridge (extra service), we may dispose only of items that are visibly spoiled. We do not check expiry dates and we do not decide based on date labels.",
+          "Home cleaning applies only to indoor living areas (garages, storage rooms, yards, and similar spaces are not included).",
+          "Scrubbing of grout/joints is not included in standard cleaning (available as an additional service)."
+        ]
+      }
+    },
+    "contact_cta": "Contact us",
+    "back_home_cta": "Back to home"
   },
   "photoGallery": {
     "title": "Photo Gallery",

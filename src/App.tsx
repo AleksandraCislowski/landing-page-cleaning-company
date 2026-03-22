@@ -20,6 +20,7 @@ import Faq from './components/Faq';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import GalleryPage from './pages/GalleryPage.tsx';
+import ResidentialGuidePage from './pages/ResidentialGuidePage.tsx';
 
 const theme = createTheme({
   palette: {
@@ -87,6 +88,7 @@ function App() {
         <Routes>
           <Route path='/' element={<MainPage />} />
           <Route path='/gallery' element={<GalleryPage />} />
+          <Route path='/residential-guide' element={<ResidentialGuidePage />} />
         </Routes>
       </ThemeProvider>
     </BrowserRouter>

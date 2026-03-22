@@ -7,11 +7,16 @@ import {
   Dialog,
   DialogContent,
   IconButton,
+  Fab,
+  Tooltip,
   useTheme,
   useMediaQuery,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import MenuBookIcon from '@mui/icons-material/MenuBook';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
 import ResidentialServiceCard from './services/ResidentialServiceCard';
 import ResidentialServiceDialogContent from './services/ResidentialServiceDialogContent';
 import DeepCleanServiceCard from './services/DeepCleanServiceCard';
@@ -24,6 +29,7 @@ import { ServiceId, serviceDefinitions } from './services/serviceDefinitions';
 
 export default function Services() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const [selectedServiceId, setSelectedServiceId] = useState<ServiceId | null>(
@@ -33,6 +39,23 @@ export default function Services() {
     ? serviceDefinitions[selectedServiceId]
     : null;
   const isResidentialSelected = selectedServiceId === 'residential';
+
+  const handleScrollToContact = () => {
+    setSelectedServiceId(null);
+    window.setTimeout(() => {
+      document.getElementById('contact')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }, 120);
+  };
+
+  const handleOpenResidentialGuide = () => {
+    setSelectedServiceId(null);
+    window.setTimeout(() => {
+      navigate('/residential-guide');
+    }, 120);
+  };
 
   return (
     <Box id='services' sx={{ py: { xs: 6, md: 10 }, background: '#f9f9f9' }}>
@@ -130,6 +153,42 @@ export default function Services() {
                 <></>
               )}
             </DialogContent>
+            {isResidentialSelected && (
+              <Tooltip
+                title={t('services.residential_guide_cta')}
+                placement='left'
+                arrow
+              >
+                <Fab
+                  color='secondary'
+                  aria-label='open residential guide'
+                  onClick={handleOpenResidentialGuide}
+                  sx={{
+                    position: 'absolute',
+                    right: { xs: 16, sm: 24 },
+                    bottom: { xs: 88, sm: 96 },
+                    zIndex: 2,
+                  }}
+                >
+                  <MenuBookIcon />
+                </Fab>
+              </Tooltip>
+            )}
+            <Tooltip title={t('contact.title')} placement='left' arrow>
+              <Fab
+                color='primary'
+                aria-label='go to contact form'
+                onClick={handleScrollToContact}
+                sx={{
+                  position: 'absolute',
+                  right: { xs: 16, sm: 24 },
+                  bottom: { xs: 16, sm: 24 },
+                  zIndex: 2,
+                }}
+              >
+                <MailOutlineIcon />
+              </Fab>
+            </Tooltip>
           </>
         )}
       </Dialog>

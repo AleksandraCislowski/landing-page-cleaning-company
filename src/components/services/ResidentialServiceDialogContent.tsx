@@ -1,3 +1,4 @@
+import { useRef } from 'react';
 import {
   Box,
   Typography,
@@ -13,6 +14,7 @@ import { useTranslation } from 'react-i18next';
 export default function ResidentialServiceDialogContent() {
   const { t } = useTranslation();
   const theme = useTheme();
+  const checklistSectionRef = useRef<HTMLDivElement | null>(null);
 
   const howItWorksSteps = t('services.client_info.how_it_works.steps', {
     returnObjects: true,
@@ -63,6 +65,16 @@ export default function ResidentialServiceDialogContent() {
     borderRadius: 2,
     border: '1px solid rgba(45, 0, 84, 0.12)',
     backgroundColor: '#fff',
+  };
+
+  const handleSuppliesLinkClick = (
+    event: React.MouseEvent<HTMLAnchorElement>,
+  ) => {
+    event.preventDefault();
+    checklistSectionRef.current?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
   };
 
   return (
@@ -137,7 +149,18 @@ export default function ResidentialServiceDialogContent() {
           </Typography>
           <Typography
             variant='body2'
-            sx={{ color: theme.palette.primary.main, mt: 0.8, fontWeight: 700 }}
+            component='a'
+            href='#cleaning-checklist'
+            onClick={handleSuppliesLinkClick}
+            sx={{
+              display: 'inline-block',
+              color: theme.palette.primary.main,
+              mt: 0.8,
+              fontWeight: 700,
+              textDecoration: 'underline',
+              cursor: 'pointer',
+              '&:hover': { opacity: 0.85 },
+            }}
           >
             {t('services.client_info.supplies.link')}
           </Typography>
@@ -215,7 +238,11 @@ export default function ResidentialServiceDialogContent() {
           </Typography>
         </Box>
 
-        <Box sx={{ ...sectionCardSx, gridColumn: { xs: '1', md: '1 / -1' } }}>
+        <Box
+          id='cleaning-checklist'
+          ref={checklistSectionRef}
+          sx={{ ...sectionCardSx, gridColumn: { xs: '1', md: '1 / -1' } }}
+        >
           <Typography variant='subtitle1' sx={{ fontWeight: 700, mb: 0.75 }}>
             {t('services.client_info.checklist.title')}
           </Typography>

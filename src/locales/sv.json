@@ -15,6 +15,7 @@
   "services": {
     "title": "Våra Tjänster",
     "learn_more": "Läs mer",
+    "residential_guide_cta": "Full guide för hemstädning",
     "residential": "Hemstädning",
     "residential_desc": "Kompletta hemstädtjänster",
     "residential_detail": "Vi anpassar hemstädningen efter din bostad och ditt schema. Vi städar varje rum med omsorg och använder produkter som är säkra för hela familjen.",
@@ -222,7 +223,117 @@
     "hours": "Öppettider"
   },
   "footer": {
-    "rights": "Alla rättigheter förbehållna."
+    "rights": "Alla rättigheter förbehållna.",
+    "residential_guide": "Guide för hemstädning"
+  },
+  "residentialGuide": {
+    "title": "Guide för hemstädning",
+    "subtitle": "Allt du behöver veta om vår regelbundna hemstädning.",
+    "intro": "Den här guiden förklarar vad som ingår i regelbunden hemstädning och vilka begränsningar som gäller, så att förväntningarna är tydliga för båda parter.",
+    "section_a": {
+      "title": "Vad som ingår i vår hemstädning",
+      "general_info": {
+        "title": "Allmän information",
+        "items": [
+          "Vi rengör alla ytor och all utrustning som är lätt åtkomlig från golvnivå.",
+          "Av säkerhetsskäl använder vi inte stegar eller pallar.",
+          "Rengöring ovanför normal räckhöjd ingår i storstädning, som erbjuds som tilläggstjänst.",
+          "Vi ber vänligen att all städutrustning fungerar fullt ut (t.ex. dammsugare, mopp). Vi arbetar inte med skadad eller icke fungerande utrustning.",
+          "Om nödvändiga städprodukter saknas förbehåller vi oss rätten att hoppa över vissa moment eller lämna vissa ytor ostädade.",
+          "Av säkerhetsskäl utför vi inte städning om en hund lämnas utan tillsyn i hemmet. Små sällskapsdjur (som katter, fiskar eller burdjur) kan vara kvar under städningen, förutsatt att de är säkrade och inte påverkar arbetet.",
+          "Av säkerhets- och juridiska skäl kan vår personal inte vara ensam i bostaden med minderåriga utan närvaro av ansvarig vuxen.",
+          "Observera att regelbunden hemstädning syftar till att bibehålla renlighet, inte återställa kraftigt slitna eller eftersatta ytor.",
+          "Vi arbetar alltid noggrant och omsorgsfullt, men vi kan inte få slitna föremål att se nya ut."
+        ]
+      },
+      "kitchen": {
+        "title": "Kök",
+        "items": [
+          "Rengöring av diskho, bänkskivor och kranar",
+          "Avtorkning av kakel ovanför diskbänken",
+          "Utvändig rengöring av köksluckor",
+          "Rengöring av alla åtkomliga ytor (bord, stolar, fönsterbrädor m.m.)",
+          "Dammsugning av golvlister och kanter",
+          "Punktstädning av dörrar (borttagning av synliga fläckar)",
+          "Dammsugning och moppning av golv",
+          "Rengöring av soputrymmet under diskhon",
+          "Tömning av kaffemaskin (kaffesump/kapslar) och sköljning av kaffekanna",
+          "Rengöring av mikrovågsugn (in- och utvändigt), om den är lätt åtkomlig",
+          "Inplockning i diskmaskin och urplockning en gång per besök",
+          "Tömning av sopor"
+        ]
+      },
+      "bathroom_toilet": {
+        "title": "Badrum & Toalett",
+        "items": [
+          "Rengöring av dusch, duschkabin och badkar",
+          "Rengöring av handfat och toalett",
+          "Rengöring av åtkomliga kranar och rör",
+          "Punktstädning av väggar och kakel (endast synliga fläckar)",
+          "Polering av speglar",
+          "Utvändig dammtorkning av badrumsmöbler och utrustning",
+          "Dammsugning och moppning av golv",
+          "Tömning av sopor"
+        ]
+      },
+      "living_bedrooms": {
+        "title": "Vardagsrum & Sovrum",
+        "items": [
+          "Dammsugning av golv, mattor och golvlister",
+          "Moppning av golv",
+          "Dammtorkning av möbler, lampor, fönsterbrädor, element, dörrar, karmar, lister och andra åtkomliga ytor",
+          "Bäddning av säng (byte av sänglinne på begäran)",
+          "Tömning av sopor"
+        ]
+      }
+    },
+    "section_b": {
+      "title": "Hemstädning - Ytterligare riktlinjer",
+      "not_included": {
+        "title": "Vad som inte ingår",
+        "items": [
+          "Vi rengör inte lampor om de inte är lätt åtkomliga från golvnivå.",
+          "Kristallampor och kristallkronor rengörs inte under några omständigheter.",
+          "Vi diskar inte stora mängder disk för hand (max cirka 15 minuter per besök).",
+          "Vattning av växter ingår inte i ordinarie hemstädning. Om du är bortrest på en längre semester och lämnar en påminnelse till oss kan vi vattna dina växter så att de håller sig fina.",
+          "Tvätt ingår inte i ordinarie hemstädning. Tjänsten kan bokas som tillägg mot extra kostnad.",
+          "Vi erbjuder inte hushållsunderhåll, till exempel byte av gardiner, byte av glödlampor eller borttagning av stearinfläckar.",
+          "Behöver du hjälp med garderober och skåp? Organisering kan bokas som tilläggstjänst mot extra kostnad."
+        ]
+      },
+      "pets": {
+        "title": "Husdjur",
+        "items": [
+          "Vi städar inte efter husdjur (t.ex. kattlådor, burar, akvarier).",
+          "Vi matar inte djur och byter inte deras vatten.",
+          "Vi rastar inte hundar."
+        ]
+      },
+      "furniture_handling": {
+        "title": "Möbler & hantering",
+        "items": [
+          "Vi flyttar inte möbler eller stora vitvaror (t.ex. kylskåp, tvättmaskiner).",
+          "Vi lyfter, skakar eller piskar inte mattor."
+        ]
+      },
+      "sensitive_surfaces": {
+        "title": "Känsliga ytor",
+        "items": [
+          "TV-skärmar och andra skärmar rengörs endast med torra metoder.",
+          "Specialrengöringsmedel kan endast användas om kunden tillhandahåller dem och på kundens ansvar."
+        ]
+      },
+      "additional_notes": {
+        "title": "Ytterligare information",
+        "items": [
+          "Vid rengöring av kylskåp (tilläggstjänst) kan vi endast kasta varor som är tydligt synligt förstörda. Vi kontrollerar inte bäst före- eller sista förbrukningsdatum och fattar inga beslut utifrån datummärkning.",
+          "Hemstädning gäller endast inomhusytor (garage, förråd, gård och liknande ytor ingår inte).",
+          "Skrubbning av fogar ingår inte i standardstädning (kan bokas som tilläggstjänst)."
+        ]
+      }
+    },
+    "contact_cta": "Kontakta oss",
+    "back_home_cta": "Till startsidan"
   },
   "photoGallery": {
     "title": "Fotogalleri",
