@@ -1,4 +1,4 @@
-import { Box, Container, Typography, Chip } from '@mui/material';
+import { Box, Container, Typography, Chip, Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import ReactBeforeSliderComponent from 'react-before-after-slider-component';
 import 'react-before-after-slider-component/dist/build.css';
@@ -154,70 +154,77 @@ export default function GalleryPage() {
                       >
                         {t(PAIR_SUBTITLE_KEYS[i])}
                       </Typography>
-                      <Box
-                        sx={{
-                          position: 'relative',
-                          borderRadius: 3,
-                          overflow: 'hidden',
-                          boxShadow: '0 4px 16px rgba(45,0,84,0.14)',
-                          backgroundColor: '#f1edf7',
-                          '& .before-after-slider': {
-                            width: '100%',
-                            maxWidth: '100%',
-                            aspectRatio: { xs: '4 / 3', md: '1 / 1' },
-                            margin: '0 auto',
-                          },
-                          '& .before-after-slider__first-photo-container, & .before-after-slider__second-photo-container':
-                            {
-                              height: '100%',
-                            },
-                          '& .before-after-slider img': {
-                            height: '100%',
-                            width: '100%',
-                            objectFit: 'contain',
-                            backgroundColor: '#f1edf7',
-                          },
-                        }}
+                      <Tooltip
+                        title={t('photoGallery.drag_tooltip')}
+                        arrow
+                        placement='top'
+                        enterDelay={220}
                       >
-                        <Chip
-                          label={t('photoGallery.before')}
-                          size='small'
+                        <Box
                           sx={{
-                            position: 'absolute',
-                            top: 12,
-                            left: 12,
-                            zIndex: 2,
-                            bgcolor: (theme) => theme.palette.primary.main,
-                            color: 'white',
-                            fontWeight: 700,
-                            fontSize: '0.72rem',
-                            letterSpacing: 0.5,
+                            position: 'relative',
+                            borderRadius: 3,
+                            overflow: 'hidden',
+                            boxShadow: '0 4px 16px rgba(45,0,84,0.14)',
+                            backgroundColor: '#f1edf7',
+                            '& .before-after-slider': {
+                              width: '100%',
+                              maxWidth: '100%',
+                              aspectRatio: { xs: '4 / 3', md: '1 / 1' },
+                              margin: '0 auto',
+                            },
+                            '& .before-after-slider__first-photo-container, & .before-after-slider__second-photo-container':
+                              {
+                                height: '100%',
+                              },
+                            '& .before-after-slider img': {
+                              height: '100%',
+                              width: '100%',
+                              objectFit: 'contain',
+                              backgroundColor: '#f1edf7',
+                            },
                           }}
-                        />
-                        <Chip
-                          label={t('photoGallery.after')}
-                          size='small'
-                          sx={{
-                            position: 'absolute',
-                            top: 12,
-                            right: 12,
-                            zIndex: 2,
-                            bgcolor: (theme) => theme.palette.secondary.main,
-                            color: 'white',
-                            fontWeight: 700,
-                            fontSize: '0.72rem',
-                            letterSpacing: 0.5,
-                          }}
-                        />
-                        <ReactBeforeSliderComponent
-                          firstImage={{
-                            imageUrl: beforeImage,
-                          }}
-                          secondImage={{
-                            imageUrl: afterImage,
-                          }}
-                        />
-                      </Box>
+                        >
+                          <Chip
+                            label={t('photoGallery.before')}
+                            size='small'
+                            sx={{
+                              position: 'absolute',
+                              top: 12,
+                              left: 12,
+                              zIndex: 2,
+                              bgcolor: (theme) => theme.palette.primary.main,
+                              color: 'white',
+                              fontWeight: 700,
+                              fontSize: '0.72rem',
+                              letterSpacing: 0.5,
+                            }}
+                          />
+                          <Chip
+                            label={t('photoGallery.after')}
+                            size='small'
+                            sx={{
+                              position: 'absolute',
+                              top: 12,
+                              right: 12,
+                              zIndex: 2,
+                              bgcolor: (theme) => theme.palette.secondary.main,
+                              color: 'white',
+                              fontWeight: 700,
+                              fontSize: '0.72rem',
+                              letterSpacing: 0.5,
+                            }}
+                          />
+                          <ReactBeforeSliderComponent
+                            firstImage={{
+                              imageUrl: beforeImage,
+                            }}
+                            secondImage={{
+                              imageUrl: afterImage,
+                            }}
+                          />
+                        </Box>
+                      </Tooltip>
                     </>
                   );
                 })()}

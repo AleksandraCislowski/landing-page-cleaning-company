@@ -363,6 +363,7 @@
     "title": "Fotogalleri",
     "subtitle": "Här kan du se verkliga resultat före och efter våra städtjänster. Grundligt, noggrant och med omsorg — varje gång.",
     "hint": "Dra reglaget åt vänster eller höger för att jämföra före och efter.",
+    "drag_tooltip": "Du kan dra i reglaget för att jämföra före och efter.",
     "facebookCta": "Vill du se mer av vårt arbete?",
     "facebookCtaLink": "Följ oss på Facebook för regelbundna uppdateringar och fler före- och efterbilder.",
     "before": "Före",
