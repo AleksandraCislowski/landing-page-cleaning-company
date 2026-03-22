@@ -154,14 +154,14 @@
     "next": "Next slide",
     "items": {
       "fresh-home": {
-        "alt": "Bright and beautifully maintained home interior",
-        "title": "A Home That Feels Lighter",
-        "description": "Clean, balanced interiors create a calmer atmosphere and a more welcoming home."
-      },
-      "kitchen-detail": {
         "alt": "Elegant detail in a beautifully prepared home",
         "title": "Beauty in the Details",
         "description": "True luxury is felt in the finishing touches that make a home feel intentionally prepared."
+      },
+      "kitchen-detail": {
+        "alt": "Bright and beautifully maintained home interior",
+        "title": "A Home That Feels Lighter",
+        "description": "Clean, balanced interiors create a calmer atmosphere and a more welcoming home."
       },
       "bathroom-shine": {
         "alt": "Crystal-clear finish and polished surfaces",

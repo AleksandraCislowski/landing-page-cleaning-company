@@ -154,14 +154,14 @@
     "next": "Nästa bild",
     "items": {
       "fresh-home": {
-        "alt": "Ljust och vackert välskött hem",
-        "title": "Ett hem som känns lättare",
-        "description": "Rena, harmoniska interiörer skapar en lugnare atmosfär och ett mer välkomnande hem."
-      },
-      "kitchen-detail": {
         "alt": "Elegant detalj i ett vackert förberett hem",
         "title": "Skönheten finns i detaljerna",
         "description": "Äkta lyx känns i de sista detaljerna som får ett hem att kännas genomtänkt och omsorgsfullt förberett."
+      },
+      "kitchen-detail": {
+        "alt": "Ljust och vackert välskött hem",
+        "title": "Ett hem som känns lättare",
+        "description": "Rena, harmoniska interiörer skapar en lugnare atmosfär och ett mer välkomnande hem."
       },
       "bathroom-shine": {
         "alt": "Kristallklar finish och polerade ytor",
