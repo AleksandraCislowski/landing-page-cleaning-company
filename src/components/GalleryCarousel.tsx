@@ -285,10 +285,21 @@ export default function GalleryCarousel() {
           {slides.map((_, index) => (
             <Box
               key={index}
+              component='button'
+              type='button'
+              onClick={() => {
+                setIsTransitioning(true);
+                setActiveIndex(index + 1);
+                setAutoplayKey((prev) => prev + 1);
+              }}
+              aria-label={`${t('gallery.title')} ${index + 1}`}
               sx={{
                 width: index === currentSlide ? 28 : 10,
                 height: 10,
                 borderRadius: 999,
+                border: 'none',
+                p: 0,
+                cursor: 'pointer',
                 transition: 'all 0.3s ease',
                 backgroundColor:
                   index === currentSlide
