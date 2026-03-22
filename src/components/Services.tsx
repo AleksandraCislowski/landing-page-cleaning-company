@@ -3,100 +3,36 @@ import {
   Container,
   Typography,
   Grid,
-  Card,
-  CardContent,
   Box,
   Dialog,
   DialogContent,
   IconButton,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
   useTheme,
   useMediaQuery,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
-import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { useTranslation } from 'react-i18next';
-import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
-import ApartmentIcon from '@mui/icons-material/Apartment';
-import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
-import cardphoto1 from '../assets/card1.png';
-import cardphoto2 from '../assets/card2.png';
-import cardphoto3 from '../assets/card3.png';
-import cardphoto4 from '../assets/card4.png';
-
-type Service = {
-  icon: React.ReactElement;
-  image: string;
-  nameKey: string;
-  descKey: string;
-  detailKey: string;
-  bulletKeys: string[];
-};
-
-const services: Service[] = [
-  {
-    icon: <LocalLaundryServiceIcon sx={{ fontSize: 48 }} />,
-    image: cardphoto1,
-    nameKey: 'services.residential',
-    descKey: 'services.residential_desc',
-    detailKey: 'services.residential_detail',
-    bulletKeys: [
-      'services.residential_b1',
-      'services.residential_b2',
-      'services.residential_b3',
-      'services.residential_b4',
-    ],
-  },
-  {
-    icon: <ApartmentIcon sx={{ fontSize: 48 }} />,
-    image: cardphoto2,
-    nameKey: 'services.commercial',
-    descKey: 'services.commercial_desc',
-    detailKey: 'services.commercial_detail',
-    bulletKeys: [
-      'services.commercial_b1',
-      'services.commercial_b2',
-      'services.commercial_b3',
-      'services.commercial_b4',
-    ],
-  },
-  {
-    icon: <AutoAwesomeIcon sx={{ fontSize: 48 }} />,
-    image: cardphoto3,
-    nameKey: 'services.deep_clean',
-    descKey: 'services.deep_clean_desc',
-    detailKey: 'services.deep_clean_detail',
-    bulletKeys: [
-      'services.deep_clean_b1',
-      'services.deep_clean_b2',
-      'services.deep_clean_b3',
-      'services.deep_clean_b4',
-    ],
-  },
-  {
-    icon: <DirectionsCarIcon sx={{ fontSize: 48 }} />,
-    image: cardphoto4,
-    nameKey: 'services.move',
-    descKey: 'services.move_desc',
-    detailKey: 'services.move_detail',
-    bulletKeys: [
-      'services.move_b1',
-      'services.move_b2',
-      'services.move_b3',
-      'services.move_b4',
-    ],
-  },
-];
+import ResidentialServiceCard from './services/ResidentialServiceCard';
+import ResidentialServiceDialogContent from './services/ResidentialServiceDialogContent';
+import DeepCleanServiceCard from './services/DeepCleanServiceCard';
+import DeepCleanServiceDialogContent from './services/DeepCleanServiceDialogContent';
+import WindowServiceCard from './services/WindowServiceCard';
+import WindowServiceDialogContent from './services/WindowServiceDialogContent';
+import ExtraServiceCard from './services/ExtraServiceCard';
+import ExtraServiceDialogContent from './services/ExtraServiceDialogContent';
+import { ServiceId, serviceDefinitions } from './services/serviceDefinitions';
 
 export default function Services() {
   const { t } = useTranslation();
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('sm'));
-  const [selected, setSelected] = useState<Service | null>(null);
+  const [selectedServiceId, setSelectedServiceId] = useState<ServiceId | null>(
+    null,
+  );
+  const selected = selectedServiceId
+    ? serviceDefinitions[selectedServiceId]
+    : null;
+  const isResidentialSelected = selectedServiceId === 'residential';
 
   return (
     <Box id='services' sx={{ py: { xs: 6, md: 10 }, background: '#f9f9f9' }}>
@@ -105,67 +41,15 @@ export default function Services() {
           {t('services.title')}
         </Typography>
         <Grid container spacing={3}>
-          {services.map((service, index) => (
-            <Grid item xs={12} sm={6} md={3} key={index}>
-              <Card
-                onClick={() => setSelected(service)}
-                sx={{
-                  height: '100%',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  textAlign: 'center',
-                  cursor: 'pointer',
-                  transition: 'transform 0.3s, box-shadow 0.3s',
-                  '&:hover': {
-                    transform: 'translateY(-8px)',
-                    boxShadow: '0 12px 24px rgba(0,0,0,0.15)',
-                  },
-                  overflow: 'hidden',
-                }}
-              >
-                <Box
-                  component='img'
-                  src={service.image}
-                  alt=''
-                  sx={{
-                    width: '100%',
-                    height: 150,
-                    objectFit: 'cover',
-                    display: 'block',
-                  }}
-                />
-                <CardContent sx={{ p: 3, flex: 1 }}>
-                  <Box sx={{ color: '#667eea', mb: 2 }}>{service.icon}</Box>
-                  <Typography
-                    variant='h6'
-                    sx={{ mb: 1, fontWeight: 'bold', color: '#333' }}
-                  >
-                    {t(service.nameKey)}
-                  </Typography>
-                  <Typography variant='body2' sx={{ color: '#666' }}>
-                    {t(service.descKey)}
-                  </Typography>
-                  <Typography
-                    variant='caption'
-                    sx={{
-                      display: 'block',
-                      mt: 2,
-                      color: theme.palette.primary.main,
-                      fontWeight: 600,
-                      letterSpacing: '0.04em',
-                    }}
-                  >
-                    {t('services.learn_more')} →
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
+          <ResidentialServiceCard onSelect={setSelectedServiceId} />
+          <DeepCleanServiceCard onSelect={setSelectedServiceId} />
+          <WindowServiceCard onSelect={setSelectedServiceId} />
+          <ExtraServiceCard onSelect={setSelectedServiceId} />
         </Grid>
       </Container>
       <Dialog
-        open={Boolean(selected)}
-        onClose={() => setSelected(null)}
+        open={Boolean(selectedServiceId)}
+        onClose={() => setSelectedServiceId(null)}
         maxWidth='md'
         fullWidth
         fullScreen={fullScreen}
@@ -192,7 +76,7 @@ export default function Services() {
               />
               <IconButton
                 aria-label='close'
-                onClick={() => setSelected(null)}
+                onClick={() => setSelectedServiceId(null)}
                 sx={{
                   position: 'absolute',
                   top: 10,
@@ -205,7 +89,6 @@ export default function Services() {
                 <CloseIcon />
               </IconButton>
             </Box>
-
             <DialogContent sx={{ px: { xs: 2.5, sm: 4 }, py: 3 }}>
               <Box
                 sx={{
@@ -235,45 +118,17 @@ export default function Services() {
                 </Typography>
               </Box>
 
-              <Typography
-                variant='body1'
-                sx={{ color: '#555', lineHeight: 1.75, mb: 3 }}
-              >
-                {t(selected.detailKey)}
-              </Typography>
-
-              <Typography
-                variant='overline'
-                sx={{
-                  display: 'block',
-                  mb: 1,
-                  color: theme.palette.primary.main,
-                  fontWeight: 700,
-                  letterSpacing: '0.12em',
-                }}
-              >
-                {t('services.includes')}
-              </Typography>
-
-              <List disablePadding>
-                {selected.bulletKeys.map((key) => (
-                  <ListItem key={key} disableGutters sx={{ py: 0.5 }}>
-                    <ListItemIcon sx={{ minWidth: 36 }}>
-                      <CheckCircleOutlineIcon
-                        fontSize='small'
-                        sx={{ color: theme.palette.secondary.main }}
-                      />
-                    </ListItemIcon>
-                    <ListItemText
-                      primary={t(key)}
-                      primaryTypographyProps={{
-                        variant: 'body2',
-                        sx: { color: '#333', fontWeight: 500 },
-                      }}
-                    />
-                  </ListItem>
-                ))}
-              </List>
+              {isResidentialSelected ? (
+                <ResidentialServiceDialogContent />
+              ) : selectedServiceId === 'deep_clean' ? (
+                <DeepCleanServiceDialogContent />
+              ) : selectedServiceId === 'window_clean' ? (
+                <WindowServiceDialogContent />
+              ) : selectedServiceId === 'extra' ? (
+                <ExtraServiceDialogContent />
+              ) : (
+                <></>
+              )}
             </DialogContent>
           </>
         )}

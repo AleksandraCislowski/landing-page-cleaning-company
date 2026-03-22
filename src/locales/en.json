@@ -15,35 +15,85 @@
   "services": {
     "title": "Our Services",
     "learn_more": "Learn more",
-    "includes": "What's included",
     "residential": "Residential Cleaning",
     "residential_desc": "Complete home cleaning services",
     "residential_detail": "Our residential cleaning is tailored to your home and schedule. We clean every room with care, using eco-friendly products that are safe for your family and pets.",
-    "residential_b1": "Kitchen and bathroom deep clean",
-    "residential_b2": "Vacuuming and mopping all floors",
-    "residential_b3": "Dusting surfaces and furniture",
-    "residential_b4": "Emptying bins and tidying up",
-    "commercial": "Commercial Cleaning",
-    "commercial_desc": "Office and business space cleaning",
-    "commercial_detail": "We keep your workspace clean, hygienic and professional. Regular commercial cleaning helps your team stay productive and makes a great impression on clients.",
-    "commercial_b1": "Offices, reception areas and meeting rooms",
-    "commercial_b2": "Kitchen and break room cleaning",
-    "commercial_b3": "Restroom sanitation",
-    "commercial_b4": "Window sills, doors and common areas",
+    "client_info": {
+      "title": "Want to become our client?",
+      "intro": "Here's everything you need to know about how we work - simple, transparent, and professional.",
+      "how_it_works": {
+        "title": "How it works",
+        "description": "We start with a free home visit, where we:",
+        "steps": [
+          "assess your home",
+          "understand your needs",
+          "answer any questions"
+        ],
+        "pricing": "After the visit, you'll receive a personalized price proposal - always a fixed price including VAT, after the RUT tax deduction.",
+        "rut_info": "The RUT deduction is applied directly to your invoice, so you only pay the reduced amount. We take care of all administration with the tax office.",
+        "rut_note": "If the RUT deduction is not approved, the full amount will be charged."
+      },
+      "plans": {
+        "title": "Cleaning plans",
+        "options": ["weekly cleaning", "bi-weekly cleaning"]
+      },
+      "supplies": {
+        "title": "Cleaning supplies",
+        "description": "We work with cleaning products that you provide. Our team can recommend products tailored to your home.",
+        "link": "👉 View our recommended cleaning list [HERE]"
+      },
+      "important_info": {
+        "title": "Important information",
+        "description": "To protect your home, we do not move heavy furniture such as:",
+        "items": ["sofas", "large appliances", "heavy furnishings"],
+        "note": "If you would like cleaning behind or underneath these items, please move them before our visit.",
+        "balcony": "Balcony cleaning is not included in the standard service and can be booked separately."
+      },
+      "insurance": {
+        "title": "Safety & insurance",
+        "description": "We are insured through Trygg-Hansa, which means you are fully covered in case of any unexpected incidents, such as damage or lost keys."
+      },
+      "agreement": {
+        "title": "Agreement",
+        "points": ["Ongoing contract", "No notice period required"],
+        "trial": "Not sure yet? We also offer a trial cleaning with no commitment."
+      },
+      "extra_services": {
+        "title": "Additional services",
+        "examples": ["window cleaning", "fridge cleaning", "oven cleaning"],
+        "separate": "are priced separately.",
+        "pricing": "If a service does not have a fixed price, it is charged hourly: 200 SEK/hour",
+        "note": "Note: This hourly rate does not apply to regular home cleaning services."
+      },
+      "checklist": {
+        "title": "Cleaning checklist",
+        "items": [
+          "dish soap",
+          "window cleaner (spray)",
+          "multi-surface cleaner (e.g. Jif/Cif/Vim)",
+          "toilet cleaner",
+          "kitchen sponges",
+          "dish brush",
+          "steel wool (Svinto)",
+          "floor cleaning solution",
+          "garbage bags",
+          "vacuum bags",
+          "vacuum cleaner",
+          "bucket + mop (preferably with a wringing system)"
+        ]
+      },
+      "welcome": "Welcome!",
+      "footer": "We look forward to helping you create a clean, fresh, and comfortable home."
+    },
     "deep_clean": "Deep Cleaning",
     "deep_clean_desc": "Thorough deep cleaning",
     "deep_clean_detail": "A thorough top-to-bottom clean that covers areas often missed in regular cleaning. Perfect for spring cleaning, after renovation, or before/after an event.",
-    "deep_clean_b1": "Inside ovens, fridges and cabinets",
-    "deep_clean_b2": "Scrubbing tiles and grout",
-    "deep_clean_b3": "Cleaning behind and under furniture",
-    "deep_clean_b4": "Window cleaning inside",
-    "move": "Move In/Out Cleaning",
-    "move_desc": "Cleaning for moving",
-    "move_detail": "Moving is stressful enough without worrying about cleaning. We handle the full clean so you leave your old place spotless or arrive to a fresh new one.",
-    "move_b1": "Full apartment or house cleaning",
-    "move_b2": "Inside all cupboards and drawers",
-    "move_b3": "Bathroom and kitchen deep clean",
-    "move_b4": "Walls, skirting boards and light switches"
+    "window_clean": "ADD SOMETHING.",
+    "window_clean_desc": "ADD SOMETHING.",
+    "window_clean_detail": "ADD SOMETHING.",
+    "extra": "Extra Services",
+    "extra_desc": "Specialized cleaning for specific needs",
+    "extra_detail": " ADD SOMETHING."
   },
   "about": {
     "title": "About Us",
