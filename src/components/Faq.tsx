@@ -7,18 +7,32 @@ import {
   Typography,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const faqItems = [
-  { q: 'faq.q1', a: 'faq.a1' },
-  { q: 'faq.q2', a: 'faq.a2' },
   { q: 'faq.q3', a: 'faq.a3' },
+  { q: 'faq.q2', a: 'faq.a2' },
+  { q: 'faq.q1', a: 'faq.a1' },
   { q: 'faq.q4', a: 'faq.a4' },
   { q: 'faq.q5', a: 'faq.a5' },
+  { q: 'faq.q6', a: 'faq.a6' },
+  { q: 'faq.q7', a: 'faq.a7' },
+  { q: 'faq.q8', a: 'faq.a8' },
+  { q: 'faq.q9', a: 'faq.a9' },
+  { q: 'faq.q10', a: 'faq.a10' },
+  { q: 'faq.q11', a: 'faq.a11' },
+  { q: 'faq.q12', a: 'faq.a12' },
 ];
 
 export default function Faq() {
   const { t } = useTranslation();
+  const [expanded, setExpanded] = useState<string | false>(faqItems[0].q);
+
+  const handleAccordionChange =
+    (panel: string) => (_event: React.SyntheticEvent, isExpanded: boolean) => {
+      setExpanded(isExpanded ? panel : false);
+    };
 
   return (
     <Box id='faq' sx={{ py: { xs: 6, md: 10 } }}>
@@ -33,10 +47,11 @@ export default function Faq() {
         </Box>
 
         <Box sx={{ display: 'grid', gap: 1.5 }}>
-          {faqItems.map((item, index) => (
+          {faqItems.map((item) => (
             <Accordion
               key={item.q}
-              defaultExpanded={index === 0}
+              expanded={expanded === item.q}
+              onChange={handleAccordionChange(item.q)}
               disableGutters
               sx={{
                 borderRadius: '14px !important',
