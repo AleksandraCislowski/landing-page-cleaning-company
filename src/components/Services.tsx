@@ -58,7 +58,7 @@ export default function Services() {
   };
 
   return (
-    <Box id='services' sx={{ py: { xs: 6, md: 10 }, background: '#f9f9f9' }}>
+    <Box id='services' sx={{ py: { xs: 6, md: 10 }, background: '#f7f6fb' }}>
       <Container maxWidth='lg'>
         <Typography variant='h3' sx={{ textAlign: 'center', mb: 6 }}>
           {t('services.title')}

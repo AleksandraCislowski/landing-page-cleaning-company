@@ -182,22 +182,71 @@ const bubbleImages: Record<number, string> = {
 const bubbleResponsiveLayout: Record<
   number,
   {
+    lg: { top: string; left: string };
     md: { top: string; left: string };
     sm: { top: string; left: string };
   }
 > = {
-  1: { md: { top: '11%', left: '12%' }, sm: { top: '16%', left: '16%' } },
-  2: { md: { top: '16%', left: '68%' }, sm: { top: '18%', left: '62%' } },
-  3: { md: { top: '33%', left: '33%' }, sm: { top: '34%', left: '34%' } },
-  4: { md: { top: '37%', left: '74%' }, sm: { top: '37%', left: '70%' } },
-  5: { md: { top: '63%', left: '18%' }, sm: { top: '63%', left: '18%' } },
-  6: { md: { top: '58%', left: '50%' }, sm: { top: '57%', left: '50%' } },
-  7: { md: { top: '73%', left: '76%' }, sm: { top: '73%', left: '70%' } },
-  8: { md: { top: '25%', left: '82%' }, sm: { top: '25%', left: '77%' } },
-  9: { md: { top: '10%', left: '46%' }, sm: { top: '11%', left: '48%' } },
-  10: { md: { top: '49%', left: '8%' }, sm: { top: '49%', left: '10%' } },
-  11: { md: { top: '50%', left: '87%' }, sm: { top: '51%', left: '78%' } },
-  12: { md: { top: '83%', left: '47%' }, sm: { top: '84%', left: '48%' } },
+  1: {
+    lg: { top: '12%', left: '28%' },
+    md: { top: '11%', left: '12%' },
+    sm: { top: '16%', left: '16%' },
+  },
+  2: {
+    lg: { top: '15%', left: '54%' },
+    md: { top: '16%', left: '68%' },
+    sm: { top: '18%', left: '62%' },
+  },
+  3: {
+    lg: { top: '30%', left: '37%' },
+    md: { top: '33%', left: '33%' },
+    sm: { top: '34%', left: '34%' },
+  },
+  4: {
+    lg: { top: '34%', left: '60%' },
+    md: { top: '37%', left: '74%' },
+    sm: { top: '37%', left: '70%' },
+  },
+  5: {
+    lg: { top: '60%', left: '31%' },
+    md: { top: '63%', left: '18%' },
+    sm: { top: '63%', left: '18%' },
+  },
+  6: {
+    lg: { top: '58%', left: '45%' },
+    md: { top: '58%', left: '50%' },
+    sm: { top: '57%', left: '50%' },
+  },
+  7: {
+    lg: { top: '66%', left: '59%' },
+    md: { top: '73%', left: '76%' },
+    sm: { top: '73%', left: '70%' },
+  },
+  8: {
+    lg: { top: '23%', left: '66%' },
+    md: { top: '25%', left: '82%' },
+    sm: { top: '25%', left: '77%' },
+  },
+  9: {
+    lg: { top: '9%', left: '44%' },
+    md: { top: '10%', left: '46%' },
+    sm: { top: '11%', left: '48%' },
+  },
+  10: {
+    lg: { top: '47%', left: '22%' },
+    md: { top: '49%', left: '8%' },
+    sm: { top: '49%', left: '10%' },
+  },
+  11: {
+    lg: { top: '49%', left: '72%' },
+    md: { top: '50%', left: '87%' },
+    sm: { top: '51%', left: '78%' },
+  },
+  12: {
+    lg: { top: '83%', left: '45%' },
+    md: { top: '83%', left: '47%' },
+    sm: { top: '84%', left: '48%' },
+  },
 };
 
 type RecommendationsBubblesProps = {
@@ -432,10 +481,12 @@ export default function RecommendationsBubbles({
                 number,
                 { top?: string; left?: string }
               > = {
-                6: { top: '55%', left: '42%' },
-                7: { top: '70%', left: '65%' },
-                10: { top: '48%', left: '11%' },
-                11: { top: '50%', left: '84%' },
+                1: { left: '26%' },
+                6: { top: '55%', left: '43%' },
+                7: { top: '70%', left: '63%' },
+                8: { left: '67%' },
+                10: { top: '48%', left: '19%' },
+                11: { top: '50%', left: '75%' },
               };
               const top = isSmDown
                 ? responsivePosition.sm.top
@@ -443,14 +494,18 @@ export default function RecommendationsBubbles({
                   ? responsivePosition.md.top
                   : isMidRange && midRangeAdjustments[bubble.id]?.top
                     ? midRangeAdjustments[bubble.id].top!
-                    : bubble.top;
+                    : isMidRange
+                      ? bubble.top
+                      : responsivePosition.lg.top;
               const left = isSmDown
                 ? responsivePosition.sm.left
                 : isMdDown
                   ? responsivePosition.md.left
                   : isMidRange && midRangeAdjustments[bubble.id]?.left
                     ? midRangeAdjustments[bubble.id].left!
-                    : bubble.left;
+                    : isMidRange
+                      ? bubble.left
+                      : responsivePosition.lg.left;
               const bubbleSize = Math.round(
                 bubble.size * (isSmDown ? 0.72 : isMdDown ? 0.84 : 1),
               );

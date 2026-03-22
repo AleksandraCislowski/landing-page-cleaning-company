@@ -37,7 +37,7 @@ export default function Contact() {
   };
 
   return (
-    <Box id='contact' sx={{ py: { xs: 6, md: 10 }, background: '#f9f9f9' }}>
+    <Box id='contact' sx={{ py: { xs: 6, md: 10 } }}>
       <Container maxWidth='lg'>
         <Typography variant='h3' sx={{ textAlign: 'center', mb: 6 }}>
           {t('contact.title')}
