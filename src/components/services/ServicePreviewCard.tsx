@@ -23,7 +23,18 @@ export default function ServicePreviewCard({
   const service = serviceDefinitions[serviceId];
 
   return (
-    <Grid item xs={12} sm={6} md={3}>
+    <Grid
+      item
+      xs={12}
+      sm={6}
+      md={3}
+      sx={{
+        '@media (min-width: 480px) and (max-width: 899.95px)': {
+          flexBasis: '50%',
+          maxWidth: '50%',
+        },
+      }}
+    >
       <Card
         onClick={() => onSelect(serviceId)}
         sx={{
@@ -51,7 +62,14 @@ export default function ServicePreviewCard({
             display: 'block',
           }}
         />
-        <CardContent sx={{ p: 3, flex: 1 }}>
+        <CardContent
+          sx={{
+            p: 3,
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
           <Box sx={{ color: '#667eea', mb: 2 }}>{service.icon}</Box>
           <Typography
             variant='h6'
@@ -59,14 +77,15 @@ export default function ServicePreviewCard({
           >
             {t(service.nameKey)}
           </Typography>
-          <Typography variant='body2' sx={{ color: '#666' }}>
+          <Typography variant='body2' sx={{ color: '#666', flexGrow: 1 }}>
             {t(service.descKey)}
           </Typography>
           <Typography
             variant='caption'
             sx={{
               display: 'block',
-              mt: 2,
+              mt: 'auto',
+              pt: 2,
               color: theme.palette.primary.main,
               fontWeight: 600,
               letterSpacing: '0.04em',

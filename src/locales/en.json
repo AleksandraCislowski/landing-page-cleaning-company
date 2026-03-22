@@ -15,6 +15,7 @@
   "services": {
     "title": "Our Services",
     "learn_more": "Learn more",
+    "includes": "What to expect from our service",
     "residential_guide_cta": "Full house cleaning guide",
     "residential": "Residential Cleaning",
     "residential_desc": "Complete home cleaning services",
@@ -32,6 +33,7 @@
         ],
         "pricing": "During the visit, you'll receive a personalized price proposal - always a fixed price including VAT, after the RUT tax deduction.",
         "rut_info": "The RUT deduction is applied directly to your invoice, so you only pay the reduced amount. We take care of all administration with the tax office.",
+        "rut_link": "Want to learn more about the RUT deduction? Read more here.",
         "rut_note": "If the RUT deduction is not approved, the full amount will be charged."
       },
       "plans": {
@@ -87,14 +89,36 @@
       "footer": "We look forward to helping you create a clean, fresh, and comfortable home."
     },
     "deep_clean": "Deep Cleaning",
-    "deep_clean_desc": "Thorough deep cleaning",
-    "deep_clean_detail": "A thorough top-to-bottom clean that covers areas often missed in regular cleaning. Perfect for spring cleaning, after renovation, or before/after an event.",
-    "window_clean": "ADD SOMETHING.",
-    "window_clean_desc": "ADD SOMETHING.",
-    "window_clean_detail": "ADD SOMETHING.",
+    "deep_clean_desc": "Spring cleaning or guests on the way? We'll take care of it",
+    "deep_clean_detail": "A thorough top-to-bottom clean that goes beyond regular cleaning and reaches areas often overlooked. Perfect for spring cleaning, after renovations, or ahead of special occasions",
+    "deep_clean_modal_content": [
+      "Each service is individually assessed and tailored based on your location, your specific needs, and our professional recommendations. Get in touch with us, and we will help you create a suitable cleaning plan together.",
+      "You provide standard cleaning supplies yourself. If more advanced or specialized equipment is required, we will bring it."
+    ],
+    "window_clean": "Window cleaning",
+    "window_clean_desc": "Careful window cleaning for a spotless finish and maximum clarity",
+    "window_clean_detail": "Our window cleaning is carried out with precision and attention to detail for a spotless, streak-free finish. We ensure clear views and consistent quality.",
+    "window_clean_modal_content": [
+      "For existing customers, one-time window cleaning is priced the same as a single home cleaning session.",
+      "New customers are welcome to contact us, and we will be happy to arrange window cleaning upon request.",
+      "We work with professional equipment (Kärcher), along with telescopic poles and ladders to safely reach higher windows.",
+      "For safety reasons, window cleaning is not carried out during the winter season.",
+      "No preparation is required on your part. Our team carefully handles items such as vases, window decorations, and curtains with attention and care.",
+      "Please note: balcony cleaning is not included in the standard service and can be booked separately."
+    ],
     "extra": "Extra Services",
-    "extra_desc": "Specialized cleaning for specific needs",
-    "extra_detail": " ADD SOMETHING."
+    "extra_desc": "Specialized cleaning for your specific needs. Tailored solutions for every situation",
+    "extra_detail": "Specialized cleaning designed around your specific needs. Our solutions are tailored to fit each situation with precision.",
+    "extra_modal_content": [
+      "Is your refrigerator starting to smell unpleasant? Have you forgotten what your oven originally looked like? Is your balcony no longer a place you enjoy spending time?",
+      "Let us know what needs to be done - we'll take care of it for you.",
+      "Below you will find our prices for additional services:",
+      "Refrigerator cleaning - SEK 150",
+      "Freezer cleaning - SEK 150 (must be defrosted beforehand)",
+      "Oven cleaning (including standard equipment and between glass panels) - SEK 200",
+      "Drain cleaning - SEK 50",
+      "Balcony cleaning (under 6 sqm, including windows) - SEK 500"
+    ]
   },
   "about": {
     "title": "About Us",

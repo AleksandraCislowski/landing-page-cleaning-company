@@ -15,6 +15,8 @@ export default function ResidentialServiceDialogContent() {
   const { t } = useTranslation();
   const theme = useTheme();
   const checklistSectionRef = useRef<HTMLDivElement | null>(null);
+  const rutInfoLinkHref =
+    'https://www.skatteverket.se/privat/fastigheterochbostad/rotarbeteochrutarbete/safungerarrutavdraget.4.d5e04db14b6fef2c866097.html';
 
   const howItWorksSteps = t('services.client_info.how_it_works.steps', {
     returnObjects: true,
@@ -124,6 +126,25 @@ export default function ResidentialServiceDialogContent() {
             sx={{ color: '#444', lineHeight: 1.7, mt: 0.5 }}
           >
             {t('services.client_info.how_it_works.rut_info')}
+          </Typography>
+          <Typography
+            component='a'
+            href={rutInfoLinkHref}
+            target='_blank'
+            rel='noreferrer'
+            variant='subtitle2'
+            sx={{
+              display: 'inline-block',
+              color: theme.palette.primary.main,
+              lineHeight: 1.7,
+              mt: 0.75,
+              fontWeight: 700,
+              textDecoration: 'underline',
+              textUnderlineOffset: '2px',
+              '&:hover': { opacity: 0.85 },
+            }}
+          >
+            {t('services.client_info.how_it_works.rut_link')}
           </Typography>
           <Typography
             variant='caption'

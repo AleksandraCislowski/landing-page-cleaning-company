@@ -54,8 +54,15 @@ export default function Header() {
     const sectionId = location.hash.replace('#', '');
     window.requestAnimationFrame(() => {
       scrollToSection(sectionId);
+      window.setTimeout(() => {
+        window.history.replaceState(
+          null,
+          document.title,
+          `${location.pathname}${location.search}`,
+        );
+      }, 350);
     });
-  }, [location.pathname, location.hash]);
+  }, [location.pathname, location.hash, location.search]);
 
   const handleSectionNav = (id: string) => {
     if (location.pathname !== '/') {

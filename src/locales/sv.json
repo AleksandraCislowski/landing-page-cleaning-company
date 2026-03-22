@@ -15,6 +15,7 @@
   "services": {
     "title": "Våra Tjänster",
     "learn_more": "Läs mer",
+    "includes": "Vad du kan förvänta dig av vår tjänst",
     "residential_guide_cta": "Full guide för hemstädning",
     "residential": "Hemstädning",
     "residential_desc": "Kompletta hemstädtjänster",
@@ -32,6 +33,7 @@
         ],
         "pricing": "Under besöket får du ett personligt prisförslag - alltid ett fast pris inklusive moms efter RUT-avdrag.",
         "rut_info": "RUT-avdraget dras direkt på fakturan, vilket innebär att du endast betalar det reducerade beloppet. Vi sköter all administration med Skatteverket.",
+        "rut_link": "Vill du läsa mer om RUT-avdraget? Läs mer här.",
         "rut_note": "Om RUT-avdraget inte godkänns debiteras hela beloppet."
       },
       "plans": {
@@ -86,15 +88,37 @@
       "welcome": "Välkommen!",
       "footer": "Vi ser fram emot att hjälpa dig skapa ett rent, fräscht och trivsamt hem."
     },
-    "deep_clean": "ADD SOMETHING.",
-    "deep_clean_desc": "ADD SOMETHING.",
-    "deep_clean_detail": "ADD SOMETHING.",
-    "window_clean": "ADD SOMETHING.",
-    "window_clean_desc": "ADD SOMETHING.",
-    "window_clean_detail": "ADD SOMETHING.",
-    "extra": "ADD SOMETHING.",
-    "extra_desc": "ADD SOMETHING.",
-    "extra_detail": "ADD SOMETHING."
+    "deep_clean": "Storstädning",
+    "deep_clean_desc": "Vårstädning eller gäster på väg? Vi tar hand om det",
+    "deep_clean_detail": "En noggrann städning från topp till botten som går bortom vanlig städning och når områden som ofta förbises. Perfekt för vårstädning, efter renovering eller inför speciella tillfällen",
+    "deep_clean_modal_content": [
+      "Varje uppdrag bedöms individuellt och anpassas efter din plats, dina specifika behov samt våra professionella rekommendationer. Kontakta oss så hjälper vi dig att ta fram en passande städplan tillsammans.",
+      "Du står för vanliga städmaterial själv. Vid behov av mer avancerad eller specialiserad utrustning tar vi med det."
+    ],
+    "window_clean": "Fönsterputs",
+    "window_clean_desc": "Noggrann fönsterputs för ett fläckfritt resultat och maximal klarhet",
+    "window_clean_detail": "Vår fönsterputs utförs med precision och noggrannhet för ett fläckfritt och streckfritt resultat. Vi säkerställer klara vyer och jämn kvalitet.",
+    "window_clean_modal_content": [
+      "För befintliga kunder kostar en engångs fönsterputs lika mycket som ett tillfälle av hemstädning.",
+      "Nya kunder är välkomna att kontakta oss så hjälper vi gärna till att boka fönsterputs.",
+      "Vi arbetar med professionell utrustning (Kärcher) samt teleskopskaft och stege för att säkert nå högre fönster.",
+      "Av säkerhetsskäl utför vi inte fönsterputsning under vinterperioden.",
+      "Du behöver inte förbereda något. Vårt team hanterar varsamt föremål som vaser, dekorationer på fönsterkarmar och gardiner.",
+      "Observera: balkongstädning ingår inte i standardtjänsten och kan bokas separat."
+    ],
+    "extra": "Tilläggstjänster",
+    "extra_desc": "Specialiserad städning anpassad efter dina behov. Skräddarsydda lösningar för varje situation",
+    "extra_detail": "Specialiserad städning utformad efter dina behov. Våra lösningar anpassas med precision för varje situation.",
+    "extra_modal_content": [
+      "Luktar ditt kylskåp illa? Har du glömt hur din ugn såg ut från början? Känns inte längre din balkong som en plats att njuta av?",
+      "Låt oss veta vad som behöver göras - vi hjälper dig gärna.",
+      "Här hittar du våra priser för tilläggstjänster:",
+      "Rengöring av kylskåp - SEK 150",
+      "Rengöring av frys - SEK 150 (måste vara upptinad i förväg)",
+      "Rengöring av ugn (inklusive standardutrustning och mellan glas) - SEK 200",
+      "Rensning av avlopp - SEK 50",
+      "Balkongstädning (under 6 kvm, inklusive fönster) - SEK 500"
+    ]
   },
   "about": {
     "title": "Om Oss",
