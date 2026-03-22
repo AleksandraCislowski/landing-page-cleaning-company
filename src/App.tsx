@@ -73,31 +73,31 @@ function MainPage() {
       <About />
       <Box
         sx={{
-          py: { xs: 0, lg: 2 },
+          py: { xs: 0, xl: 2 },
           backgroundColor: '#f7f6fb',
         }}
       >
         <Box
           sx={{
             width: '100%',
-            maxWidth: { xs: '100%', lg: 1400 },
+            maxWidth: { xs: '100%', xl: 1400 },
             mx: 'auto',
-            px: { xs: 0, lg: 2 },
-            display: { xs: 'block', lg: 'grid' },
-            gridTemplateColumns: { lg: '1fr 1.35fr' },
+            px: { xs: 0, xl: 2 },
+            display: { xs: 'block', xl: 'grid' },
+            gridTemplateColumns: { xl: '1fr 1.35fr' },
             alignItems: 'start',
-            gap: { lg: 2 },
+            gap: { xl: 2 },
             '& #gallery': {
               background: 'transparent !important',
               backgroundImage: 'none !important',
             },
             '& #faq': {
-              backgroundColor: { lg: 'transparent !important' },
+              backgroundColor: { xl: 'transparent !important' },
             },
             '& #faq .MuiContainer-root': {
-              maxWidth: { lg: 'none' },
+              maxWidth: { xl: 'none' },
               width: '100%',
-              px: { lg: 0 },
+              px: { xl: 0 },
             },
           }}
         >
