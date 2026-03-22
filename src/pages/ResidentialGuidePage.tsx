@@ -73,8 +73,19 @@ export default function ResidentialGuidePage() {
           disableGutters
           sx={{ alignItems: 'flex-start', py: 0.4 }}
         >
-          <ListItemIcon sx={{ minWidth: 30, mt: 0.2 }}>
-            <CheckCircleOutlineIcon fontSize='small' />
+          <ListItemIcon
+            sx={{
+              minWidth: 30,
+              display: 'flex',
+              alignItems: 'flex-start',
+              justifyContent: 'center',
+              mt: '6px',
+            }}
+          >
+            <CheckCircleOutlineIcon
+              fontSize='small'
+              sx={{ color: (theme) => theme.palette.secondary.main }}
+            />
           </ListItemIcon>
           <ListItemText
             primary={item}

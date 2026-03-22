@@ -1,4 +1,4 @@
-import { Typography, useTheme } from '@mui/material';
+import { Box, Typography, useTheme } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { ServiceDefinition } from './serviceDefinitions';
 
@@ -25,6 +25,13 @@ export default function StandardServiceDialogContent({
       ? [extraContent]
       : [];
   const filteredExtraParagraphs = extraParagraphs.filter(Boolean);
+  const priceLinePattern = /\s-\sSEK\s\d+/i;
+  const infoParagraphs = filteredExtraParagraphs.filter(
+    (paragraph) => !priceLinePattern.test(paragraph),
+  );
+  const priceParagraphs = filteredExtraParagraphs.filter((paragraph) =>
+    priceLinePattern.test(paragraph),
+  );
 
   return (
     <>
@@ -39,7 +46,7 @@ export default function StandardServiceDialogContent({
         variant='overline'
         sx={{
           display: 'block',
-          mb: 1,
+          mb: 1.2,
           color: theme.palette.primary.main,
           fontWeight: 700,
           letterSpacing: '0.12em',
@@ -48,19 +55,81 @@ export default function StandardServiceDialogContent({
         {t('services.includes')}
       </Typography>
 
-      {filteredExtraParagraphs.map((paragraph, index) => (
-        <Typography
-          key={`${service.id}-extra-${index}`}
-          variant='body1'
+      {infoParagraphs.length > 0 && (
+        <Box
           sx={{
-            color: '#555',
-            lineHeight: 1.75,
-            mb: index === filteredExtraParagraphs.length - 1 ? 3 : 2,
+            p: { xs: 2, sm: 2.4 },
+            mb: priceParagraphs.length > 0 ? 2 : 3,
+            borderRadius: 2,
+            border: '1px solid rgba(45, 0, 84, 0.12)',
+            backgroundColor: '#fff',
           }}
         >
-          {paragraph}
-        </Typography>
-      ))}
+          {infoParagraphs.map((paragraph, index) => (
+            <Typography
+              key={`${service.id}-extra-info-${index}`}
+              variant='body1'
+              sx={{
+                color: '#555',
+                lineHeight: 1.75,
+                mb: index === infoParagraphs.length - 1 ? 0 : 1.5,
+              }}
+            >
+              {paragraph}
+            </Typography>
+          ))}
+        </Box>
+      )}
+
+      {priceParagraphs.length > 0 && (
+        <Box
+          sx={{
+            p: { xs: 2, sm: 2.4 },
+            mb: 3,
+            borderRadius: 2,
+            border: '1px solid rgba(45, 0, 84, 0.15)',
+            backgroundColor: 'rgba(45, 0, 84, 0.03)',
+          }}
+        >
+          {priceParagraphs.map((paragraph, index) => {
+            const [label, price] = paragraph.split(/\s-\s(SEK\s\d+.*)$/i);
+
+            return (
+              <Box
+                key={`${service.id}-extra-price-${index}`}
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  alignItems: 'flex-start',
+                  gap: 2,
+                  py: 1,
+                  borderBottom:
+                    index === priceParagraphs.length - 1
+                      ? 'none'
+                      : '1px dashed rgba(45, 0, 84, 0.2)',
+                }}
+              >
+                <Typography
+                  variant='body2'
+                  sx={{ color: '#333', fontWeight: 600 }}
+                >
+                  {label?.trim() || paragraph}
+                </Typography>
+                <Typography
+                  variant='body2'
+                  sx={{
+                    color: theme.palette.primary.main,
+                    fontWeight: 700,
+                    whiteSpace: 'nowrap',
+                  }}
+                >
+                  {price?.trim() || ''}
+                </Typography>
+              </Box>
+            );
+          })}
+        </Box>
+      )}
     </>
   );
 }

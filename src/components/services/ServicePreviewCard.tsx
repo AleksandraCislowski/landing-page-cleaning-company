@@ -23,18 +23,7 @@ export default function ServicePreviewCard({
   const service = serviceDefinitions[serviceId];
 
   return (
-    <Grid
-      item
-      xs={12}
-      sm={6}
-      md={3}
-      sx={{
-        '@media (min-width: 480px) and (max-width: 899.95px)': {
-          flexBasis: '50%',
-          maxWidth: '50%',
-        },
-      }}
-    >
+    <Grid item xs={12} sm={6} md={3}>
       <Card
         onClick={() => onSelect(serviceId)}
         sx={{

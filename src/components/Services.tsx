@@ -112,7 +112,13 @@ export default function Services() {
                 <CloseIcon />
               </IconButton>
             </Box>
-            <DialogContent sx={{ px: { xs: 2.5, sm: 4 }, py: 3 }}>
+            <DialogContent
+              sx={{
+                px: { xs: 2.5, sm: 4 },
+                pt: 3,
+                pb: isResidentialSelected ? 3 : { xs: 11, sm: 10 },
+              }}
+            >
               <Box
                 sx={{
                   display: 'flex',
