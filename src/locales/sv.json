@@ -15,35 +15,85 @@
   "services": {
     "title": "Våra Tjänster",
     "learn_more": "Läs mer",
-    "includes": "Vad ingår",
     "residential": "Hemstädning",
     "residential_desc": "Kompletta hemstädtjänster",
     "residential_detail": "Vi anpassar hemstädningen efter din bostad och ditt schema. Vi städar varje rum med omsorg och använder miljövänliga produkter som är säkra för hela familjen.",
-    "residential_b1": "Grundlig rengöring av kök och badrum",
-    "residential_b2": "Dammsugning och moppning av alla golv",
-    "residential_b3": "Dammtorkning av ytor och möbler",
-    "residential_b4": "Tömning av sopor och plockning",
-    "commercial": "Kommersiell Städning",
-    "commercial_desc": "Kontors- och affärsrumsstädning",
-    "commercial_detail": "Vi håller din arbetsplats ren, hygienisk och representativ. Regelbunden kontorsstädning hjälper ditt team att hålla fokus och ger ett professionellt intryck på besökare.",
-    "commercial_b1": "Kontor, reception och konferensrum",
-    "commercial_b2": "Kök och personalrum",
-    "commercial_b3": "Sanering av toaletter",
-    "commercial_b4": "Fönsterbrädor, dörrar och gemensamma ytor",
-    "deep_clean": "Djupstädning",
-    "deep_clean_desc": "Grundlig djupstädning",
-    "deep_clean_detail": "En grundlig städning från golv till tak som täcker ytor som ofta missas vid vanlig städning. Perfekt som vårstädning, efter renovering eller inför/efter ett evenemang.",
-    "deep_clean_b1": "Inuti ugn, kylskåp och skåp",
-    "deep_clean_b2": "Skrubbning av kakel och fogar",
-    "deep_clean_b3": "Städning bakom och under möbler",
-    "deep_clean_b4": "Invändig fönsterputs",
-    "move": "Inflyttnings-/Utflyttningsstädning",
-    "move_desc": "Städning för flytt",
-    "move_detail": "Flytt är nog stressigt ändå utan att oroa sig för städningen. Vi tar hand om hela rengoringen så att du lämnar din gamla bostad skinande ren eller välkomnas av ett fräscht nytt hem.",
-    "move_b1": "Komplett städning av lägenhet eller hus",
-    "move_b2": "Inuti alla skåp och lådor",
-    "move_b3": "Djupstädning av badrum och kök",
-    "move_b4": "Väggar, socklar och strömbrytare"
+    "client_info": {
+      "title": "Vill du bli vår kund?",
+      "intro": "Här är allt du behöver veta om hur vi arbetar - enkelt, transparent och professionellt.",
+      "how_it_works": {
+        "title": "Så fungerar det",
+        "description": "Vi börjar med ett kostnadsfritt hembesök där vi:",
+        "steps": [
+          "går igenom ditt hem",
+          "förstår dina behov",
+          "svarar på dina frågor"
+        ],
+        "pricing": "Under besöket får du ett personligt prisförslag - alltid ett fast pris inklusive moms efter RUT-avdrag.",
+        "rut_info": "RUT-avdraget dras direkt på fakturan, vilket innebär att du endast betalar det reducerade beloppet. Vi sköter all administration med Skatteverket.",
+        "rut_note": "Om RUT-avdraget inte godkänns debiteras hela beloppet."
+      },
+      "plans": {
+        "title": "Städplaner",
+        "options": ["städning varje vecka", "städning varannan vecka"]
+      },
+      "supplies": {
+        "title": "Städmaterial",
+        "description": "Vi arbetar med städmaterial som du själv tillhandahåller. Vårt team kan rekommendera produkter anpassade efter ditt hem.",
+        "link": "👉 Se vår lista över rekommenderade produkter [HÄR]"
+      },
+      "important_info": {
+        "title": "Viktig information",
+        "description": "För att skydda ditt hem flyttar vi inte tunga möbler såsom:",
+        "items": ["soffor", "stora vitvaror", "tunga möbler"],
+        "note": "Om du önskar städning bakom eller under dessa ber vi dig att flytta dem innan vårt besök.",
+        "balcony": "Balkongstädning ingår inte i standardtjänsten och kan bokas separat."
+      },
+      "insurance": {
+        "title": "Trygghet & försäkring",
+        "description": "Vi är försäkrade via Trygg-Hansa, vilket innebär att du är fullt skyddad vid oväntade händelser, såsom skador eller borttappade nycklar."
+      },
+      "agreement": {
+        "title": "Avtal",
+        "points": ["tillsvidareavtal", "ingen uppsägningstid"],
+        "trial": "Är du osäker? Vi erbjuder även provstädning utan bindning."
+      },
+      "extra_services": {
+        "title": "Tilläggstjänster",
+        "examples": ["fönsterputs", "rengöring av kylskåp", "ugnsrengöring"],
+        "separate": "har separata priser.",
+        "pricing": "Om en tjänst saknar fast pris debiteras den per timme: 200 SEK/timme",
+        "note": "Observera: Detta timpris gäller inte för vanlig hemstädning."
+      },
+      "checklist": {
+        "title": "Checklista – städmaterial",
+        "items": [
+          "diskmedel",
+          "fönsterputs (spray)",
+          "allrengöring (t.ex. Jif/Cif/Vim)",
+          "WC-rengöring",
+          "kökssvampar",
+          "diskborste",
+          "svinto",
+          "golvrengöringsmedel",
+          "soppåsar",
+          "dammsugarpåsar",
+          "dammsugare",
+          "hink + mopp (gärna med vridsystem)"
+        ]
+      },
+      "welcome": "Välkommen!",
+      "footer": "Vi ser fram emot att hjälpa dig skapa ett rent, fräscht och trivsamt hem."
+    },
+    "deep_clean": "ADD SOMETHING.",
+    "deep_clean_desc": "ADD SOMETHING.",
+    "deep_clean_detail": "ADD SOMETHING.",
+    "window_clean": "ADD SOMETHING.",
+    "window_clean_desc": "ADD SOMETHING.",
+    "window_clean_detail": "ADD SOMETHING.",
+    "extra": "ADD SOMETHING.",
+    "extra_desc": "ADD SOMETHING.",
+    "extra_detail": "ADD SOMETHING."
   },
   "about": {
     "title": "Om Oss",
