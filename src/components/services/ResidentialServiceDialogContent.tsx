@@ -67,6 +67,12 @@ export default function ResidentialServiceDialogContent() {
 
   return (
     <>
+      <Typography
+        variant='subtitle2'
+        sx={{ color: '#555', lineHeight: 1.75, mb: 2.5 }}
+      >
+        {t('services.residential_detail')}
+      </Typography>
       <Typography variant='h5' sx={{ fontWeight: 700, mb: 1 }}>
         {t('services.client_info.title')}
       </Typography>
@@ -217,15 +223,12 @@ export default function ResidentialServiceDialogContent() {
         </Box>
       </Box>
 
-      <Typography
-        variant='h6'
-        sx={{ color: '#333', fontWeight: 700, mt: 2.25, mb: 0.5 }}
-      >
+      <Typography variant='h5' sx={{ fontWeight: 700, mt: 2.25, mb: 0.5 }}>
         {t('services.client_info.welcome')}
       </Typography>
       <Typography
-        variant='body1'
-        sx={{ color: '#333', lineHeight: 1.75, fontWeight: 600 }}
+        variant='subtitle1'
+        sx={{ lineHeight: 1.75, fontWeight: 600 }}
       >
         {t('services.client_info.footer')}
       </Typography>

@@ -39,6 +39,14 @@ const theme = createTheme({
       fontWeight: 'bold',
       color: '#2d0054',
     },
+    h5: {
+      fontWeight: 'bold',
+      color: '#2d0054',
+    },
+    subtitle1: {
+      fontWeight: 'bold',
+      color: '#2d0054',
+    },
   },
   components: {
     MuiButton: {
