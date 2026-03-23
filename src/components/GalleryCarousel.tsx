@@ -118,7 +118,7 @@ export default function GalleryCarousel() {
           sx={{
             display: 'flex',
             alignItems: { xs: 'flex-start', md: 'center' },
-            justifyContent: 'space-between',
+            justifyContent: 'flex-start',
             flexDirection: { xs: 'column', md: 'row' },
             gap: 2,
             mb: 3,
@@ -156,28 +156,6 @@ export default function GalleryCarousel() {
             >
               {t('gallery.permission_note')}
             </Typography>
-          </Box>
-          <Box sx={{ display: 'flex', gap: 1 }}>
-            <IconButton
-              aria-label={t('gallery.previous')}
-              onClick={handlePrevious}
-              sx={{
-                border: '1px solid rgba(45, 0, 84, 0.15)',
-                color: theme.palette.primary.main,
-              }}
-            >
-              <ArrowBackIosNewIcon fontSize='small' />
-            </IconButton>
-            <IconButton
-              aria-label={t('gallery.next')}
-              onClick={handleNext}
-              sx={{
-                border: '1px solid rgba(45, 0, 84, 0.15)',
-                color: theme.palette.primary.main,
-              }}
-            >
-              <ArrowForwardIosIcon fontSize='small' />
-            </IconButton>
           </Box>
         </Box>
 
@@ -286,6 +264,54 @@ export default function GalleryCarousel() {
                           mb: { xs: 1.25, md: 1.5 },
                         }}
                       >
+                        {isActiveSlide ? (
+                          <>
+                            <IconButton
+                              aria-label={t('gallery.previous')}
+                              onClick={handlePrevious}
+                              sx={{
+                                position: 'absolute',
+                                left: { xs: 8, sm: 10, md: 12 },
+                                top: '50%',
+                                transform: 'translateY(-50%)',
+                                zIndex: 3,
+                                width: { xs: 34, sm: 38 },
+                                height: { xs: 34, sm: 38 },
+                                bgcolor: 'rgba(255, 255, 255, 0.88)',
+                                border: '1px solid rgba(45, 0, 84, 0.16)',
+                                color: theme.palette.primary.main,
+                                backdropFilter: 'blur(2px)',
+                                '&:hover': {
+                                  bgcolor: 'rgba(255, 255, 255, 0.98)',
+                                },
+                              }}
+                            >
+                              <ArrowBackIosNewIcon sx={{ fontSize: 18 }} />
+                            </IconButton>
+                            <IconButton
+                              aria-label={t('gallery.next')}
+                              onClick={handleNext}
+                              sx={{
+                                position: 'absolute',
+                                right: { xs: 8, sm: 10, md: 12 },
+                                top: '50%',
+                                transform: 'translateY(-50%)',
+                                zIndex: 3,
+                                width: { xs: 34, sm: 38 },
+                                height: { xs: 34, sm: 38 },
+                                bgcolor: 'rgba(255, 255, 255, 0.88)',
+                                border: '1px solid rgba(45, 0, 84, 0.16)',
+                                color: theme.palette.primary.main,
+                                backdropFilter: 'blur(2px)',
+                                '&:hover': {
+                                  bgcolor: 'rgba(255, 255, 255, 0.98)',
+                                },
+                              }}
+                            >
+                              <ArrowForwardIosIcon sx={{ fontSize: 18 }} />
+                            </IconButton>
+                          </>
+                        ) : null}
                         <Box
                           component='img'
                           src={slide.src}
