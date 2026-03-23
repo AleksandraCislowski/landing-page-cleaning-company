@@ -3,6 +3,8 @@
     "title": "Professional Cleaning Services",
     "subtitle": "Comfort Starts with a Clean Home.",
     "privacy_line": "Your home is personal. We clean with discretion, privacy, and full confidentiality.",
+    "quote_mail_subject": "Quote request",
+    "quote_mail_body": "Hello,\n\nI would like to request a quote for cleaning services.\n\nPreferred service:\nHome size / number of rooms:\nPreferred frequency:\nPreferred start date:\nAddress / area:\nAdditional notes:\n\nBest regards,",
     "cta": "Get a Quote"
   },
   "nav": {
@@ -110,6 +112,8 @@
     "extra": "Extra Services",
     "extra_desc": "Specialized cleaning for your specific needs. Tailored solutions for every situation",
     "extra_detail": "Specialized cleaning designed around your specific needs. Our solutions are tailored to fit each situation with precision.",
+    "mail_subject": "Service inquiry",
+    "mail_body": "Hello,\n\nI am interested in your cleaning services and would like more details.\n\nService type:\nHome size / number of rooms:\nPreferred date and time:\nAddress / area:\nAdditional details:\n\nBest regards,",
     "extra_modal_content": [
       "Is your refrigerator starting to smell unpleasant? Have you forgotten what your oven originally looked like? Is your balcony no longer a place you enjoy spending time?",
       "Let us know what needs to be done - we'll take care of it for you.",
@@ -263,6 +267,8 @@
     "title": "Contact Us",
     "phone": "Phone",
     "email": "Email",
+    "mail_subject": "Cleaning service inquiry",
+    "mail_body": "Hello,\n\nI would like to get in touch regarding your cleaning services.\n\nMy question/request:\nPreferred contact method (phone/email):\nAddress / area (optional):\n\nBest regards,",
     "address": "Address",
     "hours": "Business Hours",
     "opening_hours": {

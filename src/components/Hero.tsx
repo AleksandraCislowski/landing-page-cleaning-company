@@ -8,7 +8,9 @@ export default function Hero() {
   const { t } = useTranslation();
   const [isReady, setIsReady] = useState(false);
   const quoteEmail = 'cislowski.aleksandra@gmail.com';
-  const quoteMailto = `mailto:${quoteEmail}?subject=${encodeURIComponent('Quote request')}`;
+  const quoteMailto = `mailto:${quoteEmail}?subject=${encodeURIComponent(
+    t('hero.quote_mail_subject'),
+  )}&body=${encodeURIComponent(t('hero.quote_mail_body'))}`;
   const handleQuoteClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     event.stopPropagation();
@@ -33,7 +35,9 @@ export default function Hero() {
         backgroundSize: { xs: 'cover', md: '108% auto' },
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        height: '40vh',
+        height: { xs: 'auto', md: '40vh' },
+        minHeight: { xs: 520, sm: 560, md: 0 },
+        py: { xs: 5, sm: 6, md: 0 },
         display: 'flex',
         alignItems: 'center',
         position: 'relative',
@@ -150,6 +154,9 @@ export default function Hero() {
                 href='tel:+46733338901'
                 variant='outlined'
                 sx={{
+                  px: { xs: 1.5, sm: 2 },
+                  fontSize: { xs: '0.82rem', sm: '0.875rem' },
+                  whiteSpace: 'nowrap',
                   borderColor: 'white',
                   color: 'white',
                   '&:hover': {

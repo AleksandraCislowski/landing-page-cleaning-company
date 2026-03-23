@@ -41,8 +41,8 @@ export default function Services() {
   const isResidentialSelected = selectedServiceId === 'residential';
   const contactEmail = 'cislowski.aleksandra@gmail.com';
   const contactMailto = `mailto:${contactEmail}?subject=${encodeURIComponent(
-    'Service inquiry',
-  )}`;
+    t('services.mail_subject'),
+  )}&body=${encodeURIComponent(t('services.mail_body'))}`;
   const handleContactMailClick = (
     event: React.MouseEvent<HTMLButtonElement>,
   ) => {

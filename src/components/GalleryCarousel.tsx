@@ -258,7 +258,7 @@ export default function GalleryCarousel() {
                       <Box
                         sx={{
                           position: 'relative',
-                          aspectRatio: '1 / 1',
+                          aspectRatio: { xs: '4 / 5', sm: '1 / 1' },
                           overflow: 'hidden',
                           borderRadius: { xs: 2.5, sm: 3, md: 3.5 },
                           mb: { xs: 1.25, md: 1.5 },

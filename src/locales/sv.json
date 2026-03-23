@@ -3,6 +3,8 @@
     "title": "Professionella Städtjänster",
     "subtitle": "Komfort börjar med ett rent hem.",
     "privacy_line": "Ditt hem är personligt. Vi städar med diskretion, integritet och full konfidentialitet.",
+    "quote_mail_subject": "Offertförfrågan",
+    "quote_mail_body": "Hej,\n\nJag vill gärna få en offert för städtjänster.\n\nÖnskad tjänst:\nBostadens storlek / antal rum:\nÖnskad frekvens:\nÖnskat startdatum:\nAdress / område:\nYtterligare information:\n\nVänliga hälsningar,",
     "cta": "Få en offert"
   },
   "nav": {
@@ -110,6 +112,8 @@
     "extra": "Tilläggstjänster",
     "extra_desc": "Specialiserad städning anpassad efter dina behov. Skräddarsydda lösningar för varje situation",
     "extra_detail": "Specialiserad städning utformad efter dina behov. Våra lösningar anpassas med precision för varje situation.",
+    "mail_subject": "Förfrågan om tjänst",
+    "mail_body": "Hej,\n\nJag är intresserad av era städtjänster och vill gärna få mer information.\n\nTyp av tjänst:\nBostadens storlek / antal rum:\nÖnskat datum och tid:\nAdress / område:\nYtterligare detaljer:\n\nVänliga hälsningar,",
     "extra_modal_content": [
       "Luktar ditt kylskåp illa? Har du glömt hur din ugn såg ut från början? Känns inte längre din balkong som en plats att njuta av?",
       "Låt oss veta vad som behöver göras - vi hjälper dig gärna.",
@@ -263,6 +267,8 @@
     "title": "Kontakta Oss",
     "phone": "Telefon",
     "email": "E-post",
+    "mail_subject": "Förfrågan om städtjänst",
+    "mail_body": "Hej,\n\nJag vill komma i kontakt med er angående era städtjänster.\n\nMin fråga/önskemål:\nÖnskat kontaktsätt (telefon/e-post):\nAdress / område (valfritt):\n\nVänliga hälsningar,",
     "address": "Adress",
     "hours": "Öppettider",
     "opening_hours": {

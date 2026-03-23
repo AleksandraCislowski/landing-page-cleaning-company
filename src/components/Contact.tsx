@@ -14,6 +14,9 @@ export default function Contact() {
   const phoneDisplay = '+46 (0) 73 333 89 01';
   const phoneHref = 'tel:+46733338901';
   const email = 'cislowski.aleksandra@gmail.com';
+  const emailMailto = `mailto:${email}?subject=${encodeURIComponent(
+    t('contact.mail_subject'),
+  )}&body=${encodeURIComponent(t('contact.mail_body'))}`;
   const mapQuery = encodeURIComponent(address);
   const mapEmbedUrl = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
   const mapOpenUrl = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
@@ -89,7 +92,7 @@ export default function Contact() {
                   <Typography
                     variant='body1'
                     component='a'
-                    href={`mailto:${email}`}
+                    href={emailMailto}
                     sx={{
                       fontWeight: 'bold',
                       color: '#333',
