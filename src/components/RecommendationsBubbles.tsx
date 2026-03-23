@@ -488,12 +488,14 @@ export default function RecommendationsBubbles({
                 10: { top: '48%', left: '19%' },
                 11: { top: '50%', left: '75%' },
               };
+              const midRangeTop = midRangeAdjustments[bubble.id]?.top;
+              const midRangeLeft = midRangeAdjustments[bubble.id]?.left;
               const top = isSmDown
                 ? responsivePosition.sm.top
                 : isMdDown
                   ? responsivePosition.md.top
-                  : isMidRange && midRangeAdjustments[bubble.id]?.top
-                    ? midRangeAdjustments[bubble.id].top!
+                  : isMidRange && midRangeTop
+                    ? midRangeTop
                     : isMidRange
                       ? bubble.top
                       : responsivePosition.lg.top;
@@ -501,8 +503,8 @@ export default function RecommendationsBubbles({
                 ? responsivePosition.sm.left
                 : isMdDown
                   ? responsivePosition.md.left
-                  : isMidRange && midRangeAdjustments[bubble.id]?.left
-                    ? midRangeAdjustments[bubble.id].left!
+                  : isMidRange && midRangeLeft
+                    ? midRangeLeft
                     : isMidRange
                       ? bubble.left
                       : responsivePosition.lg.left;
