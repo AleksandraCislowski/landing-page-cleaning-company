@@ -1,147 +1,57 @@
-# Pristine Cleaning - Stockholm Cleaning Company Website
+# Aleksandra Cislowski Städfirma — Landing Page
 
-A modern, bilingual (Swedish/English) landing page for a cleaning company in Stockholm, built with React, TypeScript, Vite, Material-UI (MUI), and internationalization support.
+> A production-ready commercial website built for a real cleaning company operating in Stockholm, Sweden.
 
-## Features
+---
 
-✨ **Modern Design** - Clean and professional UI with gradient accents
-🌍 **Bilingual Support** - Seamless switching between Swedish and English
-📱 **Responsive** - Mobile-first design that works on all devices
-🎨 **MUI Styled** - Material-UI components ready for custom styling
-⚡ **Fast** - Built with Vite for optimal performance
-♿ **Accessible** - WCAG compliant components
+## What is this?
 
-## Project Structure
+This is a full landing page I designed and built from scratch for a local cleaning business. The client needed an online presence that would convert visitors into paying customers — so the entire project was shaped around that goal: clear service presentation, social proof, direct contact, and a seamless experience on any device.
 
-```
-src/
-├── components/
-│   ├── Header.tsx          # Navigation header with language switcher
-│   ├── LanguageSwitcher.tsx # Language toggle button
-│   ├── Hero.tsx            # Hero section with CTA
-│   ├── Services.tsx        # Services grid (4 service cards)
-│   ├── About.tsx           # Company info and value propositions
-│   ├── Contact.tsx         # Contact form and information
-│   └── Footer.tsx          # Footer with social links
-├── i18n/
-│   └── config.ts           # i18next configuration
-├── locales/
-│   ├── en.json             # English translations
-│   └── sv.json             # Swedish translations
-├── App.tsx                 # Main App component with theme
-├── main.tsx                # React entry point
-└── index.css               # Global styles
-```
+The site is live, deployed on Vercel, and actively used by the business.
 
-## Getting Started
+---
 
-### Prerequisites
+## What problems does it solve?
 
-- Node.js 16+
-- npm or yarn
+**Before:** The company had no website. Customers had no way to browse services, check prices, or get in touch outside of word-of-mouth.
 
-### Installation
+**After:**
 
-```bash
-# Install dependencies
-npm install
-```
+- Potential customers can explore all services with full pricing details in a modal dialog
+- A before/after photo gallery builds trust before the first call
+- A contact section with a working email form, clickable phone number, and embedded Google Maps removes all friction
+- A "Get a Quote" button opens a pre-filled email directly — no form needed
+- Customer reviews are presented as animated bubbles to feel alive, not static
 
-### Development
+---
 
-```bash
-# Start development server
-npm run dev
-```
+## Highlights
 
-The app will be available at `http://localhost:5173`
+**Bilingual (Swedish / English)**
+Full i18n support with instant language switching — no page reload. The site auto-detects browser language on first visit.
 
-### Build
+**Conversion-oriented UX**
+Every section is designed to move the visitor toward a booking: hero CTA → services → gallery → reviews → contact. The layout follows a deliberate information hierarchy.
 
-```bash
-# Build for production
-npm run build
+**Polished animations**
+Scroll-reveal on gallery pairs, a smooth Ken Burns effect on the carousel, dialog transitions, accordion elevation, and a glass-morphism header that reacts to scroll — all with `prefers-reduced-motion` support.
 
-# Preview production build
-npm run preview
-```
+**RUT deduction guide**
+Swedish customers can access a dedicated page explaining how to claim the government's 50% tax deduction on cleaning services (RUT-avdrag), which is a major purchase driver in this market.
 
-## Technology Stack
+---
 
-- **React 18** - UI framework
-- **TypeScript** - Type safety
-- **Vite** - Build tool and dev server
-- **Material-UI (MUI)** - Component library and styling
-- **i18next** - Internationalization
-- **React i18next** - React bindings for i18next
-- **Emotion** - CSS-in-JS (used by MUI)
+## Tech stack
 
-## Customization
+| Layer      | Choice                                |
+| ---------- | ------------------------------------- |
+| UI         | React 18 + TypeScript                 |
+| Components | Material-UI (MUI v5)                  |
+| Styling    | MUI `sx` prop + CSS-in-JS keyframes   |
+| i18n       | i18next + react-i18next               |
+| Routing    | React Router v7                       |
+| Backend    | Vercel Serverless Functions (Node.js) |
+| Deployment | Vercel (Free tier, CI/CD from GitHub) |
 
-### Update Branding
-
-Edit the business name and contact info in:
-
-- `src/components/Header.tsx` - Company name in header
-- `src/components/Footer.tsx` - Copyright and company name
-- `src/locales/en.json` and `src/locales/sv.json` - All text content
-
-### Change Colors
-
-Modify the theme in `src/App.tsx`:
-
-```typescript
-const theme = createTheme({
-  palette: {
-    primary: { main: '#YOUR_COLOR' },
-    secondary: { main: '#YOUR_COLOR' },
-  },
-});
-```
-
-### Add More Services
-
-Edit `src/components/Services.tsx` and add entries to the `services` array with:
-
-- Icon (from `@mui/icons-material`)
-- Translation keys in `en.json` and `sv.json`
-
-### Update Translations
-
-Edit the JSON files in `src/locales/`:
-
-- `en.json` - English translations
-- `sv.json` - Swedish translations
-
-Add new translation keys and reference them with `const { t } = useTranslation()` in components.
-
-### Add New Sections
-
-1. Create component in `src/components/YourSection.tsx`
-2. Import and add to `src/App.tsx`
-3. Add translation keys to both locale files
-
-## Styling with MUI
-
-All components use MUI's `sx` prop for styling. Examples:
-
-```typescript
-<Box sx={{ color: '#667eea', mb: 2 }}>
-  Content
-</Box>
-```
-
-For more MUI documentation: https://mui.com/material-ui/getting-started/
-
-## Languages
-
-The app automatically detects browser language and defaults to English if not Swedish. Users can manually switch using the language toggle in the header.
-
-Supported languages:
-
-- 🇬🇧 English (`en`)
-- 🇸🇪 Swedish (`sv`)
-
-## License
-
-MIT
+---
