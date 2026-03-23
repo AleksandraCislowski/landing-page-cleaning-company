@@ -151,6 +151,7 @@
   "gallery": {
     "title": "Vårt Arbete",
     "subtitle": "Se ett snabbt urval av våra städstandarder och vår konsekventa kvalitet - hitta fler före- och efterexempel",
+    "permission_note": "Alla bilder publiceras med tillstånd.",
     "here": "här.",
     "placeholder": "BILD",
     "previous": "Föregående bild",
@@ -388,6 +389,7 @@
   "photoGallery": {
     "title": "Fotogalleri",
     "subtitle": "Här kan du se verkliga resultat före och efter våra städtjänster. Grundligt, noggrant och med omsorg — varje gång.",
+    "permission_note": "Alla bilder publiceras med tillstånd.",
     "hint": "Dra reglaget åt vänster eller höger för att jämföra före och efter.",
     "drag_tooltip": "Du kan dra i reglaget för att jämföra före och efter.",
     "facebookCta": "Vill du se mer av vårt arbete?",

@@ -146,6 +146,16 @@ export default function GalleryCarousel() {
                 {t('gallery.here')}
               </Box>
             </Typography>
+            <Typography
+              variant='body2'
+              sx={{
+                mt: 1,
+                color: 'rgba(45, 0, 84, 0.72)',
+                fontStyle: 'italic',
+              }}
+            >
+              {t('gallery.permission_note')}
+            </Typography>
           </Box>
           <Box sx={{ display: 'flex', gap: 1 }}>
             <IconButton

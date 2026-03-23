@@ -151,6 +151,7 @@
   "gallery": {
     "title": "Our Work",
     "subtitle": "See a quick sample of our cleaning standards and consistency - find more before-and-after examples",
+    "permission_note": "All photos are published with permission.",
     "here": "here.",
     "placeholder": "PHOTO",
     "previous": "Previous slide",
@@ -388,6 +389,7 @@
   "photoGallery": {
     "title": "Photo Gallery",
     "subtitle": "Here you can see real before and after results from our cleaning services. Fresh, thorough, and done with care — every time.",
+    "permission_note": "All photos are published with permission.",
     "hint": "Drag the slider left or right to compare before and after.",
     "drag_tooltip": "You can drag the slider to compare before and after.",
     "facebookCta": "Want to see more of our work?",

@@ -168,6 +168,16 @@ export default function GalleryPage() {
           >
             ↔ {t('photoGallery.hint')}
           </Typography>
+          <Typography
+            variant='body2'
+            sx={{
+              mt: 1,
+              color: 'rgba(255,255,255,0.78)',
+              fontStyle: 'italic',
+            }}
+          >
+            {t('photoGallery.permission_note')}
+          </Typography>
         </Container>
       </Box>
 
