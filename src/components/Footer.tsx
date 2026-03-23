@@ -47,6 +47,8 @@ export default function Footer() {
               <img
                 src={logo}
                 alt='Logo'
+                width={43}
+                height={40}
                 style={{ height: '40px', marginRight: '10px' }}
               />
               <Typography variant='h6' sx={{ fontWeight: 'bold' }}>

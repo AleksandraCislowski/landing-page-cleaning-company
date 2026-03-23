@@ -2,7 +2,8 @@ import { Box, Container, Typography, Button, Stack, Grid } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import { useTheme, useMediaQuery } from '@mui/material';
-import hero from '../assets/hero-background.jpg';
+import heroJpg from '../assets/hero-background-1920.jpg';
+import heroAvif from '../assets/hero-background-1920.avif';
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -31,31 +32,13 @@ export default function Hero() {
     <Box
       id='home'
       sx={{
-        backgroundImage: `url(${hero})`,
-        backgroundSize: { xs: 'cover', md: '108% auto' },
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
         height: { xs: 'auto', md: '40vh' },
         minHeight: { xs: 520, sm: 560, md: 0 },
         py: { xs: 5, sm: 6, md: 0 },
         display: 'flex',
         alignItems: 'center',
         position: 'relative',
-        animation: {
-          xs: 'none',
-          md: 'heroBgDrift 18s ease-in-out infinite alternate',
-        },
-        '@keyframes heroBgDrift': {
-          '0%': {
-            backgroundPosition: 'center 46%',
-          },
-          '100%': {
-            backgroundPosition: 'center 54%',
-          },
-        },
-        '@media (prefers-reduced-motion: reduce)': {
-          animation: 'none',
-        },
+        overflow: 'hidden',
         '&::before': {
           content: '""',
           position: 'absolute',
@@ -68,6 +51,52 @@ export default function Hero() {
         },
       }}
     >
+      <Box
+        component='picture'
+        sx={{
+          position: 'absolute',
+          inset: 0,
+          zIndex: 0,
+          display: 'block',
+          overflow: 'hidden',
+        }}
+      >
+        <source srcSet={heroAvif} type='image/avif' />
+        <Box
+          component='img'
+          src={heroJpg}
+          alt=''
+          aria-hidden
+          fetchPriority='high'
+          loading='eager'
+          decoding='async'
+          width={1920}
+          height={1280}
+          sx={{
+            display: 'block',
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center 50%',
+            willChange: 'transform',
+            animation: {
+              xs: 'none',
+              md: 'heroImgDrift 18s ease-in-out infinite alternate',
+            },
+            '@keyframes heroImgDrift': {
+              '0%': {
+                transform: 'scale(1.08) translate3d(0, -2.5%, 0)',
+              },
+              '100%': {
+                transform: 'scale(1.08) translate3d(0, 2.5%, 0)',
+              },
+            },
+            '@media (prefers-reduced-motion: reduce)': {
+              animation: 'none',
+            },
+          }}
+        />
+      </Box>
       <Container maxWidth='lg' sx={{ position: 'relative', zIndex: 2 }}>
         <Grid container spacing={4} alignItems='center'>
           <Grid item xs={12} md={8}>

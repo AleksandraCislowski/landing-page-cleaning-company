@@ -14,7 +14,7 @@ import ImagePlaceholder from './ImagePlaceholder';
 import { FirmaYearCounter, PersonYearCounter } from './YearCounter';
 import RecommendationsBubbles from './RecommendationsBubbles.tsx';
 import person from '../assets/person.jpg';
-import happyperson from '../assets/happy-person.jpg';
+import happyperson from '../assets/happy-person-380.jpg';
 import rutLogo from '../assets/rut-avdrag-logo.png';
 import tryggLogo from '../assets/trygghansa-logo.png';
 import ReviewsIcon from '@mui/icons-material/Reviews';
@@ -90,6 +90,8 @@ const reasons = [
       <img
         src={rutLogo}
         alt='RUT Logo'
+        width={65}
+        height={65}
         style={{ width: 65, height: 65, objectFit: 'contain' }}
       />
     ),
@@ -101,6 +103,8 @@ const reasons = [
       <img
         src={tryggLogo}
         alt='Trygghansa Logo'
+        width={79}
+        height={36}
         style={{ height: 36, objectFit: 'contain' }}
       />
     ),

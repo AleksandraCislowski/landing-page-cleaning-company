@@ -27,6 +27,8 @@ export default function Logo({
       component='img'
       src={logo}
       alt={alt}
+      width={43}
+      height={40}
       onClick={handleClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}

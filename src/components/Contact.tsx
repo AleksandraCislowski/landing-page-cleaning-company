@@ -5,7 +5,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ImagePlaceholder from './ImagePlaceholder';
-import contactphoto from '../assets/contact.jpg';
+import contactphoto from '../assets/contact-1400.jpg';
 
 export default function Contact() {
   const { t } = useTranslation();
