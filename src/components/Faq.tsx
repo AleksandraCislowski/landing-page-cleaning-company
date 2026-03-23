@@ -16,6 +16,7 @@ const faqItems = [
   { q: 'faq.q1', a: 'faq.a1' },
   { q: 'faq.q4', a: 'faq.a4' },
   { q: 'faq.q5', a: 'faq.a5' },
+  { q: 'faq.q13', a: 'faq.a13' },
   { q: 'faq.q6', a: 'faq.a6' },
   { q: 'faq.q7', a: 'faq.a7' },
   { q: 'faq.q8', a: 'faq.a8' },

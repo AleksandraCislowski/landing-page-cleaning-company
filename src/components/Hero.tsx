@@ -99,6 +99,22 @@ export default function Hero() {
             >
               {t('hero.subtitle')}
             </Typography>
+            <Typography
+              variant='body1'
+              sx={{
+                mb: 3,
+                fontSize: { xs: '0.95rem', md: '1.05rem' },
+                color: 'rgba(255, 255, 255, 0.95)',
+                textShadow: '0 1px 6px rgba(0,0,0,0.75)',
+                textAlign: { xs: 'center', md: 'left' },
+                opacity: isReady ? 0.95 : 0,
+                transform: isReady ? 'translateY(0)' : 'translateY(16px)',
+                transition:
+                  'opacity 560ms ease 180ms, transform 560ms ease 180ms',
+              }}
+            >
+              {t('hero.privacy_line')}
+            </Typography>
             <Stack
               direction={{ xs: 'column', sm: 'row' }}
               spacing={2}

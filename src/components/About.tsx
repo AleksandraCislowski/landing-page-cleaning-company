@@ -8,6 +8,8 @@ import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import ContentPasteOffIcon from '@mui/icons-material/ContentPasteOff';
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import Face2Icon from '@mui/icons-material/Face2';
+import LockIcon from '@mui/icons-material/Lock';
+import TuneIcon from '@mui/icons-material/Tune';
 import ImagePlaceholder from './ImagePlaceholder';
 import { FirmaYearCounter, PersonYearCounter } from './YearCounter';
 import RecommendationsBubbles from './RecommendationsBubbles.tsx';
@@ -66,6 +68,22 @@ const reasons = [
       />
     ),
     nameKey: 'about.permanentpersonnel',
+  },
+  {
+    icon: (
+      <LockIcon
+        sx={{ fontSize: 40, color: (theme) => theme.palette.primary.main }}
+      />
+    ),
+    nameKey: 'about.confidentiality',
+  },
+  {
+    icon: (
+      <TuneIcon
+        sx={{ fontSize: 40, color: (theme) => theme.palette.primary.main }}
+      />
+    ),
+    nameKey: 'about.attention_to_detail',
   },
   {
     icon: (
@@ -345,7 +363,7 @@ export default function About() {
                   }}
                 >
                   <ImagePlaceholder
-                    height={380}
+                    height={460}
                     src={happyperson}
                     alt='Picture of a happy woman with orange sunglasses.'
                   />

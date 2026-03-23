@@ -2,6 +2,7 @@
   "hero": {
     "title": "Professionella Städtjänster",
     "subtitle": "Komfort börjar med ett rent hem.",
+    "privacy_line": "Ditt hem är personligt. Vi städar med diskretion, integritet och full konfidentialitet.",
     "cta": "Få en offert"
   },
   "nav": {
@@ -142,6 +143,8 @@
     "quickservice": "Snabb Service",
     "noticeperiod": "Ingen Uppsägningstid",
     "permanentpersonnel": "Samma personal vid varje städning",
+    "confidentiality": "Integritet & Konfidentialitet",
+    "attention_to_detail": "Skräddarsydd städplan",
     "rut": "RUT Avdrag",
     "trygghansa": "Försäkring"
   },
@@ -238,6 +241,8 @@
     "a4": "Ja. Vi erbjuder provstädning utan bindning. Väljer du att fortsätta tecknar vi ett tillsvidareavtal utan uppsägningstid.",
     "q5": "Kan jag boka återkommande städning?",
     "a5": "Absolut. Vi erbjuder veckovis och varannan vecka-städning. Vi går igenom vad som passar bäst för din bostad under det inledande hembesöket.",
+    "q13": "Skyddar ni min integritet och konfidentialitet?",
+    "a13": "Ja. Integritet och konfidentialitet är centrala i vårt arbetssätt. Vi hanterar varje hem, rutin och personlig detalj med full diskretion.",
     "q6": "Har ni försäkring?",
     "a6": "Ja. Vi är försäkrade via Trygg-Hansa, vilket täcker oavsiktliga skador under arbetet och ger full trygghet vid händelser som skador eller borttappade nycklar.",
     "q7": "Hur fungerar RUT-avdraget?",

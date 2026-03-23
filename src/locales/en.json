@@ -2,6 +2,7 @@
   "hero": {
     "title": "Professional Cleaning Services",
     "subtitle": "Comfort Starts with a Clean Home.",
+    "privacy_line": "Your home is personal. We clean with discretion, privacy, and full confidentiality.",
     "cta": "Get a Quote"
   },
   "nav": {
@@ -142,6 +143,8 @@
     "quickservice": "Quick Service",
     "noticeperiod": "No Notice Period",
     "permanentpersonnel": "Same personnel every cleaning",
+    "confidentiality": "Privacy & Confidentiality",
+    "attention_to_detail": "Tailored Cleaning Plans",
     "rut": "RUT Deduction",
     "trygghansa": "Insurance"
   },
@@ -238,6 +241,8 @@
     "a4": "Yes. We offer a trial cleaning with no commitment. If you decide to continue, we set up an ongoing contract with no notice period required.",
     "q5": "Can I book recurring cleaning?",
     "a5": "Absolutely. We offer weekly and bi-weekly cleaning plans. We discuss the best option for your home during the initial visit.",
+    "q13": "Do you protect my privacy and confidentiality?",
+    "a13": "Yes. Privacy and confidentiality are core to how we work. We treat every home, routine, and personal detail with complete discretion.",
     "q6": "Are you insured?",
     "a6": "Yes. We are insured through Trygg-Hansa, which covers accidental damage during service and provides full peace of mind in case of incidents such as damage or lost keys.",
     "q7": "How does the RUT deduction work?",
