@@ -1,5 +1,6 @@
 import { Box, Container, Typography, Chip, Tooltip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import { useEffect, useRef, useState } from 'react';
 import ReactBeforeSliderComponent from 'react-before-after-slider-component';
 import 'react-before-after-slider-component/dist/build.css';
 import Header from '../components/Header.tsx';
@@ -73,6 +74,54 @@ const PAIR_SUBTITLE_KEYS = [
 
 export default function GalleryPage() {
   const { t } = useTranslation();
+  const pairRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const [visiblePairs, setVisiblePairs] = useState<boolean[]>(() =>
+    Array.from({ length: TOTAL_PAIRS }, () => false),
+  );
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          const pairIndex = Number(
+            (entry.target as HTMLElement).dataset.pairIndex || -1,
+          );
+
+          if (Number.isNaN(pairIndex) || pairIndex < 0) {
+            return;
+          }
+
+          setVisiblePairs((previous) => {
+            if (previous[pairIndex]) {
+              return previous;
+            }
+
+            const next = [...previous];
+            next[pairIndex] = true;
+            return next;
+          });
+
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.18,
+        rootMargin: '0px 0px -8% 0px',
+      },
+    );
+
+    pairRefs.current.forEach((node) => {
+      if (node) {
+        observer.observe(node);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <Box>
@@ -133,7 +182,22 @@ export default function GalleryPage() {
             }}
           >
             {Array.from({ length: TOTAL_PAIRS }, (_, i) => (
-              <Box key={i}>
+              <Box
+                key={i}
+                ref={(element) => {
+                  pairRefs.current[i] = element as HTMLDivElement | null;
+                }}
+                data-pair-index={i}
+                sx={{
+                  opacity: visiblePairs[i] ? 1 : 0,
+                  transform: visiblePairs[i]
+                    ? 'translateY(0) scale(1)'
+                    : 'translateY(20px) scale(0.985)',
+                  transition:
+                    'opacity 460ms ease, transform 520ms cubic-bezier(0.22, 1, 0.36, 1)',
+                  transitionDelay: `${Math.min(i * 45, 220)}ms`,
+                }}
+              >
                 {(() => {
                   const beforeIndex = i * 2;
                   const afterIndex = beforeIndex + 1;

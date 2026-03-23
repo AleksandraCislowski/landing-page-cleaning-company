@@ -97,6 +97,7 @@ export default function GalleryCarousel() {
     const autoplayTimer = window.setInterval(() => {
       setIsTransitioning(true);
       setActiveIndex((prev) => Math.min(prev + 1, slides.length + 2));
+      setAutoplayKey((prev) => prev + 1);
     }, AUTOPLAY_INTERVAL_MS);
 
     return () => window.clearInterval(autoplayTimer);
@@ -181,6 +182,39 @@ export default function GalleryCarousel() {
         >
           <Box
             sx={{
+              height: 3,
+              width: '100%',
+              mb: 1.5,
+              borderRadius: 999,
+              overflow: 'hidden',
+              backgroundColor: 'rgba(45, 0, 84, 0.12)',
+            }}
+          >
+            <Box
+              key={autoplayKey}
+              sx={{
+                height: '100%',
+                width: '100%',
+                transformOrigin: 'left center',
+                background: `linear-gradient(90deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+                animation: `${AUTOPLAY_INTERVAL_MS}ms linear 0ms 1 normal none running slideProgress`,
+                '@keyframes slideProgress': {
+                  '0%': {
+                    transform: 'scaleX(0)',
+                  },
+                  '100%': {
+                    transform: 'scaleX(1)',
+                  },
+                },
+                '@media (prefers-reduced-motion: reduce)': {
+                  animation: 'none',
+                },
+              }}
+            />
+          </Box>
+
+          <Box
+            sx={{
               display: 'flex',
               alignItems: 'stretch',
               width: `${loopedSlides.length * 100}%`,
@@ -189,102 +223,110 @@ export default function GalleryCarousel() {
             }}
             onTransitionEnd={handleTransitionEnd}
           >
-            {loopedSlides.map((slide, index) => (
-              <Box
-                key={`${slide.label}-${index}`}
-                sx={{
-                  width: `${100 / loopedSlides.length}%`,
-                  p: 0,
-                  display: 'flex',
-                }}
-              >
+            {loopedSlides.map((slide, index) => {
+              const isActiveSlide = index === activeIndex;
+
+              return (
                 <Box
+                  key={`${slide.label}-${index}`}
                   sx={{
-                    position: 'relative',
-                    width: { xs: '90%', sm: '80%', md: '70%' },
-                    mx: 'auto',
-                    height: '100%',
+                    width: `${100 / loopedSlides.length}%`,
+                    p: 0,
                     display: 'flex',
-                    flexDirection: 'column',
-                    overflow: 'hidden',
-                    borderRadius: { xs: 3, md: 2 },
-                    isolation: 'isolate',
-                    '&::before': {
-                      content: '""',
-                      position: 'absolute',
-                      inset: 0,
-                      background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
-                      opacity: 0.7,
-                      zIndex: 0,
-                    },
                   }}
                 >
                   <Box
                     sx={{
-                      zIndex: 1,
                       position: 'relative',
+                      width: { xs: '90%', sm: '80%', md: '70%' },
+                      mx: 'auto',
                       height: '100%',
                       display: 'flex',
                       flexDirection: 'column',
-                      p: { xs: 1, sm: 1.25, md: 1.5 },
-                      pb: { xs: 1.5, md: 2 },
+                      overflow: 'hidden',
+                      borderRadius: { xs: 3, md: 2 },
+                      isolation: 'isolate',
+                      '&::before': {
+                        content: '""',
+                        position: 'absolute',
+                        inset: 0,
+                        background: `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+                        opacity: 0.7,
+                        zIndex: 0,
+                      },
                     }}
                   >
                     <Box
                       sx={{
+                        zIndex: 1,
                         position: 'relative',
-                        aspectRatio: '1 / 1',
-                        overflow: 'hidden',
-                        borderRadius: { xs: 2.5, sm: 3, md: 3.5 },
-                        mb: { xs: 1.25, md: 1.5 },
+                        height: '100%',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        p: { xs: 1, sm: 1.25, md: 1.5 },
+                        pb: { xs: 1.5, md: 2 },
                       }}
                     >
                       <Box
-                        component='img'
-                        src={slide.src}
-                        alt={t(`gallery.items.${slide.key}.alt`)}
                         sx={{
-                          width: '100%',
-                          height: '100%',
-                          objectFit: 'cover',
-                          objectPosition: 'center bottom',
-                          display: 'block',
+                          position: 'relative',
+                          aspectRatio: '1 / 1',
+                          overflow: 'hidden',
+                          borderRadius: { xs: 2.5, sm: 3, md: 3.5 },
+                          mb: { xs: 1.25, md: 1.5 },
                         }}
-                      />
-                    </Box>
+                      >
+                        <Box
+                          component='img'
+                          src={slide.src}
+                          alt={t(`gallery.items.${slide.key}.alt`)}
+                          sx={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            objectPosition: 'center bottom',
+                            display: 'block',
+                            transform: isActiveSlide
+                              ? 'scale(1.04)'
+                              : 'scale(1)',
+                            transition: `transform ${AUTOPLAY_INTERVAL_MS}ms linear`,
+                          }}
+                        />
+                      </Box>
 
-                    <Box
-                      sx={{
-                        color: '#fff',
-                        flexGrow: 1,
-                        px: { xs: 0.25, md: 0.5 },
-                        textShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
-                      }}
-                    >
-                      <Typography
-                        variant='h4'
+                      <Box
                         sx={{
-                          fontWeight: 700,
-                          lineHeight: 1.1,
-                          fontSize: { xs: '1.25rem', md: '1.8rem' },
-                          mb: 0.75,
+                          color: '#fff',
+                          flexGrow: 1,
+                          px: { xs: 0.25, md: 0.5 },
+                          textShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
                         }}
                       >
-                        {t(`gallery.items.${slide.key}.title`)}
-                      </Typography>
-                      <Typography
-                        variant='body2'
-                        sx={{
-                          color: 'rgba(255, 255, 255, 0.92)',
-                        }}
-                      >
-                        {t(`gallery.items.${slide.key}.description`)}
-                      </Typography>
+                        <Typography
+                          variant='h4'
+                          sx={{
+                            fontWeight: 700,
+                            lineHeight: 1.1,
+                            fontSize: { xs: '1.25rem', md: '1.8rem' },
+                            mb: 0.75,
+                          }}
+                        >
+                          {t(`gallery.items.${slide.key}.title`)}
+                        </Typography>
+                        <Typography
+                          variant='body2'
+                          sx={{
+                            color: 'rgba(255, 255, 255, 0.92)',
+                          }}
+                        >
+                          {t(`gallery.items.${slide.key}.description`)}
+                        </Typography>
+                      </Box>
                     </Box>
                   </Box>
                 </Box>
-              </Box>
-            ))}
+              );
+            })}
           </Box>
         </Box>
 

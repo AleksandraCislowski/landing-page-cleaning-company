@@ -1,5 +1,6 @@
 import { Container, Typography, Grid, Box, Card } from '@mui/material';
 import { useTranslation } from 'react-i18next';
+import { useState } from 'react';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -8,6 +9,7 @@ import contactphoto from '../assets/contact.jpg';
 
 export default function Contact() {
   const { t } = useTranslation();
+  const [isMapLoaded, setIsMapLoaded] = useState(false);
   const address = t('contact.gps');
   const phoneDisplay = '+46 (0) 73 333 89 01';
   const phoneHref = 'tel:+46733338901';
@@ -55,7 +57,17 @@ export default function Contact() {
                     variant='body1'
                     component='a'
                     href={phoneHref}
-                    sx={{ fontWeight: 'bold', color: '#333' }}
+                    sx={{
+                      fontWeight: 'bold',
+                      color: '#333',
+                      textDecoration: 'none',
+                      transition: 'color 180ms ease',
+                      '&:hover': {
+                        color: (theme) => theme.palette.primary.main,
+                        textDecoration: 'underline',
+                        textUnderlineOffset: '3px',
+                      },
+                    }}
                   >
                     {phoneDisplay}
                   </Typography>
@@ -78,7 +90,17 @@ export default function Contact() {
                     variant='body1'
                     component='a'
                     href={`mailto:${email}`}
-                    sx={{ fontWeight: 'bold', color: '#333' }}
+                    sx={{
+                      fontWeight: 'bold',
+                      color: '#333',
+                      textDecoration: 'none',
+                      transition: 'color 180ms ease',
+                      '&:hover': {
+                        color: (theme) => theme.palette.primary.main,
+                        textDecoration: 'underline',
+                        textUnderlineOffset: '3px',
+                      },
+                    }}
                   >
                     {email}
                   </Typography>
@@ -147,12 +169,15 @@ export default function Contact() {
                   title='Google Maps location'
                   src={mapEmbedUrl}
                   loading='lazy'
+                  onLoad={() => setIsMapLoaded(true)}
                   referrerPolicy='no-referrer-when-downgrade'
                   sx={{
                     width: '100%',
                     minHeight: { xs: 300, md: 420 },
                     border: 0,
                     display: 'block',
+                    opacity: isMapLoaded ? 1 : 0,
+                    transition: 'opacity 420ms ease',
                   }}
                   allowFullScreen
                 />

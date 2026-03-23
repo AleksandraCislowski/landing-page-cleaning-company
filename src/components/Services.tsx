@@ -77,10 +77,29 @@ export default function Services() {
         maxWidth='md'
         fullWidth
         fullScreen={fullScreen}
+        transitionDuration={{ enter: 320, exit: 220 }}
         PaperProps={{
           sx: {
             borderRadius: { xs: 0, sm: 5 },
             overflow: 'hidden',
+            boxShadow: '0 30px 70px rgba(18, 7, 30, 0.34)',
+            animation: 'serviceDialogIn 320ms cubic-bezier(0.22, 1, 0.36, 1)',
+            '@keyframes serviceDialogIn': {
+              '0%': {
+                opacity: 0,
+                transform: 'translateY(14px) scale(0.98)',
+              },
+              '100%': {
+                opacity: 1,
+                transform: 'translateY(0) scale(1)',
+              },
+            },
+          },
+        }}
+        BackdropProps={{
+          sx: {
+            backgroundColor: 'rgba(16, 8, 27, 0.46)',
+            backdropFilter: 'blur(3px)',
           },
         }}
       >

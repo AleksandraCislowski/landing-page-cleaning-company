@@ -20,9 +20,21 @@ import MenuIcon from '@mui/icons-material/Menu';
 export default function Header() {
   const { t } = useTranslation();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const [isScrolled, setIsScrolled] = useState(false);
   const open = Boolean(anchorEl);
   const location = useLocation();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 24);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -90,11 +102,26 @@ export default function Header() {
       position='sticky'
       sx={{
         background: (theme) =>
-          `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+          isScrolled
+            ? `linear-gradient(135deg, rgba(45, 0, 84, 0.88) 0%, rgba(237, 0, 197, 0.8) 100%)`
+            : `linear-gradient(135deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
+        backdropFilter: isScrolled ? 'blur(10px)' : 'none',
+        boxShadow: isScrolled
+          ? '0 10px 28px rgba(20, 8, 32, 0.24)'
+          : '0 4px 12px rgba(20, 8, 32, 0.14)',
+        transition:
+          'background 280ms ease, box-shadow 280ms ease, backdrop-filter 280ms ease',
       }}
     >
       <Container maxWidth='lg'>
-        <Toolbar sx={{ display: 'flex', alignItems: 'center', minHeight: 64 }}>
+        <Toolbar
+          sx={{
+            display: 'flex',
+            alignItems: 'center',
+            minHeight: isScrolled ? 58 : 64,
+            transition: 'min-height 240ms ease',
+          }}
+        >
           <Box
             sx={{
               display: 'flex',

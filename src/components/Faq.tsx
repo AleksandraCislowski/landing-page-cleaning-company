@@ -56,7 +56,18 @@ export default function Faq() {
               sx={{
                 borderRadius: '14px !important',
                 border: '1px solid rgba(45, 0, 84, 0.12)',
-                boxShadow: 'none',
+                transition:
+                  'box-shadow 220ms ease, border-color 220ms ease, transform 220ms ease',
+                transform:
+                  expanded === item.q ? 'translateY(-1px)' : 'translateY(0)',
+                borderColor:
+                  expanded === item.q
+                    ? 'rgba(45, 0, 84, 0.24)'
+                    : 'rgba(45, 0, 84, 0.12)',
+                boxShadow:
+                  expanded === item.q
+                    ? '0 10px 24px rgba(45, 0, 84, 0.12)'
+                    : 'none',
                 '&:before': { display: 'none' },
               }}
             >
@@ -66,6 +77,13 @@ export default function Faq() {
                   px: 2.5,
                   py: 0.5,
                   '& .MuiAccordionSummary-content': { my: 1.25 },
+                  '& .MuiAccordionSummary-expandIconWrapper': {
+                    transition: 'transform 240ms ease, color 240ms ease',
+                    color:
+                      expanded === item.q
+                        ? 'secondary.main'
+                        : 'rgba(45, 0, 84, 0.72)',
+                  },
                 }}
               >
                 <Typography

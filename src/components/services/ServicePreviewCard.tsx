@@ -27,17 +27,40 @@ export default function ServicePreviewCard({
       <Card
         onClick={() => onSelect(serviceId)}
         sx={{
+          position: 'relative',
           height: '100%',
           display: 'flex',
           flexDirection: 'column',
           textAlign: 'center',
           cursor: 'pointer',
-          transition: 'transform 0.3s, box-shadow 0.3s',
+          transition: 'transform 0.32s ease, box-shadow 0.32s ease',
           '&:hover': {
             transform: 'translateY(-8px)',
-            boxShadow: '0 12px 24px rgba(0,0,0,0.15)',
+            boxShadow: '0 18px 34px rgba(18, 7, 30, 0.2)',
+            '&::after': {
+              transform: 'translateX(180%)',
+              opacity: 1,
+            },
+            '& .service-icon-wrap': {
+              transform: 'scale(1.08)',
+            },
           },
           overflow: 'hidden',
+          '&::after': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: '-42%',
+            width: '30%',
+            height: '100%',
+            background:
+              'linear-gradient(105deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.33) 45%, rgba(255,255,255,0) 100%)',
+            transform: 'translateX(-90%)',
+            opacity: 0,
+            transition: 'transform 520ms ease, opacity 240ms ease',
+            pointerEvents: 'none',
+            zIndex: 2,
+          },
         }}
       >
         <Box
@@ -59,7 +82,17 @@ export default function ServicePreviewCard({
             flexDirection: 'column',
           }}
         >
-          <Box sx={{ color: '#667eea', mb: 2 }}>{service.icon}</Box>
+          <Box
+            className='service-icon-wrap'
+            sx={{
+              color: '#667eea',
+              mb: 2,
+              transition: 'transform 320ms ease',
+              transformOrigin: 'center',
+            }}
+          >
+            {service.icon}
+          </Box>
           <Typography
             variant='h6'
             sx={{ mb: 1, fontWeight: 'bold', color: '#333' }}
