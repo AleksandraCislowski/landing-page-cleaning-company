@@ -30,14 +30,17 @@ export default function Hero() {
       id='home'
       sx={{
         backgroundImage: `url(${hero})`,
-        backgroundSize: '108% auto',
+        backgroundSize: { xs: 'cover', md: '108% auto' },
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         height: '40vh',
         display: 'flex',
         alignItems: 'center',
         position: 'relative',
-        animation: 'heroBgDrift 18s ease-in-out infinite alternate',
+        animation: {
+          xs: 'none',
+          md: 'heroBgDrift 18s ease-in-out infinite alternate',
+        },
         '@keyframes heroBgDrift': {
           '0%': {
             backgroundPosition: 'center 46%',
