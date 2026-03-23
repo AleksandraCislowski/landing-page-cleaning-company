@@ -2,7 +2,7 @@
   "hero": {
     "title": "Professionella Städtjänster",
     "subtitle": "Komfort börjar med ett rent hem.",
-    "privacy_line": "Ditt hem är personligt. Vi städar med diskretion, integritet och full konfidentialitet.",
+    "privacy_line": "Ditt hem är personligt. Städningen utförs med diskretion, integritet och full konfidentialitet.",
     "quote_mail_subject": "Offertförfrågan",
     "quote_mail_body": "Hej,\n\nJag vill gärna få en offert för städtjänster.\n\nÖnskad tjänst:\nBostadens storlek / antal rum:\nÖnskad frekvens:\nÖnskat startdatum:\nAdress / område:\nYtterligare information:\n\nVänliga hälsningar,",
     "cta": "Få en offert"
@@ -10,32 +10,32 @@
   "nav": {
     "home": "Hem",
     "services": "Tjänster",
-    "about": "Om oss",
+    "about": "Om",
     "contact": "Kontakt",
     "phone": "Telefon",
     "gallery": "Galleri"
   },
   "services": {
-    "title": "Våra Tjänster",
+    "title": "Tjänster",
     "learn_more": "Läs mer",
-    "includes": "Vad du kan förvänta dig av vår tjänst",
+    "includes": "Vad du kan förvänta dig av tjänsten",
     "residential_guide_cta": "Full guide för hemstädning",
     "residential": "Hemstädning",
     "residential_desc": "Kompletta hemstädtjänster",
-    "residential_detail": "Vi anpassar hemstädningen efter din bostad och ditt schema. Vi städar varje rum med omsorg och använder produkter som är säkra för hela familjen.",
+    "residential_detail": "Hemstädningen anpassas efter din bostad och ditt schema. Varje rum städas med omsorg och med produkter som är säkra för hela familjen.",
     "client_info": {
-      "title": "Vill du bli vår kund?",
-      "intro": "Här är allt du behöver veta om hur vi arbetar - enkelt, transparent och professionellt.",
+      "title": "Vill du bli kund?",
+      "intro": "Här är allt du behöver veta om hur tjänsten fungerar - enkelt, transparent och professionellt.",
       "how_it_works": {
         "title": "Så fungerar det",
-        "description": "Vi börjar med ett kostnadsfritt hembesök där vi:",
+        "description": "Ett kostnadsfritt hembesök bokas för att:",
         "steps": [
           "går igenom ditt hem",
           "förstår dina behov",
           "svarar på dina frågor"
         ],
         "pricing": "Under besöket får du ett personligt prisförslag - alltid ett fast pris inklusive moms efter RUT-avdrag.",
-        "rut_info": "RUT-avdraget dras direkt på fakturan, vilket innebär att du endast betalar det reducerade beloppet. Vi sköter all administration med Skatteverket.",
+        "rut_info": "RUT-avdraget dras direkt på fakturan, vilket innebär att du endast betalar det reducerade beloppet. All administration med Skatteverket hanteras åt dig.",
         "rut_link": "Vill du läsa mer om RUT-avdraget? Läs mer här.",
         "rut_note": "Om RUT-avdraget inte godkänns debiteras hela beloppet."
       },
@@ -45,24 +45,24 @@
       },
       "supplies": {
         "title": "Städmaterial",
-        "description": "Vi arbetar med städmaterial som du själv tillhandahåller. Vårt team kan rekommendera produkter anpassade efter ditt hem.",
-        "link": "Se vår lista över rekommenderade produkter här."
+        "description": "Städningen utförs med städmaterial som du själv tillhandahåller. Rekommendationer anpassade efter ditt hem finns tillgängliga.",
+        "link": "Se listan över rekommenderade produkter här."
       },
       "important_info": {
         "title": "Viktig information",
-        "description": "För att skydda ditt hem flyttar vi inte tunga möbler såsom:",
+        "description": "För att skydda ditt hem flyttas inte tunga möbler såsom:",
         "items": ["soffor", "stora vitvaror", "tunga möbler"],
-        "note": "Om du önskar städning bakom eller under dessa ber vi dig att flytta dem innan vårt besök.",
+        "note": "Om du önskar städning bakom eller under dessa behöver de flyttas innan besöket.",
         "balcony": "Balkongstädning ingår inte i standardtjänsten och kan bokas separat."
       },
       "insurance": {
         "title": "Trygghet & försäkring",
-        "description": "Vi är försäkrade via Trygg-Hansa, vilket innebär att du är fullt skyddad vid oväntade händelser, såsom skador eller borttappade nycklar."
+        "description": "Tjänsten är försäkrad via Trygg-Hansa, vilket innebär att du är fullt skyddad vid oväntade händelser, såsom skador eller borttappade nycklar."
       },
       "agreement": {
         "title": "Avtal",
         "points": ["tillsvidareavtal", "ingen uppsägningstid"],
-        "trial": "Är du osäker? Vi erbjuder även provstädning utan bindning."
+        "trial": "Är du osäker? Provstädning erbjuds utan bindning."
       },
       "extra_services": {
         "title": "Tilläggstjänster",
@@ -89,35 +89,35 @@
         ]
       },
       "welcome": "Välkommen!",
-      "footer": "Vi ser fram emot att hjälpa dig skapa ett rent, fräscht och trivsamt hem."
+      "footer": "Ser fram emot att hjälpa dig skapa ett rent, fräscht och trivsamt hem."
     },
     "deep_clean": "Storstädning",
-    "deep_clean_desc": "Vårstädning eller gäster på väg? Vi tar hand om det",
+    "deep_clean_desc": "Vårstädning eller gäster på väg? Det ordnas åt dig",
     "deep_clean_detail": "En noggrann städning från topp till botten som går bortom vanlig städning och når områden som ofta förbises. Perfekt för vårstädning, efter renovering eller inför speciella tillfällen",
     "deep_clean_modal_content": [
-      "Varje uppdrag bedöms individuellt och anpassas efter din plats, dina specifika behov samt våra professionella rekommendationer. Kontakta oss så hjälper vi dig att ta fram en passande städplan tillsammans.",
-      "Du står för vanliga städmaterial själv. Vid behov av mer avancerad eller specialiserad utrustning tar vi med det."
+      "Varje uppdrag bedöms individuellt och anpassas efter din plats, dina specifika behov samt professionella rekommendationer. Ta kontakt för att få en passande städplan.",
+      "Du står för vanliga städmaterial själv. Vid behov av mer avancerad eller specialiserad utrustning tas detta med vid behov."
     ],
     "window_clean": "Fönsterputs",
     "window_clean_desc": "Noggrann fönsterputs för ett fläckfritt resultat och maximal klarhet",
-    "window_clean_detail": "Vår fönsterputs utförs med precision och noggrannhet för ett fläckfritt och streckfritt resultat. Vi säkerställer klara vyer och jämn kvalitet.",
+    "window_clean_detail": "Fönsterputs utförs med precision och noggrannhet för ett fläckfritt och streckfritt resultat, med klara vyer och jämn kvalitet.",
     "window_clean_modal_content": [
       "För befintliga kunder kostar en engångs fönsterputs lika mycket som ett tillfälle av hemstädning.",
-      "Nya kunder är välkomna att kontakta oss så hjälper vi gärna till att boka fönsterputs.",
-      "Vi arbetar med professionell utrustning (Kärcher) samt teleskopskaft och stege för att säkert nå högre fönster.",
-      "Av säkerhetsskäl utför vi inte fönsterputsning under vinterperioden.",
-      "Du behöver inte förbereda något. Vårt team hanterar varsamt föremål som vaser, dekorationer på fönsterkarmar och gardiner.",
+      "Nya kunder är välkomna att ta kontakt, och fönsterputs bokas gärna på förfrågan.",
+      "Professionell utrustning (Kärcher), teleskopskaft och stege används för att säkert nå högre fönster.",
+      "Av säkerhetsskäl utförs inte fönsterputsning under vinterperioden.",
+      "Du behöver inte förbereda något. Föremål som vaser, dekorationer på fönsterkarmar och gardiner hanteras varsamt.",
       "Observera: balkongstädning ingår inte i standardtjänsten och kan bokas separat."
     ],
     "extra": "Tilläggstjänster",
     "extra_desc": "Specialiserad städning anpassad efter dina behov. Skräddarsydda lösningar för varje situation",
-    "extra_detail": "Specialiserad städning utformad efter dina behov. Våra lösningar anpassas med precision för varje situation.",
+    "extra_detail": "Specialiserad städning utformad efter dina behov. Lösningarna anpassas med precision för varje situation.",
     "mail_subject": "Förfrågan om tjänst",
-    "mail_body": "Hej,\n\nJag är intresserad av era städtjänster och vill gärna få mer information.\n\nTyp av tjänst:\nBostadens storlek / antal rum:\nÖnskat datum och tid:\nAdress / område:\nYtterligare detaljer:\n\nVänliga hälsningar,",
+    "mail_body": "Hej,\n\nJag är intresserad av dina städtjänster och vill gärna få mer information.\n\nTyp av tjänst:\nBostadens storlek / antal rum:\nÖnskat datum och tid:\nAdress / område:\nYtterligare detaljer:\n\nVänliga hälsningar,",
     "extra_modal_content": [
       "Luktar ditt kylskåp illa? Har du glömt hur din ugn såg ut från början? Känns inte längre din balkong som en plats att njuta av?",
-      "Låt oss veta vad som behöver göras - vi hjälper dig gärna.",
-      "Här hittar du våra priser för tilläggstjänster:",
+      "Berätta vad som behöver göras - det ordnas gärna åt dig.",
+      "Här hittar du priser för tilläggstjänster:",
       "Rengöring av kylskåp - SEK 150",
       "Rengöring av frys - SEK 150 (måste vara upptinad i förväg)",
       "Rengöring av ugn (inklusive standardutrustning och mellan glas) - SEK 200",
@@ -126,35 +126,35 @@
     ]
   },
   "about": {
-    "title": "Om Oss",
+    "title": "Om Mig",
     "text1": "Jag heter Aleksandra och har över ",
     "text2": " års erfarenhet som professionell städare. De senaste ",
     "text3": " åren har jag drivit min egen städverksamhet i Stockholm och byggt upp ett starkt rykte för pålitlighet, hög kvalitet och stor noggrannhet.",
     "text4": "Jag specialiserar mig på förstklassiga hemstädtjänster anpassade efter varje kunds individuella behov, inklusive både regelbunden städning och storstädning. Mitt mål är att skapa rena, trivsamma och välskötta hem där mina kunder verkligen kan koppla av och känna sig bekväma.",
     "text5": "Kundernas trygghet och säkerhet är min högsta prioritet. Därför samarbetar jag med Trygg-Hansa. Det innebär att du är fullt försäkrad om något oväntat skulle hända under städningen, till exempel vid skador eller borttappade nycklar.",
     "text6": "Om du söker en pålitlig och erfaren städhjälp i Stockholm hjälper jag dig gärna att hålla ditt hem skinande rent, fräscht och bekymmersfritt.",
-    "why_choose": "Varför Välja Oss?",
-    "recommendations_cta": "Hör våra kunder",
-    "our_work_cta": "Vårt Arbete",
-    "recommendations_modal_title": "Hur är det att arbeta med oss? Hör våra kunder",
+    "why_choose": "Varför välja det här företaget?",
+    "recommendations_cta": "Hör mina kunder",
+    "our_work_cta": "Mitt arbete",
+    "recommendations_modal_title": "Hur är det att arbeta med mig? Hör mina kunder",
     "recommendations_modal_hint": "Det här är riktiga kundomdömen som delas med tillstånd. Klicka på en bubbla för att öppna hela skärmdumpen.",
     "recommendations_backdrop_close": "Klicka utanför för att stänga",
     "recommendation_bubble": "Bubbla med kundomdöme",
     "recommendations_preview_alt": "Full skärmdump av ett äkta kundomdöme",
-    "trained": "Utbildad Personal",
+    "trained": "Utbildad städare",
     "eco": "Miljövänlig",
     "reliable": "Pålitlig",
     "quickservice": "Snabb Service",
     "noticeperiod": "Ingen Uppsägningstid",
-    "permanentpersonnel": "Samma personal vid varje städning",
+    "permanentpersonnel": "Samma person vid varje städning",
     "confidentiality": "Integritet & Konfidentialitet",
     "attention_to_detail": "Skräddarsydd städplan",
     "rut": "RUT Avdrag",
     "trygghansa": "Försäkring"
   },
   "gallery": {
-    "title": "Vårt Arbete",
-    "subtitle": "Se ett snabbt urval av våra städstandarder och vår konsekventa kvalitet - hitta fler före- och efterexempel",
+    "title": "Arbetsprover",
+    "subtitle": "Se ett snabbt urval av städstandard och konsekvent kvalitet - hitta fler före- och efterexempel",
     "permission_note": "Alla bilder publiceras med tillstånd.",
     "here": "här.",
     "placeholder": "BILD",
@@ -184,7 +184,7 @@
       "move-out-finish": {
         "alt": "Elegant hemstyling med noggrant utvalda detaljer",
         "title": "Elegans i varje detalj",
-        "description": "Vi tar hand om de minsta detaljerna med samma precision som resten av rummet."
+        "description": "De minsta detaljerna tas om hand med samma precision som resten av rummet."
       },
       "office-clean": {
         "alt": "Rent och djurvänligt hem",
@@ -194,12 +194,12 @@
       "window-sparkle": {
         "alt": "Stilfull hemkomposition med omsorgsfull känsla",
         "title": "Stilsatt med intention",
-        "description": "Vi värdesätter presentation, precision och de subtila detaljer som lyfter känslan i ett hem."
+        "description": "Presentation, precision och subtila detaljer värdesätts för att lyfta känslan i ett hem."
       },
       "floor-polish": {
         "alt": "Säsongsbetonad hemstyling i en fräsch och välkomnande miljö",
         "title": "Ett hem för speciella stunder",
-        "description": "Vi hjälper ditt hem att kännas ljust, glädjefyllt och vackert förberett för varje tillfälle."
+        "description": "Ditt hem förbereds för att kännas ljust, glädjefyllt och vackert inför varje tillfälle."
       },
       "deep-clean": {
         "alt": "Vackert avslutad badrumsdetalj",
@@ -213,8 +213,8 @@
       },
       "carpet-care": {
         "alt": "Djurvänligt hem skött med omsorg",
-        "title": "Fortfarande osäker på om vi är djurvänliga?",
-        "description": "Vi trodde att vi redan hade gjort det tydligt, men ja, det är vi verkligen. Rena och bekväma hem ska fungera lika bra för husdjur också."
+        "title": "Fortfarande osäker på om tjänsten är djurvänlig?",
+        "description": "Absolut. Rena och bekväma hem ska fungera lika bra för husdjur också."
       },
       "exterior-shine": {
         "alt": "Elegant vardagsrum med lugn och sofistikerad känsla",
@@ -223,13 +223,13 @@
       },
       "green-clean": {
         "alt": "Fräscht och djurvänligt hem",
-        "title": "Har vi nämnt att vi är djurvänliga?",
-        "description": "För det är vi. Fräscha och välskötta hem kan fortfarande kännas varma, avslappnade och perfekt anpassade för livet med husdjur."
+        "title": "Djurvänlig tjänst, som nämnt",
+        "description": "Fräscha och välskötta hem kan fortfarande kännas varma, avslappnade och perfekt anpassade för livet med husdjur."
       },
       "custom-solution": {
         "alt": "Välkomnande hem anpassat för verkliga livet med husdjur",
         "title": "Djurvänligt. Om det behövde sägas en gång till.",
-        "description": "Vi tar hand om hem på ett sätt som gör dem rena, välkomnande och bekväma för alla i hushållet."
+        "description": "Hem tas om hand på ett sätt som gör dem rena, välkomnande och bekväma för alla i hushållet."
       }
     }
   },
@@ -237,38 +237,38 @@
     "title": "Vanliga Frågor",
     "subtitle": "Det som kunder oftast undrar innan bokning.",
     "q1": "Behöver jag tillhandahålla städprodukter?",
-    "a1": "Ja — kunden tillhandahåller egna städprodukter och utrustning. Vårt team hjälper gärna till med rekommendationer anpassade för ditt hem. Vid storstädning eller specialiserade tjänster tar vi med nödvändig professionell utrustning.",
+    "a1": "Ja — kunden tillhandahåller egna städprodukter och utrustning. Rekommendationer anpassade för ditt hem kan ges vid behov. Vid storstädning eller specialiserade tjänster tas nödvändig professionell utrustning med.",
     "q2": "Hur lång tid tar en vanlig hemstädning?",
     "a2": "Det beror på bostadens storlek och skick. De flesta regelbundna städningar tar mellan 2 och 4 timmar.",
     "q3": "Hur får jag en prisuppgift?",
-    "a3": "Vi börjar alltid med ett kostnadsfritt hembesök där vi går igenom din bostad, förstår dina behov och svarar på dina frågor. Du får sedan ett fast prisförslag inklusive moms, efter RUT-avdrag.",
+    "a3": "Det börjar alltid med ett kostnadsfritt hembesök där bostaden gås igenom, behoven kartläggs och frågor besvaras. Därefter får du ett fast prisförslag inklusive moms, efter RUT-avdrag.",
     "q4": "Kan jag prova tjänsten utan att binda mig?",
-    "a4": "Ja. Vi erbjuder provstädning utan bindning. Väljer du att fortsätta tecknar vi ett tillsvidareavtal utan uppsägningstid.",
+    "a4": "Ja. Provstädning erbjuds utan bindning. Väljer du att fortsätta tecknas ett tillsvidareavtal utan uppsägningstid.",
     "q5": "Kan jag boka återkommande städning?",
-    "a5": "Absolut. Vi erbjuder veckovis och varannan vecka-städning. Vi går igenom vad som passar bäst för din bostad under det inledande hembesöket.",
-    "q13": "Skyddar ni min integritet och konfidentialitet?",
-    "a13": "Ja. Integritet och konfidentialitet är centrala i vårt arbetssätt. Vi hanterar varje hem, rutin och personlig detalj med full diskretion.",
-    "q6": "Har ni försäkring?",
-    "a6": "Ja. Vi är försäkrade via Trygg-Hansa, vilket täcker oavsiktliga skador under arbetet och ger full trygghet vid händelser som skador eller borttappade nycklar.",
+    "a5": "Absolut. Veckovis och varannan vecka-städning erbjuds. Vad som passar bäst för din bostad gås igenom under det inledande hembesöket.",
+    "q13": "Skyddar du min integritet och konfidentialitet?",
+    "a13": "Ja. Integritet och konfidentialitet är centrala principer. Varje hem, rutin och personlig detalj hanteras med full diskretion.",
+    "q6": "Har du försäkring?",
+    "a6": "Ja. Tjänsten är försäkrad via Trygg-Hansa, vilket täcker oavsiktliga skador under arbetet och ger full trygghet vid händelser som skador eller borttappade nycklar.",
     "q7": "Hur fungerar RUT-avdraget?",
-    "a7": "Om du är berättigad i Sverige dras RUT-avdraget direkt på fakturan — du betalar bara det reducerade beloppet. Vi sköter all administration med Skatteverket åt dig.",
-    "q8": "Städar ni hem med husdjur?",
-    "a8": "Ja, vi är djurvänliga. Små sällskapsdjur som katter, fiskar eller djur i bur kan vara kvar i hemmet under städningen, förutsatt att de är säkrade och inte stör arbetet. Av säkerhetsskäl ska hundar vara under tillsyn eller tas bort under besöket. Vi städar inte djurens egna utrymmen som kattlåda, bur eller akvarium.",
+    "a7": "Om du är berättigad i Sverige dras RUT-avdraget direkt på fakturan — du betalar bara det reducerade beloppet. All administration med Skatteverket hanteras åt dig.",
+    "q8": "Städar du hem med husdjur?",
+    "a8": "Ja, tjänsten är djurvänlig. Små sällskapsdjur som katter, fiskar eller djur i bur kan vara kvar i hemmet under städningen, förutsatt att de är säkrade och inte stör arbetet. Av säkerhetsskäl ska hundar vara under tillsyn eller tas bort under besöket. Djurens egna utrymmen som kattlåda, bur eller akvarium städas inte.",
     "q9": "Vad ingår inte i standardstädningen?",
     "a9": "Standardstädning inkluderar inte tvätt, bevattning av växter, balkongstädning, städning ovanför normal räckhöjd eller flytt av tunga möbler. Tvätt, balkongstädning och vissa andra moment kan bokas som tilläggstjänster.",
     "q10": "Utförs fönsterputsning hela året?",
-    "a10": "Nej — fönsterputsning utförs inte under vinterperioden, och vi utför den inte heller på höjder som kräver specialutrustning eller säkerhetsutrustning. Balkongstädning utförs inte heller under vintertid. För befintliga kunder kostar det lika mycket som ett vanligt städtillfälle. Nya kunder hälsas välkomna att kontakta oss för mer information.",
-    "q11": "Tvättar ni mattor, madrasser eller andra textilier?",
-    "a11": "Nej. Tvätt av mattor, madrasser, täcken och liknande textilier kräver specialutrustning som vi inte har. Dessa föremål faller utanför ramen för vår städtjänst.",
-    "q12": "Erbjuder ni utomhustjänster som trädgårdsarbete eller snöröjning?",
-    "a12": "Nej — vi utför enbart inomhusstädning. Vi utför inte trädgårdsarbete, snöröjning, poolrengöring eller rengöring av öppna spisar, kaminer och skorstenar."
+    "a10": "Nej — fönsterputsning utförs inte under vinterperioden, och fönster på höjder som kräver specialutrustning eller säkerhetsutrustning putsas inte heller. Balkongstädning utförs inte under vintertid. För befintliga kunder kostar det lika mycket som ett vanligt städtillfälle. Nya kunder är välkomna att ta kontakt för mer information.",
+    "q11": "Tvättar du mattor, madrasser eller andra textilier?",
+    "a11": "Nej. Tvätt av mattor, madrasser, täcken och liknande textilier kräver specialutrustning som inte medförs. Dessa föremål faller utanför ramen för städtjänsten.",
+    "q12": "Erbjuder du utomhustjänster som trädgårdsarbete eller snöröjning?",
+    "a12": "Nej — tjänsterna omfattar endast inomhusstädning. Trädgårdsarbete, snöröjning, poolrengöring samt rengöring av öppna spisar, kaminer och skorstenar utförs inte."
   },
   "contact": {
-    "title": "Kontakta Oss",
+    "title": "Kontakt",
     "phone": "Telefon",
     "email": "E-post",
     "mail_subject": "Förfrågan om städtjänst",
-    "mail_body": "Hej,\n\nJag vill komma i kontakt med er angående era städtjänster.\n\nMin fråga/önskemål:\nÖnskat kontaktsätt (telefon/e-post):\nAdress / område (valfritt):\n\nVänliga hälsningar,",
+    "mail_body": "Hej,\n\nJag vill komma i kontakt med dig angående dina städtjänster.\n\nMin fråga/önskemål:\nÖnskat kontaktsätt (telefon/e-post):\nAdress / område (valfritt):\n\nVänliga hälsningar,",
     "address": "Adress",
     "hours": "Öppettider",
     "opening_hours": {
@@ -276,7 +276,7 @@
       "weekend": "Lör - Sön: 10:00 - 16:00"
     },
     "gps": "Sverkersgatan 8, Hägersten, Sverige",
-    "map_title": "Hitta Oss På Kartan",
+    "map_title": "Hitta på kartan",
     "map_open": "Öppna i Google Maps"
   },
   "footer": {
@@ -285,22 +285,22 @@
   },
   "residentialGuide": {
     "title": "Guide för hemstädning",
-    "subtitle": "Allt du behöver veta om vår regelbundna hemstädning.",
+    "subtitle": "Allt du behöver veta om regelbunden hemstädning.",
     "intro": "Den här guiden förklarar vad som ingår i regelbunden hemstädning och vilka begränsningar som gäller, så att förväntningarna är tydliga för båda parter.",
     "section_a": {
-      "title": "Vad som ingår i vår hemstädning",
+      "title": "Vad som ingår i den här hemstädningen",
       "general_info": {
         "title": "Allmän information",
         "items": [
-          "Vi rengör alla ytor och all utrustning som är lätt åtkomlig från golvnivå.",
-          "Av säkerhetsskäl använder vi inte stegar eller pallar.",
+          "Alla ytor och all utrustning som är lätt åtkomlig från golvnivå rengörs.",
+          "Av säkerhetsskäl används inte stegar eller pallar.",
           "Rengöring ovanför normal räckhöjd ingår i storstädning, som erbjuds som tilläggstjänst.",
-          "Vi ber vänligen att all städutrustning fungerar fullt ut (t.ex. dammsugare, mopp). Vi arbetar inte med skadad eller icke fungerande utrustning.",
-          "Om nödvändiga städprodukter saknas förbehåller vi oss rätten att hoppa över vissa moment eller lämna vissa ytor ostädade.",
-          "Av säkerhetsskäl utför vi inte städning om en hund lämnas utan tillsyn i hemmet. Små sällskapsdjur (som katter, fiskar eller burdjur) kan vara kvar under städningen, förutsatt att de är säkrade och inte påverkar arbetet.",
-          "Av säkerhets- och juridiska skäl kan vår personal inte vara ensam i bostaden med minderåriga utan närvaro av ansvarig vuxen.",
+          "All städutrustning behöver fungera fullt ut (t.ex. dammsugare, mopp). Skadad eller icke fungerande utrustning används inte.",
+          "Om nödvändiga städprodukter saknas kan vissa moment hoppas över eller vissa ytor lämnas ostädade.",
+          "Av säkerhetsskäl utförs inte städning om en hund lämnas utan tillsyn i hemmet. Små sällskapsdjur (som katter, fiskar eller burdjur) kan vara kvar under städningen, förutsatt att de är säkrade och inte påverkar arbetet.",
+          "Av säkerhets- och juridiska skäl utförs inte städning i bostad med minderåriga utan närvaro av ansvarig vuxen.",
           "Observera att regelbunden hemstädning syftar till att bibehålla renlighet, inte återställa kraftigt slitna eller eftersatta ytor.",
-          "Vi arbetar alltid noggrant och omsorgsfullt, men vi kan inte få slitna föremål att se nya ut."
+          "Arbetet utförs alltid noggrant och omsorgsfullt, men slitna föremål kan inte göras som nya."
         ]
       },
       "kitchen": {
@@ -349,28 +349,28 @@
       "not_included": {
         "title": "Vad som inte ingår",
         "items": [
-          "Vi rengör inte lampor om de inte är lätt åtkomliga från golvnivå.",
+          "Lampor rengörs inte om de inte är lätt åtkomliga från golvnivå.",
           "Kristallampor och kristallkronor rengörs inte under några omständigheter.",
-          "Vi diskar inte stora mängder disk för hand (max cirka 15 minuter per besök).",
-          "Vattning av växter ingår inte i ordinarie hemstädning. Om du är bortrest på en längre semester och lämnar en påminnelse till oss kan vi vattna dina växter så att de håller sig fina.",
+          "Stora mängder disk handdiskas inte (max cirka 15 minuter per besök).",
+          "Vattning av växter ingår inte i ordinarie hemstädning. Om du är bortrest på en längre semester och lämnar en påminnelse kan växter vattnas så att de håller sig fina.",
           "Tvätt ingår inte i ordinarie hemstädning. Tjänsten kan bokas som tillägg mot extra kostnad.",
-          "Vi erbjuder inte hushållsunderhåll, till exempel byte av gardiner, byte av glödlampor eller borttagning av stearinfläckar.",
+          "Hushållsunderhåll erbjuds inte, till exempel byte av gardiner, byte av glödlampor eller borttagning av stearinfläckar.",
           "Behöver du hjälp med garderober och skåp? Organisering kan bokas som tilläggstjänst mot extra kostnad."
         ]
       },
       "pets": {
         "title": "Husdjur",
         "items": [
-          "Vi städar inte efter husdjur (t.ex. kattlådor, burar, akvarier).",
-          "Vi matar inte djur och byter inte deras vatten.",
-          "Vi rastar inte hundar."
+          "Städning efter husdjur (t.ex. kattlådor, burar, akvarier) ingår inte.",
+          "Matning av djur eller byte av vatten ingår inte.",
+          "Hundrastning ingår inte."
         ]
       },
       "furniture_handling": {
         "title": "Möbler & hantering",
         "items": [
-          "Vi flyttar inte möbler eller stora vitvaror (t.ex. kylskåp, tvättmaskiner).",
-          "Vi lyfter, skakar eller piskar inte mattor."
+          "Möbler eller stora vitvaror (t.ex. kylskåp, tvättmaskiner) flyttas inte.",
+          "Mattor lyfts, skakas eller piskas inte."
         ]
       },
       "sensitive_surfaces": {
@@ -383,23 +383,23 @@
       "additional_notes": {
         "title": "Ytterligare information",
         "items": [
-          "Vid rengöring av kylskåp (tilläggstjänst) kan vi endast kasta varor som är tydligt synligt förstörda. Vi kontrollerar inte bäst före- eller sista förbrukningsdatum och fattar inga beslut utifrån datummärkning.",
+          "Vid rengöring av kylskåp (tilläggstjänst) kastas endast varor som är tydligt synligt förstörda. Bäst före- eller sista förbrukningsdatum kontrolleras inte, och inga beslut fattas utifrån datummärkning.",
           "Hemstädning gäller endast inomhusytor (garage, förråd, gård och liknande ytor ingår inte).",
           "Skrubbning av fogar ingår inte i standardstädning (kan bokas som tilläggstjänst)."
         ]
       }
     },
-    "contact_cta": "Kontakta oss",
+    "contact_cta": "Kontakt",
     "back_home_cta": "Till startsidan"
   },
   "photoGallery": {
     "title": "Fotogalleri",
-    "subtitle": "Här kan du se verkliga resultat före och efter våra städtjänster. Grundligt, noggrant och med omsorg — varje gång.",
+    "subtitle": "Här kan du se verkliga resultat före och efter städtjänsterna. Grundligt, noggrant och med omsorg — varje gång.",
     "permission_note": "Alla bilder publiceras med tillstånd.",
     "hint": "Dra reglaget åt vänster eller höger för att jämföra före och efter.",
     "drag_tooltip": "Du kan dra i reglaget för att jämföra före och efter.",
-    "facebookCta": "Vill du se mer av vårt arbete?",
-    "facebookCtaLink": "Följ oss på Facebook för regelbundna uppdateringar och fler före- och efterbilder.",
+    "facebookCta": "Vill du se fler resultat?",
+    "facebookCtaLink": "Följ på Facebook för regelbundna uppdateringar och fler före- och efterbilder.",
     "before": "Före",
     "after": "Efter",
     "photoPlaceholder": "Bild kommer snart",

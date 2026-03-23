@@ -200,14 +200,15 @@ export default function Contact() {
                 sx={{
                   mt: 2,
                   display: 'inline-block',
-                  color: '#23408e',
+                  color: (theme) => theme.palette.primary.main,
                   fontWeight: 700,
                   textDecoration: 'none',
                   '&:hover': {
                     textDecoration: 'underline',
                   },
                   '&:focus-visible': {
-                    outline: '2px solid #23408e',
+                    outline: (theme) =>
+                      `2px solid ${theme.palette.primary.main}`,
                     outlineOffset: 3,
                     borderRadius: 4,
                   },

@@ -2,7 +2,7 @@
   "hero": {
     "title": "Professional Cleaning Services",
     "subtitle": "Comfort Starts with a Clean Home.",
-    "privacy_line": "Your home is personal. We clean with discretion, privacy, and full confidentiality.",
+    "privacy_line": "Your home is personal. Cleaning is carried out with discretion, privacy, and full confidentiality.",
     "quote_mail_subject": "Quote request",
     "quote_mail_body": "Hello,\n\nI would like to request a quote for cleaning services.\n\nPreferred service:\nHome size / number of rooms:\nPreferred frequency:\nPreferred start date:\nAddress / area:\nAdditional notes:\n\nBest regards,",
     "cta": "Get a Quote"
@@ -16,26 +16,26 @@
     "gallery": "Gallery"
   },
   "services": {
-    "title": "Our Services",
+    "title": "Services",
     "learn_more": "Learn more",
-    "includes": "What to expect from our service",
+    "includes": "What to expect from this service",
     "residential_guide_cta": "Full house cleaning guide",
     "residential": "Residential Cleaning",
     "residential_desc": "Complete home cleaning services",
-    "residential_detail": "Our residential cleaning is tailored to your home and schedule. We clean every room with care, using products that are safe for your family and pets.",
+    "residential_detail": "Residential cleaning is tailored to your home and schedule. Every room is cleaned with care, using products that are safe for your family and pets.",
     "client_info": {
-      "title": "Want to become our client?",
-      "intro": "Here's everything you need to know about how we work - simple, transparent, and professional.",
+      "title": "Interested in becoming a client?",
+      "intro": "Here's everything you need to know about how the service works - simple, transparent, and professional.",
       "how_it_works": {
         "title": "How it works",
-        "description": "We start with a free home visit, where we:",
+        "description": "A free home visit is arranged to:",
         "steps": [
           "assess your home",
           "understand your needs",
           "answer any questions"
         ],
         "pricing": "During the visit, you'll receive a personalized price proposal - always a fixed price including VAT, after the RUT tax deduction.",
-        "rut_info": "The RUT deduction is applied directly to your invoice, so you only pay the reduced amount. We take care of all administration with the tax office.",
+        "rut_info": "The RUT deduction is applied directly to your invoice, so you only pay the reduced amount. All administration with the tax office is handled for you.",
         "rut_link": "Want to learn more about the RUT deduction? Read more here.",
         "rut_note": "If the RUT deduction is not approved, the full amount will be charged."
       },
@@ -45,24 +45,24 @@
       },
       "supplies": {
         "title": "Cleaning supplies",
-        "description": "We work with cleaning products that you provide. Our team can recommend products tailored to your home.",
-        "link": "View our recommended cleaning list here."
+        "description": "Cleaning is carried out with products provided by you. Product recommendations tailored to your home are available.",
+        "link": "View the recommended cleaning list here."
       },
       "important_info": {
         "title": "Important information",
-        "description": "To protect your home, we do not move heavy furniture such as:",
+        "description": "To protect your home, heavy furniture is not moved, such as:",
         "items": ["sofas", "large appliances", "heavy furnishings"],
-        "note": "If you would like cleaning behind or underneath these items, please move them before our visit.",
+        "note": "If you would like cleaning behind or underneath these items, please move them before the visit.",
         "balcony": "Balcony cleaning is not included in the standard service and can be booked separately."
       },
       "insurance": {
         "title": "Safety & insurance",
-        "description": "We are insured through Trygg-Hansa, which means you are fully covered in case of any unexpected incidents, such as damage or lost keys."
+        "description": "The service is insured through Trygg-Hansa, which means you are fully covered in case of any unexpected incidents, such as damage or lost keys."
       },
       "agreement": {
         "title": "Agreement",
         "points": ["Ongoing contract", "No notice period required"],
-        "trial": "Not sure yet? We also offer a trial cleaning with no commitment."
+        "trial": "Not sure yet? A trial cleaning is also available with no commitment."
       },
       "extra_services": {
         "title": "Additional services",
@@ -89,35 +89,35 @@
         ]
       },
       "welcome": "Welcome!",
-      "footer": "We look forward to helping you create a clean, fresh, and comfortable home."
+      "footer": "Looking forward to helping you create a clean, fresh, and comfortable home."
     },
     "deep_clean": "Deep Cleaning",
-    "deep_clean_desc": "Spring cleaning or guests on the way? We'll take care of it",
+    "deep_clean_desc": "Spring cleaning or guests on the way? It can be taken care of for you",
     "deep_clean_detail": "A thorough top-to-bottom clean that goes beyond regular cleaning and reaches areas often overlooked. Perfect for spring cleaning, after renovations, or ahead of special occasions",
     "deep_clean_modal_content": [
-      "Each service is individually assessed and tailored based on your location, your specific needs, and our professional recommendations. Get in touch with us, and we will help you create a suitable cleaning plan together.",
-      "You provide standard cleaning supplies yourself. If more advanced or specialized equipment is required, we will bring it."
+      "Each service is individually assessed and tailored based on your location, your specific needs, and professional recommendations. Get in touch to create a suitable cleaning plan.",
+      "You provide standard cleaning supplies yourself. If more advanced or specialized equipment is required, it is brought as needed."
     ],
     "window_clean": "Window cleaning",
     "window_clean_desc": "Careful window cleaning for a spotless finish and maximum clarity",
-    "window_clean_detail": "Our window cleaning is carried out with precision and attention to detail for a spotless, streak-free finish. We ensure clear views and consistent quality.",
+    "window_clean_detail": "Window cleaning is carried out with precision and attention to detail for a spotless, streak-free finish, ensuring clear views and consistent quality.",
     "window_clean_modal_content": [
       "For existing customers, one-time window cleaning is priced the same as a single home cleaning session.",
-      "New customers are welcome to contact us, and we will be happy to arrange window cleaning upon request.",
-      "We work with professional equipment (Kärcher), along with telescopic poles and ladders to safely reach higher windows.",
+      "New customers are welcome to get in touch, and window cleaning can be arranged upon request.",
+      "Professional equipment (Kärcher), telescopic poles, and ladders are used to safely reach higher windows.",
       "For safety reasons, window cleaning is not carried out during the winter season.",
-      "No preparation is required on your part. Our team carefully handles items such as vases, window decorations, and curtains with attention and care.",
+      "No preparation is required on your part. Items such as vases, window decorations, and curtains are handled carefully and with attention.",
       "Please note: balcony cleaning is not included in the standard service and can be booked separately."
     ],
     "extra": "Extra Services",
     "extra_desc": "Specialized cleaning for your specific needs. Tailored solutions for every situation",
-    "extra_detail": "Specialized cleaning designed around your specific needs. Our solutions are tailored to fit each situation with precision.",
+    "extra_detail": "Specialized cleaning designed around your specific needs. Solutions are tailored to fit each situation with precision.",
     "mail_subject": "Service inquiry",
     "mail_body": "Hello,\n\nI am interested in your cleaning services and would like more details.\n\nService type:\nHome size / number of rooms:\nPreferred date and time:\nAddress / area:\nAdditional details:\n\nBest regards,",
     "extra_modal_content": [
       "Is your refrigerator starting to smell unpleasant? Have you forgotten what your oven originally looked like? Is your balcony no longer a place you enjoy spending time?",
-      "Let us know what needs to be done - we'll take care of it for you.",
-      "Below you will find our prices for additional services:",
+      "Share what needs to be done - it will be handled for you.",
+      "Below you will find prices for additional services:",
       "Refrigerator cleaning - SEK 150",
       "Freezer cleaning - SEK 150 (must be defrosted beforehand)",
       "Oven cleaning (including standard equipment and between glass panels) - SEK 200",
@@ -126,17 +126,17 @@
     ]
   },
   "about": {
-    "title": "About Us",
+    "title": "About Me",
     "text1": "My name is Aleksandra, and I have over ",
     "text2": " years of experience as a professional cleaner. For the past ",
     "text3": " years, I have been successfully running my own cleaning services in Stockholm, building a strong reputation for reliability, high quality, and exceptional attention to detail. ",
     "text4": "I specialize in premium home cleaning services tailored to each client's individual needs, including both regular maintenance cleaning and deep cleaning. My goal is to create clean, comfortable, and well-maintained living spaces where my clients can truly relax and feel at ease.",
     "text5": "Customer trust and safety are my top priorities. That is why I work in partnership with Trygg-Hansa. This provides full coverage in the unlikely event of accidental damage during cleaning or if keys are misplaced, giving my clients complete peace of mind.",
     "text6": "If you are looking for a reliable and experienced cleaner in Stockholm, I would be happy to help you keep your home spotless, fresh, and stress-free.",
-    "why_choose": "Why Choose Us?",
-    "recommendations_cta": "Hear from our clients",
-    "our_work_cta": "Our Work",
-    "recommendations_modal_title": "How is it working with us? Hear from our clients",
+    "why_choose": "Why Choose This Company?",
+    "recommendations_cta": "Hear from my clients",
+    "our_work_cta": "My Work",
+    "recommendations_modal_title": "How is it working with me? Hear from my clients",
     "recommendations_modal_hint": "These are real client messages shared with permission. Click any bubble to open the full review screenshot.",
     "recommendations_backdrop_close": "Click outside to close",
     "recommendation_bubble": "Client review bubble",
@@ -153,8 +153,8 @@
     "trygghansa": "Insurance"
   },
   "gallery": {
-    "title": "Our Work",
-    "subtitle": "See a quick sample of our cleaning standards and consistency - find more before-and-after examples",
+    "title": "Work Portfolio",
+    "subtitle": "See a quick sample of cleaning standards and consistency - find more before-and-after examples",
     "permission_note": "All photos are published with permission.",
     "here": "here.",
     "placeholder": "PHOTO",
@@ -184,7 +184,7 @@
       "move-out-finish": {
         "alt": "Elegant home styling with carefully prepared details",
         "title": "Elegance in Every Detail",
-        "description": "We care for the smallest elements with the same precision as the room itself."
+        "description": "The smallest elements are handled with the same precision as the room itself."
       },
       "office-clean": {
         "alt": "Clean and pet-friendly home atmosphere",
@@ -194,12 +194,12 @@
       "window-sparkle": {
         "alt": "Styled home composition prepared with care",
         "title": "Styled with Intention",
-        "description": "We value presentation, precision, and the subtle details that elevate the feeling of a home."
+        "description": "Presentation, precision, and subtle details are valued to elevate the feeling of a home."
       },
       "floor-polish": {
         "alt": "Seasonal home styling in a fresh, welcoming space",
         "title": "A Home for Special Moments",
-        "description": "We help your space feel light, joyful, and beautifully prepared for every occasion."
+        "description": "Your space is prepared to feel light, joyful, and beautifully ready for every occasion."
       },
       "deep-clean": {
         "alt": "Beautifully finished bathroom detail",
@@ -213,8 +213,8 @@
       },
       "carpet-care": {
         "alt": "Pet-friendly home maintained with care",
-        "title": "Still Wondering If We're Pet-Friendly?",
-        "description": "We thought we made it clear already, but yes, we absolutely are. Clean, comfortable homes should work beautifully for pets too."
+        "title": "Still Wondering If It's Pet-Friendly?",
+        "description": "Absolutely yes. Clean, comfortable homes should work beautifully for pets too."
       },
       "exterior-shine": {
         "alt": "Elegant living room with a calm and refined atmosphere",
@@ -223,13 +223,13 @@
       },
       "green-clean": {
         "alt": "Fresh pet-friendly home interior",
-        "title": "Have We Mentioned We're Pet-Friendly?",
-        "description": "Because we are. Fresh, well-kept spaces can still feel warm, relaxed, and perfectly suited for life with pets."
+        "title": "Pet-Friendly, As Mentioned",
+        "description": "Fresh, well-kept spaces can still feel warm, relaxed, and perfectly suited for life with pets."
       },
       "custom-solution": {
         "alt": "Welcoming home designed for real life with pets",
         "title": "Pet-Friendly. In Case It Needed Saying Again.",
-        "description": "We care for homes in a way that keeps them clean, welcoming, and comfortable for every member of the household."
+        "description": "Homes are cared for in a way that keeps them clean, welcoming, and comfortable for every member of the household."
       }
     }
   },
@@ -237,34 +237,34 @@
     "title": "Frequently Asked Questions",
     "subtitle": "Everything clients usually ask before booking.",
     "q1": "Do I need to provide cleaning supplies?",
-    "a1": "Yes — clients provide their own cleaning products and equipment. Our team is happy to recommend what works best for your home. For deep cleaning or specialized services, any required professional equipment is brought by us.",
+    "a1": "Yes — clients provide their own cleaning products and equipment. Recommendations can be provided based on what works best for your home. For deep cleaning or specialized services, any required professional equipment is brought as needed.",
     "q2": "How long does a standard home cleaning take?",
     "a2": "It depends on the size and condition of your home. Most regular appointments take between 2 and 4 hours.",
     "q3": "How do I get a price quote?",
-    "a3": "We start with a free home visit where we assess your home, understand your needs, and answer any questions. You then receive a fixed-price proposal including VAT, after the RUT deduction.",
+    "a3": "A free home visit is arranged to assess your home, understand your needs, and answer any questions. You then receive a fixed-price proposal including VAT, after the RUT deduction.",
     "q4": "Can I try the service before committing?",
-    "a4": "Yes. We offer a trial cleaning with no commitment. If you decide to continue, we set up an ongoing contract with no notice period required.",
+    "a4": "Yes. A trial cleaning is available with no commitment. If you decide to continue, an ongoing contract is set up with no notice period required.",
     "q5": "Can I book recurring cleaning?",
-    "a5": "Absolutely. We offer weekly and bi-weekly cleaning plans. We discuss the best option for your home during the initial visit.",
+    "a5": "Absolutely. Weekly and bi-weekly cleaning plans are available. The best option for your home is discussed during the initial visit.",
     "q13": "Do you protect my privacy and confidentiality?",
-    "a13": "Yes. Privacy and confidentiality are core to how we work. We treat every home, routine, and personal detail with complete discretion.",
+    "a13": "Yes. Privacy and confidentiality are core principles. Every home, routine, and personal detail is handled with complete discretion.",
     "q6": "Are you insured?",
-    "a6": "Yes. We are insured through Trygg-Hansa, which covers accidental damage during service and provides full peace of mind in case of incidents such as damage or lost keys.",
+    "a6": "Yes. The service is insured through Trygg-Hansa, which covers accidental damage during service and provides full peace of mind in case of incidents such as damage or lost keys.",
     "q7": "How does the RUT deduction work?",
-    "a7": "If you are eligible in Sweden, the RUT deduction is applied directly to your invoice — you only pay the reduced amount. We handle all administration with the tax office on your behalf.",
+    "a7": "If you are eligible in Sweden, the RUT deduction is applied directly to your invoice — you only pay the reduced amount. All administration with the tax office is handled on your behalf.",
     "q8": "Do you clean homes with pets?",
-    "a8": "Yes, we are pet-friendly. Small household pets such as cats, fish, or caged animals may remain at home during the cleaning, as long as they are secured. For safety reasons, dogs must be supervised or removed during the visit. Please note that we do not clean pet areas such as litter boxes, cages, or aquariums.",
+    "a8": "Yes, the service is pet-friendly. Small household pets such as cats, fish, or caged animals may remain at home during the cleaning, as long as they are secured. For safety reasons, dogs must be supervised or removed during the visit. Please note that pet areas such as litter boxes, cages, or aquariums are not cleaned.",
     "q9": "What is not included in standard cleaning?",
     "a9": "Standard cleaning does not include laundry, watering plants, balcony cleaning, cleaning above reachable height, or moving heavy furniture. Laundry, balcony cleaning, and some other tasks can be booked as additional services.",
     "q10": "Is window cleaning available throughout the year?",
-    "a10": "No — window cleaning is not carried out during the winter season, and we do not clean windows at heights that require specialist equipment or safety gear. Balcony washing is also not done during winter. For existing customers, window cleaning is priced the same as one regular cleaning session. New customers are welcome to contact us for more information.",
+    "a10": "No — window cleaning is not carried out during the winter season, and windows at heights that require specialist equipment or safety gear are not cleaned. Balcony washing is also not done during winter. For existing customers, window cleaning is priced the same as one regular cleaning session. New customers are welcome to get in touch for more information.",
     "q11": "Do you wash carpets, mattresses, or other textiles?",
-    "a11": "No. Washing carpets, mattresses, duvets, and similar textiles requires specialist equipment that we do not carry. These items fall outside the scope of our cleaning services.",
+    "a11": "No. Washing carpets, mattresses, duvets, and similar textiles requires specialist equipment that is not carried. These items fall outside the scope of the cleaning services.",
     "q12": "Do you offer outdoor services such as gardening or snow removal?",
-    "a12": "No — our services are limited to indoor cleaning only. We do not carry out gardening, snow shovelling, pool cleaning, or cleaning of open fireplaces, stoves, and chimneys."
+    "a12": "No — the services are limited to indoor cleaning only. Gardening, snow shovelling, pool cleaning, and cleaning of open fireplaces, stoves, and chimneys are not carried out."
   },
   "contact": {
-    "title": "Contact Us",
+    "title": "Contact",
     "phone": "Phone",
     "email": "Email",
     "mail_subject": "Cleaning service inquiry",
@@ -276,7 +276,7 @@
       "weekend": "Sat - Sun: 10:00 - 16:00"
     },
     "gps": "Sverkersgatan 8,Hägersten, Sweden",
-    "map_title": "Find Us On The Map",
+    "map_title": "Find On The Map",
     "map_open": "Open in Google Maps"
   },
   "footer": {
@@ -285,22 +285,22 @@
   },
   "residentialGuide": {
     "title": "House Cleaning Guide",
-    "subtitle": "Everything you should know about our regular residential cleaning service.",
+    "subtitle": "Everything you should know about regular residential cleaning service.",
     "intro": "This guide explains what is included in regular house cleaning and which limitations apply, so expectations stay clear for both sides.",
     "section_a": {
-      "title": "What is included in our house cleaning",
+      "title": "What is included in this house cleaning service",
       "general_info": {
         "title": "General information",
         "items": [
-          "We clean all surfaces and equipment that are easily accessible from floor level.",
-          "For safety reasons, we do not use ladders or step stools.",
+          "All surfaces and equipment that are easily accessible from floor level are cleaned.",
+          "For safety reasons, ladders or step stools are not used.",
           "Cleaning above reachable height is included in deep cleaning, which is offered as an additional service.",
-          "We kindly ask that all cleaning equipment is fully functional (e.g. vacuum cleaner, mop). We do not work with damaged or non-functioning equipment.",
-          "If the necessary cleaning supplies are not provided, we reserve the right to skip certain tasks or leave specific areas uncleaned.",
-          "For safety reasons, we do not perform cleaning if a dog is left unsupervised in the home. Small household pets (such as cats, fish, or caged animals) may remain during the cleaning, provided they are secured and do not interfere with the service.",
-          "For safety and legal reasons, our staff cannot stay alone in the home with minors without a responsible adult present.",
+          "Please ensure that all cleaning equipment is fully functional (e.g. vacuum cleaner, mop). Damaged or non-functioning equipment is not used.",
+          "If the necessary cleaning supplies are not provided, certain tasks may be skipped or specific areas may be left uncleaned.",
+          "For safety reasons, cleaning is not performed if a dog is left unsupervised in the home. Small household pets (such as cats, fish, or caged animals) may remain during the cleaning, provided they are secured and do not interfere with the service.",
+          "For safety and legal reasons, no service is performed in a home with minors unless a responsible adult is present.",
           "Please note that regular home cleaning is designed to maintain cleanliness, not restore heavily worn or neglected surfaces.",
-          "While we always work carefully and thoroughly, we are not able to make worn items look new."
+          "Work is always carried out carefully and thoroughly, but worn items cannot be made to look new."
         ]
       },
       "kitchen": {
@@ -349,28 +349,28 @@
       "not_included": {
         "title": "What is not included",
         "items": [
-          "We do not clean lamps unless they are easily accessible from floor level.",
+          "Lamps are not cleaned unless they are easily accessible from floor level.",
           "Crystal lamps and chandeliers are not cleaned under any circumstances.",
-          "We do not wash large amounts of dishes by hand (maximum approx. 15 minutes per visit).",
-          "Watering plants is not included in standard home cleaning. If you are away for a longer holiday and leave us a reminder, we can water your plants so they stay in good condition.",
+          "Large amounts of dishes are not washed by hand (maximum approx. 15 minutes per visit).",
+          "Watering plants is not included in standard home cleaning. If you are away for a longer holiday and leave a reminder, plants can be watered so they stay in good condition.",
           "Laundry is not included in standard home cleaning. It can be booked as an additional service for an extra fee.",
-          "We do not provide household maintenance tasks, such as changing curtains, replacing light bulbs, or removing candle wax stains.",
+          "Household maintenance tasks are not provided, such as changing curtains, replacing light bulbs, or removing candle wax stains.",
           "Need help with wardrobes and closets? Organization is available as an additional service for an extra fee."
         ]
       },
       "pets": {
         "title": "Pets",
         "items": [
-          "We do not clean after pets (e.g. litter boxes, cages, aquariums).",
-          "We do not feed animals or change their water.",
-          "We do not walk dogs."
+          "Cleaning after pets (e.g. litter boxes, cages, aquariums) is not included.",
+          "Feeding animals or changing their water is not included.",
+          "Dog walking is not included."
         ]
       },
       "furniture_handling": {
         "title": "Furniture & handling",
         "items": [
-          "We do not move furniture or large appliances (e.g. refrigerators, washing machines).",
-          "We do not lift, shake, or beat carpets."
+          "Furniture or large appliances (e.g. refrigerators, washing machines) are not moved.",
+          "Carpets are not lifted, shaken, or beaten."
         ]
       },
       "sensitive_surfaces": {
@@ -383,23 +383,23 @@
       "additional_notes": {
         "title": "Additional notes",
         "items": [
-          "When cleaning the fridge (extra service), we may dispose only of items that are visibly spoiled. We do not check expiry dates and we do not decide based on date labels.",
+          "When cleaning the fridge (extra service), only items that are visibly spoiled may be disposed of. Expiry dates are not checked and decisions are not made based on date labels.",
           "Home cleaning applies only to indoor living areas (garages, storage rooms, yards, and similar spaces are not included).",
           "Scrubbing of grout/joints is not included in standard cleaning (available as an additional service)."
         ]
       }
     },
-    "contact_cta": "Contact us",
+    "contact_cta": "Contact",
     "back_home_cta": "Back to home"
   },
   "photoGallery": {
     "title": "Photo Gallery",
-    "subtitle": "Here you can see real before and after results from our cleaning services. Fresh, thorough, and done with care — every time.",
+    "subtitle": "Here you can see real before and after results from the cleaning services. Fresh, thorough, and done with care — every time.",
     "permission_note": "All photos are published with permission.",
     "hint": "Drag the slider left or right to compare before and after.",
     "drag_tooltip": "You can drag the slider to compare before and after.",
-    "facebookCta": "Want to see more of our work?",
-    "facebookCtaLink": "Follow us on Facebook for regular updates and more before & after results.",
+    "facebookCta": "Want to see more work results?",
+    "facebookCtaLink": "Follow on Facebook for regular updates and more before & after results.",
     "before": "Before",
     "after": "After",
     "photoPlaceholder": "Photo coming soon",

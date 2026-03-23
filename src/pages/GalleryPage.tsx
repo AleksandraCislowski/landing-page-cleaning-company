@@ -75,6 +75,8 @@ const PAIR_SUBTITLE_KEYS = [
 export default function GalleryPage() {
   const { t } = useTranslation();
   const pairRefs = useRef<Array<HTMLDivElement | null>>([]);
+  const facebookUrl =
+    'https://www.facebook.com/people/Aleksandra-Cislowski-St%C3%A4dfirma/100049051159295/?eid=ARAevyTA8p6Ty6yyykAMFlYIMz1Osk5IHiK2JmG_jVgKFb4jiLocIaATKMs9TWhHZ5M9EMPcSoM7zR_e&timeline_context_item_type=intro_card_work&timeline_context_item_source=100007544285132&fref=tag';
   const [visiblePairs, setVisiblePairs] = useState<boolean[]>(() =>
     Array.from({ length: TOTAL_PAIRS }, () => false),
   );
@@ -137,11 +139,18 @@ export default function GalleryPage() {
         }}
       >
         <Container maxWidth='md'>
-          <Typography
-            variant='h2'
-            sx={{ fontWeight: 'bold', mb: 2.5, color: 'white' }}
-          >
+          <Typography variant='h2' sx={{ fontWeight: 'bold', color: 'white' }}>
             {t('photoGallery.title')}
+          </Typography>
+          <Typography
+            variant='body2'
+            sx={{
+              mb: 3,
+              color: 'rgba(255,255,255,0.8)',
+              fontStyle: 'italic',
+            }}
+          >
+            {t('photoGallery.permission_note')}
           </Typography>
           <Typography
             variant='h6'
@@ -167,16 +176,6 @@ export default function GalleryPage() {
             }}
           >
             ↔ {t('photoGallery.hint')}
-          </Typography>
-          <Typography
-            variant='body2'
-            sx={{
-              mt: 1,
-              color: 'rgba(255,255,255,0.78)',
-              fontStyle: 'italic',
-            }}
-          >
-            {t('photoGallery.permission_note')}
           </Typography>
         </Container>
       </Box>
@@ -325,9 +324,47 @@ export default function GalleryPage() {
         >
           {t('photoGallery.facebookCta')}
         </Typography>
-        <Typography variant='body1' sx={{ color: '#888', mb: 3 }}>
-          {t('photoGallery.facebookCtaLink')}
-        </Typography>
+        {(() => {
+          const fullText = t('photoGallery.facebookCtaLink');
+          const marker = 'Facebook';
+          const markerIndex = fullText.indexOf(marker);
+
+          if (markerIndex === -1) {
+            return (
+              <Typography variant='body1' sx={{ color: '#888', mb: 3 }}>
+                {fullText}
+              </Typography>
+            );
+          }
+
+          const before = fullText.slice(0, markerIndex);
+          const after = fullText.slice(markerIndex + marker.length);
+
+          return (
+            <Typography variant='body1' sx={{ color: '#888', mb: 3 }}>
+              {before}
+              <Box
+                component='a'
+                href={facebookUrl}
+                target='_blank'
+                rel='noopener noreferrer'
+                aria-label='Facebook'
+                sx={{
+                  color: (theme) => theme.palette.primary.main,
+                  fontWeight: 700,
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '2px',
+                  '&:hover': {
+                    color: (theme) => theme.palette.secondary.main,
+                  },
+                }}
+              >
+                {marker}
+              </Box>
+              {after}
+            </Typography>
+          );
+        })()}
       </Box>
 
       <Footer />

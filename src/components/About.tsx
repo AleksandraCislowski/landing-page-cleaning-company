@@ -165,7 +165,7 @@ export default function About() {
         <Grid container spacing={{ xs: 4, md: 6 }} alignItems='center'>
           <Grid item xs={12} md={6}>
             <ImagePlaceholder
-              height={570}
+              height={700}
               src={person}
               alt='Owner of the company - Aleksandra Cislowski'
             />
