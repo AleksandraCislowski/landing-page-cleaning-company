@@ -39,15 +39,16 @@ export default function Services() {
     ? serviceDefinitions[selectedServiceId]
     : null;
   const isResidentialSelected = selectedServiceId === 'residential';
-
-  const handleScrollToContact = () => {
-    setSelectedServiceId(null);
-    window.setTimeout(() => {
-      document.getElementById('contact')?.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }, 120);
+  const contactEmail = 'cislowski.aleksandra@gmail.com';
+  const contactMailto = `mailto:${contactEmail}?subject=${encodeURIComponent(
+    'Service inquiry',
+  )}`;
+  const handleContactMailClick = (
+    event: React.MouseEvent<HTMLButtonElement>,
+  ) => {
+    event.preventDefault();
+    event.stopPropagation();
+    window.location.href = contactMailto;
   };
 
   const handleOpenResidentialGuide = () => {
@@ -184,7 +185,7 @@ export default function Services() {
               <Fab
                 color='primary'
                 aria-label='go to contact form'
-                onClick={handleScrollToContact}
+                onClick={handleContactMailClick}
                 sx={{
                   position: 'absolute',
                   right: { xs: 16, sm: 24 },

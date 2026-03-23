@@ -5,10 +5,12 @@ import hero from '../assets/hero-background.jpg';
 
 export default function Hero() {
   const { t } = useTranslation();
-
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    element?.scrollIntoView({ behavior: 'smooth' });
+  const quoteEmail = 'cislowski.aleksandra@gmail.com';
+  const quoteMailto = `mailto:${quoteEmail}?subject=${encodeURIComponent('Quote request')}`;
+  const handleQuoteClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    event.stopPropagation();
+    window.location.href = quoteMailto;
   };
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
@@ -76,6 +78,7 @@ export default function Hero() {
               <Button
                 variant='contained'
                 size={isXs ? 'small' : 'medium'}
+                onClick={handleQuoteClick}
                 sx={{
                   background: 'white',
                   color: theme.palette.primary.main,
@@ -85,7 +88,6 @@ export default function Hero() {
                     color: 'white',
                   },
                 }}
-                onClick={scrollToContact}
               >
                 {t('hero.cta')}
               </Button>
