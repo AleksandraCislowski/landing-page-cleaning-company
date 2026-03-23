@@ -40,7 +40,13 @@ export default function Contact() {
                 />
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
-                <PhoneIcon sx={{ mr: 2, color: '#667eea', fontSize: 28 }} />
+                <PhoneIcon
+                  sx={{
+                    mr: 2,
+                    color: (theme) => theme.palette.primary.main,
+                    fontSize: 28,
+                  }}
+                />
                 <Box>
                   <Typography variant='subtitle2' sx={{ color: '#666' }}>
                     {t('contact.phone')}
@@ -57,7 +63,13 @@ export default function Contact() {
               </Box>
 
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
-                <EmailIcon sx={{ mr: 2, color: '#667eea', fontSize: 28 }} />
+                <EmailIcon
+                  sx={{
+                    mr: 2,
+                    color: (theme) => theme.palette.primary.main,
+                    fontSize: 28,
+                  }}
+                />
                 <Box>
                   <Typography variant='subtitle2' sx={{ color: '#666' }}>
                     {t('contact.email')}
@@ -75,7 +87,11 @@ export default function Contact() {
 
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                 <LocationOnIcon
-                  sx={{ mr: 2, color: '#667eea', fontSize: 28 }}
+                  sx={{
+                    mr: 2,
+                    color: (theme) => theme.palette.primary.main,
+                    fontSize: 28,
+                  }}
                 />
                 <Box>
                   <Typography variant='subtitle2' sx={{ color: '#666' }}>
