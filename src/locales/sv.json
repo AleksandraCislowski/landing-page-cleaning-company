@@ -263,11 +263,9 @@
       "weekdays": "Mån - Fre: 08:00 - 17:00",
       "weekend": "Lör - Sön: 10:00 - 16:00"
     },
-    "gps": "Stockholm, Sverige",
-    "form_name": "Ditt Namn",
-    "form_email": "Din E-post",
-    "form_message": "Ditt Meddelande",
-    "form_submit": "Skicka Meddelande"
+    "gps": "Sverkersgatan 8, Hägersten, Sverige",
+    "map_title": "Hitta Oss På Kartan",
+    "map_open": "Öppna i Google Maps"
   },
   "footer": {
     "rights": "Alla rättigheter förbehållna.",

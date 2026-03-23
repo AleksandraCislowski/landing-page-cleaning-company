@@ -1,41 +1,17 @@
-import {
-  Container,
-  Typography,
-  Grid,
-  Box,
-  TextField,
-  Button,
-  Card,
-} from '@mui/material';
+import { Container, Typography, Grid, Box, Card } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import PhoneIcon from '@mui/icons-material/Phone';
 import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-import { useState } from 'react';
 import ImagePlaceholder from './ImagePlaceholder';
 import contactphoto from '../assets/contact.jpg';
 
 export default function Contact() {
   const { t } = useTranslation();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add your form submission logic here (e.g., API call)
-    setFormData({ name: '', email: '', message: '' });
-  };
+  const address = t('contact.gps');
+  const mapQuery = encodeURIComponent(address);
+  const mapEmbedUrl = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
+  const mapOpenUrl = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
 
   return (
     <Box id='contact' sx={{ py: { xs: 6, md: 10 } }}>
@@ -85,7 +61,7 @@ export default function Contact() {
                     variant='body1'
                     sx={{ fontWeight: 'bold', color: '#333' }}
                   >
-                    ADD SOMETHING
+                    cislowski.aleksandra@gmail.com
                   </Typography>
                 </Box>
               </Box>
@@ -119,57 +95,64 @@ export default function Contact() {
             </Card>
           </Grid>
 
-          {/* Contact Form */}
           <Grid item xs={12} md={7}>
-            <Card sx={{ p: 3, boxShadow: 'none', border: '1px solid #e0e0e0' }}>
-              <form onSubmit={handleSubmit}>
-                <TextField
-                  fullWidth
-                  label={t('contact.form_name')}
-                  name='name'
-                  value={formData.name}
-                  onChange={handleChange}
-                  margin='normal'
-                  variant='outlined'
-                  required
-                />
-                <TextField
-                  fullWidth
-                  label={t('contact.form_email')}
-                  name='email'
-                  type='email'
-                  value={formData.email}
-                  onChange={handleChange}
-                  margin='normal'
-                  variant='outlined'
-                  required
-                />
-                <TextField
-                  fullWidth
-                  label={t('contact.form_message')}
-                  name='message'
-                  value={formData.message}
-                  onChange={handleChange}
-                  margin='normal'
-                  variant='outlined'
-                  multiline
-                  rows={5}
-                  required
-                />
-                <Button
-                  type='submit'
-                  variant='contained'
-                  size='large'
+            <Card
+              sx={{
+                p: 3,
+                boxShadow: 'none',
+                border: '1px solid #e0e0e0',
+                height: '100%',
+              }}
+            >
+              <Typography variant='h5' sx={{ mb: 2 }}>
+                {t('contact.map_title')}
+              </Typography>
+              <Typography variant='body1' sx={{ color: '#333', mb: 2 }}>
+                {address}
+              </Typography>
+
+              <Box
+                sx={{
+                  width: '100%',
+                  borderRadius: 2,
+                  overflow: 'hidden',
+                  border: '1px solid #e0e0e0',
+                }}
+              >
+                <Box
+                  component='iframe'
+                  title='Google Maps location'
+                  src={mapEmbedUrl}
+                  loading='lazy'
+                  referrerPolicy='no-referrer-when-downgrade'
                   sx={{
-                    mt: 2,
-                    background:
-                      'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                    fontWeight: 'bold',
+                    width: '100%',
+                    minHeight: { xs: 300, md: 420 },
+                    border: 0,
+                    display: 'block',
                   }}
-                >
-                  {t('contact.form_submit')}
-                </Button>
-              </form>
+                  allowFullScreen
+                />
+              </Box>
+
+              <Box
+                component='a'
+                href={mapOpenUrl}
+                target='_blank'
+                rel='noopener noreferrer'
+                sx={{
+                  mt: 2,
+                  display: 'inline-block',
+                  color: '#667eea',
+                  fontWeight: 700,
+                  textDecoration: 'none',
+                  '&:hover': {
+                    textDecoration: 'underline',
+                  },
+                }}
+              >
+                {t('contact.map_open')}
+              </Box>
             </Card>
           </Grid>
         </Grid>
