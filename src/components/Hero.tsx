@@ -181,6 +181,7 @@ export default function Hero() {
                 size={isXs ? 'small' : 'medium'}
                 component='a'
                 href='tel:+46733338901'
+                aria-label={`${t('nav.phone')}: +46 (0) 73 333 89 01`}
                 variant='outlined'
                 sx={{
                   px: { xs: 1.5, sm: 2 },

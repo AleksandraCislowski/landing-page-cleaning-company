@@ -17,6 +17,9 @@ export default function Contact() {
   const emailMailto = `mailto:${email}?subject=${encodeURIComponent(
     t('contact.mail_subject'),
   )}&body=${encodeURIComponent(t('contact.mail_body'))}`;
+  const phoneAriaLabel = `${t('contact.phone')}: ${phoneDisplay}`;
+  const emailAriaLabel = `${t('contact.email')}: ${email}`;
+  const mapLinkAriaLabel = `${t('contact.map_open')}: ${address}`;
   const mapQuery = encodeURIComponent(address);
   const mapEmbedUrl = `https://www.google.com/maps?q=${mapQuery}&output=embed`;
   const mapOpenUrl = `https://www.google.com/maps/search/?api=1&query=${mapQuery}`;
@@ -60,6 +63,7 @@ export default function Contact() {
                     variant='body1'
                     component='a'
                     href={phoneHref}
+                    aria-label={phoneAriaLabel}
                     sx={{
                       fontWeight: 'bold',
                       color: '#333',
@@ -93,6 +97,7 @@ export default function Contact() {
                     variant='body1'
                     component='a'
                     href={emailMailto}
+                    aria-label={emailAriaLabel}
                     sx={{
                       fontWeight: 'bold',
                       color: '#333',
@@ -191,14 +196,20 @@ export default function Contact() {
                 href={mapOpenUrl}
                 target='_blank'
                 rel='noopener noreferrer'
+                aria-label={mapLinkAriaLabel}
                 sx={{
                   mt: 2,
                   display: 'inline-block',
-                  color: '#667eea',
+                  color: '#23408e',
                   fontWeight: 700,
                   textDecoration: 'none',
                   '&:hover': {
                     textDecoration: 'underline',
+                  },
+                  '&:focus-visible': {
+                    outline: '2px solid #23408e',
+                    outlineOffset: 3,
+                    borderRadius: 4,
                   },
                 }}
               >

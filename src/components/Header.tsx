@@ -129,7 +129,10 @@ export default function Header() {
               flexShrink: 0,
             }}
           >
-            <Logo onClick={() => handleSectionNav('home')} />
+            <Logo
+              onClick={() => handleSectionNav('home')}
+              ariaLabel={t('nav.home')}
+            />
             <Typography
               variant='subtitle1'
               sx={{
@@ -149,16 +152,20 @@ export default function Header() {
             <IconButton
               color='inherit'
               aria-label='menu'
+              aria-controls={open ? 'mobile-navigation-menu' : undefined}
+              aria-expanded={open ? 'true' : undefined}
+              aria-haspopup='menu'
               onClick={handleMenuClick}
             >
               <MenuIcon />
             </IconButton>
             <Menu
+              id='mobile-navigation-menu'
               anchorEl={anchorEl}
               open={open}
               onClose={handleMenuClose}
               MenuListProps={{
-                'aria-labelledby': 'basic-button',
+                'aria-labelledby': 'mobile-navigation-menu',
               }}
             >
               <MenuItem onClick={() => handleMenuItemClick('home')}>

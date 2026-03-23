@@ -74,6 +74,8 @@ export default function Services() {
       <Dialog
         open={Boolean(selectedServiceId)}
         onClose={() => setSelectedServiceId(null)}
+        aria-labelledby='service-dialog-title'
+        aria-describedby='service-dialog-description'
         maxWidth='md'
         fullWidth
         fullScreen={fullScreen}
@@ -133,6 +135,7 @@ export default function Services() {
               </IconButton>
             </Box>
             <DialogContent
+              id='service-dialog-description'
               sx={{
                 px: { xs: 2.5, sm: 4 },
                 pt: 3,
@@ -162,7 +165,11 @@ export default function Services() {
                 >
                   {selected.icon}
                 </Box>
-                <Typography variant='h5' sx={{ fontWeight: 700 }}>
+                <Typography
+                  id='service-dialog-title'
+                  variant='h5'
+                  sx={{ fontWeight: 700 }}
+                >
                   {t(selected.nameKey)}
                 </Typography>
               </Box>

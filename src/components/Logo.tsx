@@ -5,6 +5,7 @@ import logo from '../assets/logo.png';
 interface LogoProps {
   onClick?: () => void;
   alt?: string;
+  ariaLabel?: string;
   height?: string;
   marginRight?: string;
 }
@@ -12,6 +13,7 @@ interface LogoProps {
 export default function Logo({
   onClick,
   alt = 'Logo',
+  ariaLabel,
   height = '40px',
   marginRight = '10px',
 }: LogoProps) {
@@ -22,14 +24,27 @@ export default function Logo({
     onClick?.();
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLImageElement>) => {
+    if (event.key !== 'Enter' && event.key !== ' ') {
+      return;
+    }
+
+    event.preventDefault();
+    handleClick();
+  };
+
   return (
     <Box
       component='img'
       src={logo}
       alt={alt}
+      aria-label={ariaLabel}
+      role={onClick ? 'button' : undefined}
+      tabIndex={onClick ? 0 : undefined}
       width={43}
       height={40}
       onClick={handleClick}
+      onKeyDown={handleKeyDown}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       sx={(theme) => ({
@@ -41,6 +56,11 @@ export default function Logo({
         transition: 'all 0.3s ease',
         cursor: 'pointer',
         transform: hovered ? 'rotate(-12deg)' : 'rotate(0deg)',
+        '&:focus-visible': {
+          outline: `2px solid ${theme.palette.common.white}`,
+          outlineOffset: 4,
+          borderRadius: 4,
+        },
       })}
     />
   );

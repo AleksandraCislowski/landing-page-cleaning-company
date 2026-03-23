@@ -82,6 +82,7 @@ export default function Footer() {
               href='https://www.facebook.com/people/Aleksandra-Cislowski-St%C3%A4dfirma/100049051159295/?eid=ARAevyTA8p6Ty6yyykAMFlYIMz1Osk5IHiK2JmG_jVgKFb4jiLocIaATKMs9TWhHZ5M9EMPcSoM7zR_e&timeline_context_item_type=intro_card_work&timeline_context_item_source=100007544285132&fref=tag'
               target='_blank'
               rel='noopener noreferrer'
+              aria-label='Facebook'
               sx={{
                 color: 'white',
                 '&:hover': { background: 'rgba(255,255,255,0.1)' },

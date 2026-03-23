@@ -428,7 +428,13 @@ export default function RecommendationsBubbles({
         {trigger}
       </Box>
 
-      <Modal open={open} onClose={handleClose} closeAfterTransition>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        closeAfterTransition
+        aria-labelledby='client-reviews-title'
+        aria-describedby='client-reviews-description'
+      >
         <Fade in={open} timeout={modalFadeMs}>
           <Box
             onClick={handleBackdropClick}
@@ -443,6 +449,7 @@ export default function RecommendationsBubbles({
             }}
           >
             <Typography
+              id='client-reviews-title'
               variant='h6'
               sx={{
                 position: 'absolute',
@@ -458,6 +465,7 @@ export default function RecommendationsBubbles({
             </Typography>
 
             <Typography
+              id='client-reviews-description'
               variant='body2'
               sx={{
                 position: 'absolute',
@@ -634,6 +642,7 @@ export default function RecommendationsBubbles({
             })}
 
             <Box
+              aria-hidden='true'
               sx={{
                 position: 'absolute',
                 right: { xs: 12, sm: 18 },

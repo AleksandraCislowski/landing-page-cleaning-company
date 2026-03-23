@@ -109,6 +109,9 @@ export default function GalleryCarousel() {
   return (
     <Box
       id='gallery'
+      role='region'
+      aria-roledescription='carousel'
+      aria-label={t('gallery.title')}
       sx={{
         py: { xs: 6, md: 10 },
         background:
@@ -219,6 +222,7 @@ export default function GalleryCarousel() {
               return (
                 <Box
                   key={`${slide.label}-${index}`}
+                  aria-hidden={!isActiveSlide}
                   sx={{
                     width: `${100 / loopedSlides.length}%`,
                     p: 0,
@@ -388,6 +392,8 @@ export default function GalleryCarousel() {
               aria-label={
                 isMobile ? undefined : `${t('gallery.title')} ${index + 1}`
               }
+              aria-current={index === currentSlide ? 'true' : undefined}
+              aria-hidden={isMobile ? true : undefined}
               sx={{
                 width: index === currentSlide ? 28 : 10,
                 height: 10,

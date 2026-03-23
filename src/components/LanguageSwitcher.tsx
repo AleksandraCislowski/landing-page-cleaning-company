@@ -24,6 +24,16 @@ export default function LanguageSwitcher({
         variant='contained'
         size='small'
         onClick={toggleLanguage}
+        aria-label={
+          language === 'en'
+            ? 'Switch language to Swedish'
+            : 'Switch language to English'
+        }
+        title={
+          language === 'en'
+            ? 'Switch language to Swedish'
+            : 'Switch language to English'
+        }
         sx={{ minWidth: 'auto' }}
       >
         {language === 'en' ? 'Svenska' : 'English'}
