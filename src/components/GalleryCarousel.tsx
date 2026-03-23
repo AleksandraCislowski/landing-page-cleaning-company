@@ -4,6 +4,7 @@ import {
   Container,
   IconButton,
   Typography,
+  useMediaQuery,
   useTheme,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
@@ -54,6 +55,7 @@ const loopedSlides = [slides[slides.length - 1], ...slides, slides[0]];
 export default function GalleryCarousel() {
   const { t } = useTranslation();
   const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [activeIndex, setActiveIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [autoplayKey, setAutoplayKey] = useState(0);
@@ -372,21 +374,27 @@ export default function GalleryCarousel() {
           {slides.map((_, index) => (
             <Box
               key={index}
-              component='button'
-              type='button'
-              onClick={() => {
-                setIsTransitioning(true);
-                setActiveIndex(index + 1);
-                setAutoplayKey((prev) => prev + 1);
-              }}
-              aria-label={`${t('gallery.title')} ${index + 1}`}
+              component={isMobile ? 'span' : 'button'}
+              type={isMobile ? undefined : 'button'}
+              onClick={
+                isMobile
+                  ? undefined
+                  : () => {
+                      setIsTransitioning(true);
+                      setActiveIndex(index + 1);
+                      setAutoplayKey((prev) => prev + 1);
+                    }
+              }
+              aria-label={
+                isMobile ? undefined : `${t('gallery.title')} ${index + 1}`
+              }
               sx={{
                 width: index === currentSlide ? 28 : 10,
                 height: 10,
                 borderRadius: 999,
                 border: 'none',
                 p: 0,
-                cursor: 'pointer',
+                cursor: isMobile ? 'default' : 'pointer',
                 transition: 'all 0.3s ease',
                 backgroundColor:
                   index === currentSlide
