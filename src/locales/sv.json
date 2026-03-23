@@ -258,7 +258,16 @@
     "phone": "Telefon",
     "email": "E-post",
     "address": "Adress",
-    "hours": "Öppettider"
+    "hours": "Öppettider",
+    "opening_hours": {
+      "weekdays": "Mån - Fre: 08:00 - 17:00",
+      "weekend": "Lör - Sön: 10:00 - 16:00"
+    },
+    "gps": "Stockholm, Sverige",
+    "form_name": "Ditt Namn",
+    "form_email": "Din E-post",
+    "form_message": "Ditt Meddelande",
+    "form_submit": "Skicka Meddelande"
   },
   "footer": {
     "rights": "Alla rättigheter förbehållna.",

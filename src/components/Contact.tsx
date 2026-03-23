@@ -13,6 +13,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { useState } from 'react';
 import ImagePlaceholder from './ImagePlaceholder';
+import contactphoto from '../assets/contact.jpg';
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -54,7 +55,10 @@ export default function Contact() {
               }}
             >
               <Box sx={{ mb: 3 }}>
-                <ImagePlaceholder height={200} />
+                <ImagePlaceholder
+                  src={contactphoto}
+                  alt='Hands holding a phone, about to make a call'
+                />
               </Box>
               <Box sx={{ display: 'flex', alignItems: 'center', mb: 3 }}>
                 <PhoneIcon sx={{ mr: 2, color: '#667eea', fontSize: 28 }} />
@@ -66,7 +70,7 @@ export default function Contact() {
                     variant='body1'
                     sx={{ fontWeight: 'bold', color: '#333' }}
                   >
-                    +46 (0) 8 XXX XXXX
+                    +46 (0) 73 333 89 01
                   </Typography>
                 </Box>
               </Box>
@@ -81,7 +85,7 @@ export default function Contact() {
                     variant='body1'
                     sx={{ fontWeight: 'bold', color: '#333' }}
                   >
-                    info@pristinecleaning.se
+                    ADD SOMETHING
                   </Typography>
                 </Box>
               </Box>
@@ -98,7 +102,7 @@ export default function Contact() {
                     variant='body1'
                     sx={{ fontWeight: 'bold', color: '#333' }}
                   >
-                    Stockholm, Sweden
+                    {t('contact.gps')}
                   </Typography>
                 </Box>
               </Box>
@@ -107,10 +111,10 @@ export default function Contact() {
                 {t('contact.hours')}
               </Typography>
               <Typography variant='body2' sx={{ color: '#333' }}>
-                Mon - Fri: 08:00 - 18:00
+                {t('contact.opening_hours.weekdays')}
               </Typography>
               <Typography variant='body2' sx={{ color: '#333' }}>
-                Sat - Sun: 10:00 - 16:00
+                {t('contact.opening_hours.weekend')}
               </Typography>
             </Card>
           </Grid>
@@ -163,7 +167,7 @@ export default function Contact() {
                     fontWeight: 'bold',
                   }}
                 >
-                  {t('contact.form_send')}
+                  {t('contact.form_submit')}
                 </Button>
               </form>
             </Card>

@@ -182,6 +182,7 @@ export default function GalleryCarousel() {
           <Box
             sx={{
               display: 'flex',
+              alignItems: 'stretch',
               width: `${loopedSlides.length * 100}%`,
               transform: `translateX(-${activeIndex * (100 / loopedSlides.length)}%)`,
               transition: isTransitioning ? 'transform 1s ease' : 'none',
@@ -194,6 +195,7 @@ export default function GalleryCarousel() {
                 sx={{
                   width: `${100 / loopedSlides.length}%`,
                   p: 0,
+                  display: 'flex',
                 }}
               >
                 <Box
@@ -201,6 +203,9 @@ export default function GalleryCarousel() {
                     position: 'relative',
                     width: { xs: '90%', sm: '80%', md: '70%' },
                     mx: 'auto',
+                    height: '100%',
+                    display: 'flex',
+                    flexDirection: 'column',
                     overflow: 'hidden',
                     borderRadius: { xs: 3, md: 2 },
                     isolation: 'isolate',
@@ -218,6 +223,9 @@ export default function GalleryCarousel() {
                     sx={{
                       zIndex: 1,
                       position: 'relative',
+                      height: '100%',
+                      display: 'flex',
+                      flexDirection: 'column',
                       p: { xs: 1, sm: 1.25, md: 1.5 },
                       pb: { xs: 1.5, md: 2 },
                     }}
@@ -248,6 +256,7 @@ export default function GalleryCarousel() {
                     <Box
                       sx={{
                         color: '#fff',
+                        flexGrow: 1,
                         px: { xs: 0.25, md: 0.5 },
                         textShadow: '0 2px 8px rgba(0, 0, 0, 0.2)',
                       }}

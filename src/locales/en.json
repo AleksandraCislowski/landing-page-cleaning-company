@@ -258,7 +258,16 @@
     "phone": "Phone",
     "email": "Email",
     "address": "Address",
-    "hours": "Business Hours"
+    "hours": "Business Hours",
+    "opening_hours": {
+      "weekdays": "Mon - Fri: 08:00 - 17:00",
+      "weekend": "Sat - Sun: 10:00 - 16:00"
+    },
+    "gps": "Stockholm, Sweden",
+    "form_name": "Your Name",
+    "form_email": "Your Email",
+    "form_message": "Your Message",
+    "form_submit": "Send Message"
   },
   "footer": {
     "rights": "All rights reserved.",
