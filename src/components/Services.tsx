@@ -107,44 +107,51 @@ export default function Services() {
       >
         {selected && (
           <>
-            <Box sx={{ position: 'relative' }}>
-              <Box
-                component='img'
-                src={selected.image}
-                alt=''
-                loading='lazy'
-                fetchPriority='low'
-                decoding='async'
-                sx={{
-                  width: '100%',
-                  height: 200,
-                  objectFit: 'cover',
-                  display: 'block',
-                }}
-              />
-              <IconButton
-                aria-label='close'
-                onClick={() => setSelectedServiceId(null)}
-                sx={{
-                  position: 'absolute',
-                  top: 10,
-                  right: 10,
-                  backgroundColor: 'rgba(0,0,0,0.45)',
-                  color: '#fff',
-                  '&:hover': { backgroundColor: 'rgba(0,0,0,0.65)' },
-                }}
-              >
-                <CloseIcon />
-              </IconButton>
-            </Box>
+            <IconButton
+              aria-label='close'
+              onClick={() => setSelectedServiceId(null)}
+              sx={{
+                position: 'absolute',
+                top: 10,
+                right: 10,
+                zIndex: 10,
+                backgroundColor: 'rgba(0,0,0,0.45)',
+                color: '#fff',
+                '&:hover': { backgroundColor: 'rgba(0,0,0,0.65)' },
+              }}
+            >
+              <CloseIcon />
+            </IconButton>
             <DialogContent
               id='service-dialog-description'
               sx={{
                 px: { xs: 2.5, sm: 4 },
-                pt: 3,
+                pt: 0,
                 pb: isResidentialSelected ? 3 : { xs: 11, sm: 10 },
               }}
             >
+              <Box
+                sx={{
+                  position: 'relative',
+                  mx: { xs: -2.5, sm: -4 },
+                  mb: 3,
+                }}
+              >
+                <Box
+                  component='img'
+                  src={selected.image}
+                  alt=''
+                  loading='lazy'
+                  fetchPriority='low'
+                  decoding='async'
+                  sx={{
+                    width: '100%',
+                    height: 200,
+                    objectFit: 'cover',
+                    display: 'block',
+                  }}
+                />
+              </Box>
               <Box
                 sx={{
                   display: 'flex',

@@ -120,7 +120,9 @@ export default function StandardServiceDialogContent({
                   sx={{
                     color: theme.palette.primary.main,
                     fontWeight: 700,
-                    whiteSpace: 'nowrap',
+                    textAlign: 'right',
+                    flexShrink: 0,
+                    maxWidth: '55%',
                   }}
                 >
                   {price?.trim() || ''}
