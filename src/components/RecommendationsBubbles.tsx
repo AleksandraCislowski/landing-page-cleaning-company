@@ -465,37 +465,45 @@ export default function RecommendationsBubbles({
               zIndex: 1400,
             }}
           >
-            <Typography
-              id='client-reviews-title'
-              variant='h6'
+            <Box
               sx={{
                 position: 'absolute',
-                top: 20,
-                left: 24,
+                top: { xs: 16, sm: 20 },
+                left: { xs: 16, sm: 24 },
                 zIndex: 3,
-                color: 'rgba(255, 255, 255, 0.95)',
-                textShadow: '0 2px 10px rgba(0,0,0,0.4)',
-                pr: 2,
+                maxWidth: {
+                  xs: 'calc(100% - 28px)',
+                  sm: 'min(520px, calc(100% - 44px))',
+                },
+                pr: { xs: 3, sm: 2 },
               }}
             >
-              {t('about.recommendations_modal_title')}
-            </Typography>
+              <Typography
+                id='client-reviews-title'
+                variant='h6'
+                sx={{
+                  color: 'rgba(255, 255, 255, 0.95)',
+                  textShadow: '0 2px 10px rgba(0,0,0,0.4)',
+                  lineHeight: 1.2,
+                  fontSize: { xs: '1rem', sm: '1.25rem' },
+                }}
+              >
+                {t('about.recommendations_modal_title')}
+              </Typography>
 
-            <Typography
-              id='client-reviews-description'
-              variant='body2'
-              sx={{
-                position: 'absolute',
-                top: 52,
-                left: 24,
-                zIndex: 3,
-                color: 'rgba(255, 255, 255, 0.8)',
-                textShadow: '0 2px 8px rgba(0,0,0,0.3)',
-                pr: 2,
-              }}
-            >
-              {t('about.recommendations_modal_hint')}
-            </Typography>
+              <Typography
+                id='client-reviews-description'
+                variant='body2'
+                sx={{
+                  mt: 0.6,
+                  color: 'rgba(255, 255, 255, 0.8)',
+                  textShadow: '0 2px 8px rgba(0,0,0,0.3)',
+                  lineHeight: 1.35,
+                }}
+              >
+                {t('about.recommendations_modal_hint')}
+              </Typography>
+            </Box>
 
             {bubbleConfig.map((bubble) => {
               const responsivePosition = bubbleResponsiveLayout[bubble.id];
