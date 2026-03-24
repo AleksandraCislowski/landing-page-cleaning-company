@@ -20,6 +20,7 @@ import recbubble9 from '../assets/recommendation bubbles photos/rec9.png';
 import recbubble10 from '../assets/recommendation bubbles photos/rec10.png';
 import recbubble11 from '../assets/recommendation bubbles photos/rec11.png';
 import recbubble12 from '../assets/recommendation bubbles photos/rec12.png';
+import recbubble13 from '../assets/recommendation bubbles photos/rec13.png';
 
 type BubbleConfig = {
   id: number;
@@ -162,6 +163,16 @@ const bubbleConfig: BubbleConfig[] = [
     enterY: 130,
     delay: 680,
   },
+  {
+    id: 13,
+    size: 74,
+    top: '76%',
+    left: '67%',
+    focus: '50% 50%',
+    enterX: 120,
+    enterY: 110,
+    delay: 740,
+  },
 ];
 
 const bubbleImages: Record<number, string> = {
@@ -177,6 +188,7 @@ const bubbleImages: Record<number, string> = {
   10: recbubble10,
   11: recbubble11,
   12: recbubble12,
+  13: recbubble13,
 };
 
 const bubbleResponsiveLayout: Record<
@@ -246,6 +258,11 @@ const bubbleResponsiveLayout: Record<
     lg: { top: '83%', left: '45%' },
     md: { top: '83%', left: '47%' },
     sm: { top: '84%', left: '48%' },
+  },
+  13: {
+    lg: { top: '76%', left: '66%' },
+    md: { top: '79%', left: '74%' },
+    sm: { top: '79%', left: '72%' },
   },
 };
 
