@@ -67,6 +67,9 @@ export default function ServicePreviewCard({
           component='img'
           src={service.image}
           alt=''
+          loading='lazy'
+          fetchPriority='low'
+          decoding='async'
           sx={{
             width: '100%',
             height: 150,

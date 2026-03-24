@@ -695,6 +695,9 @@ export default function RecommendationsBubbles({
                   component='img'
                   src={activeBubbleImage}
                   alt={t('about.recommendations_preview_alt')}
+                  loading='lazy'
+                  fetchPriority='low'
+                  decoding='async'
                   onClick={(event) => event.stopPropagation()}
                   sx={{
                     display: 'block',

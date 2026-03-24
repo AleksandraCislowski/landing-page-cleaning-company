@@ -49,6 +49,8 @@ export default function Footer() {
                 alt='Logo'
                 width={43}
                 height={40}
+                loading='lazy'
+                decoding='async'
                 style={{ height: '40px', marginRight: '10px' }}
               />
               <Typography variant='h6' sx={{ fontWeight: 'bold' }}>

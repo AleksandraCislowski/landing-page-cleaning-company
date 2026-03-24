@@ -150,6 +150,7 @@ export default function Header() {
 
           <Box sx={{ display: { xs: 'block', md: 'none' } }}>
             <IconButton
+              id='mobile-navigation-button'
               color='inherit'
               aria-label='menu'
               aria-controls={open ? 'mobile-navigation-menu' : undefined}
@@ -165,7 +166,7 @@ export default function Header() {
               open={open}
               onClose={handleMenuClose}
               MenuListProps={{
-                'aria-labelledby': 'mobile-navigation-menu',
+                'aria-labelledby': 'mobile-navigation-button',
               }}
             >
               <MenuItem onClick={() => handleMenuItemClick('home')}>

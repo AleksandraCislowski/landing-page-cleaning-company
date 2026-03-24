@@ -56,6 +56,9 @@ export default function GalleryCarousel() {
   const { t } = useTranslation();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const prefersReducedMotion = useMediaQuery(
+    '(prefers-reduced-motion: reduce)',
+  );
   const [activeIndex, setActiveIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(true);
   const [autoplayKey, setAutoplayKey] = useState(0);
@@ -96,6 +99,10 @@ export default function GalleryCarousel() {
   };
 
   useEffect(() => {
+    if (prefersReducedMotion) {
+      return;
+    }
+
     const autoplayTimer = window.setInterval(() => {
       setIsTransitioning(true);
       setActiveIndex((prev) => Math.min(prev + 1, slides.length + 2));
@@ -104,7 +111,7 @@ export default function GalleryCarousel() {
 
     return () => window.clearInterval(autoplayTimer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [autoplayKey]);
+  }, [autoplayKey, prefersReducedMotion]);
 
   return (
     <Box
@@ -190,7 +197,9 @@ export default function GalleryCarousel() {
                 width: '100%',
                 transformOrigin: 'left center',
                 background: `linear-gradient(90deg, ${theme.palette.primary.main} 0%, ${theme.palette.secondary.main} 100%)`,
-                animation: `${AUTOPLAY_INTERVAL_MS}ms linear 0ms 1 normal none running slideProgress`,
+                animation: prefersReducedMotion
+                  ? 'none'
+                  : `${AUTOPLAY_INTERVAL_MS}ms linear 0ms 1 normal none running slideProgress`,
                 '@keyframes slideProgress': {
                   '0%': {
                     transform: 'scaleX(0)',
@@ -212,7 +221,10 @@ export default function GalleryCarousel() {
               alignItems: 'stretch',
               width: `${loopedSlides.length * 100}%`,
               transform: `translateX(-${activeIndex * (100 / loopedSlides.length)}%)`,
-              transition: isTransitioning ? 'transform 1s ease' : 'none',
+              transition:
+                isTransitioning && !prefersReducedMotion
+                  ? 'transform 1s ease'
+                  : 'none',
             }}
             onTransitionEnd={handleTransitionEnd}
           >
@@ -322,6 +334,9 @@ export default function GalleryCarousel() {
                           component='img'
                           src={slide.src}
                           alt={t(`gallery.items.${slide.key}.alt`)}
+                          loading={isActiveSlide ? 'eager' : 'lazy'}
+                          fetchPriority={isActiveSlide ? 'high' : 'low'}
+                          decoding='async'
                           sx={{
                             width: '100%',
                             height: '100%',
@@ -331,7 +346,9 @@ export default function GalleryCarousel() {
                             transform: isActiveSlide
                               ? 'scale(1.04)'
                               : 'scale(1)',
-                            transition: `transform ${AUTOPLAY_INTERVAL_MS}ms linear`,
+                            transition: prefersReducedMotion
+                              ? 'none'
+                              : `transform ${AUTOPLAY_INTERVAL_MS}ms linear`,
                           }}
                         />
                       </Box>

@@ -112,6 +112,9 @@ export default function Services() {
                 component='img'
                 src={selected.image}
                 alt=''
+                loading='lazy'
+                fetchPriority='low'
+                decoding='async'
                 sx={{
                   width: '100%',
                   height: 200,
