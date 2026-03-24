@@ -3,10 +3,10 @@ import LocalLaundryServiceIcon from '@mui/icons-material/LocalLaundryService';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import DryCleaningIcon from '@mui/icons-material/DryCleaning';
 
-import cardphoto1 from '../../assets/card1.png';
-import cardphoto2 from '../../assets/card2.png';
-import cardphoto3 from '../../assets/card3.png';
-import cardphoto4 from '../../assets/card4.png';
+import cardphoto1 from '../../assets/card1.webp';
+import cardphoto2 from '../../assets/card2.webp';
+import cardphoto3 from '../../assets/card3.webp';
+import cardphoto4 from '../../assets/card4.webp';
 
 export type ServiceId = 'residential' | 'deep_clean' | 'window_clean' | 'extra';
 

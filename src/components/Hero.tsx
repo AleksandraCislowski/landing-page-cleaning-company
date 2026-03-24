@@ -5,6 +5,9 @@ import { useTheme, useMediaQuery } from '@mui/material';
 import heroJpg from '../assets/hero-background-1920.jpg';
 import heroAvif from '../assets/hero-background-1920.avif';
 import heroWebp from '../assets/hero-background-1920.webp';
+import heroMobileJpg from '../assets/hero-background-960.jpg';
+import heroMobileAvif from '../assets/hero-background-960.avif';
+import heroMobileWebp from '../assets/hero-background-960.webp';
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -62,6 +65,21 @@ export default function Hero() {
           overflow: 'hidden',
         }}
       >
+        <source
+          media='(max-width: 900px)'
+          srcSet={heroMobileAvif}
+          type='image/avif'
+        />
+        <source
+          media='(max-width: 900px)'
+          srcSet={heroMobileWebp}
+          type='image/webp'
+        />
+        <source
+          media='(max-width: 900px)'
+          srcSet={heroMobileJpg}
+          type='image/jpeg'
+        />
         <source srcSet={heroAvif} type='image/avif' />
         <source srcSet={heroWebp} type='image/webp' />
         <Box
