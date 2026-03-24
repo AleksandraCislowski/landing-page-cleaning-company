@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useTheme, useMediaQuery } from '@mui/material';
 import heroJpg from '../assets/hero-background-1920.jpg';
 import heroAvif from '../assets/hero-background-1920.avif';
+import heroWebp from '../assets/hero-background-1920.webp';
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -62,6 +63,7 @@ export default function Hero() {
         }}
       >
         <source srcSet={heroAvif} type='image/avif' />
+        <source srcSet={heroWebp} type='image/webp' />
         <Box
           component='img'
           src={heroJpg}

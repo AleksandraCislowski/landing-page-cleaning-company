@@ -138,7 +138,7 @@ export default function Header() {
               sx={{
                 color: 'inherit',
                 fontWeight: 'bold',
-                display: { xs: 'none', md: 'block' },
+                display: { xs: 'none', lg: 'block' },
               }}
             >
               Aleksandra Cislowski Städfirma
@@ -148,7 +148,7 @@ export default function Header() {
           {/* Spacer to push hamburger to the right */}
           <Box sx={{ flexGrow: 1 }} />
 
-          <Box sx={{ display: { md: 'none' } }}>
+          <Box sx={{ display: { xs: 'block', md: 'none' } }}>
             <IconButton
               color='inherit'
               aria-label='menu'
@@ -196,25 +196,68 @@ export default function Header() {
 
           <Stack
             direction='row'
-            spacing={2}
+            spacing={{ md: 0.5, lg: 2 }}
             sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center' }}
           >
-            <Button onClick={() => handleSectionNav('home')}>
+            <Button
+              onClick={() => handleSectionNav('home')}
+              sx={{
+                minWidth: { md: 'auto', lg: 64 },
+                px: { md: 0.9, lg: 1.6 },
+                fontSize: { md: '0.8rem', lg: '0.875rem' },
+              }}
+            >
               {t('nav.home')}
             </Button>
-            <Button onClick={() => handleSectionNav('services')}>
+            <Button
+              onClick={() => handleSectionNav('services')}
+              sx={{
+                minWidth: { md: 'auto', lg: 64 },
+                px: { md: 0.9, lg: 1.6 },
+                fontSize: { md: '0.8rem', lg: '0.875rem' },
+              }}
+            >
               {t('nav.services')}
             </Button>
-            <Button onClick={() => handleSectionNav('about')}>
+            <Button
+              onClick={() => handleSectionNav('about')}
+              sx={{
+                minWidth: { md: 'auto', lg: 64 },
+                px: { md: 0.9, lg: 1.6 },
+                fontSize: { md: '0.8rem', lg: '0.875rem' },
+              }}
+            >
               {t('nav.about')}
             </Button>
-            <Button onClick={() => handleSectionNav('contact')}>
+            <Button
+              onClick={() => handleSectionNav('contact')}
+              sx={{
+                minWidth: { md: 'auto', lg: 64 },
+                px: { md: 0.9, lg: 1.6 },
+                fontSize: { md: '0.8rem', lg: '0.875rem' },
+              }}
+            >
               {t('nav.contact')}
             </Button>
-            <Button component={Link} to='/gallery'>
+            <Button
+              component={Link}
+              to='/gallery'
+              sx={{
+                minWidth: { md: 'auto', lg: 64 },
+                px: { md: 0.9, lg: 1.6 },
+                fontSize: { md: '0.8rem', lg: '0.875rem' },
+              }}
+            >
               {t('nav.gallery')}
             </Button>
-            <LanguageSwitcher />
+            <Box
+              sx={{
+                transform: { md: 'scale(0.92)', lg: 'scale(1)' },
+                transformOrigin: 'right center',
+              }}
+            >
+              <LanguageSwitcher />
+            </Box>
           </Stack>
         </Toolbar>
       </Container>

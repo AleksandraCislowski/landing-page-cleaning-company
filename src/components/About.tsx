@@ -14,7 +14,7 @@ import ImagePlaceholder from './ImagePlaceholder';
 import { FirmaYearCounter, PersonYearCounter } from './YearCounter';
 import RecommendationsBubbles from './RecommendationsBubbles.tsx';
 import person from '../assets/person.jpg';
-import happyperson from '../assets/happy-person-380.jpg';
+import kitchenshelf from '../assets/kitchenshelf.jpg';
 import rutLogo from '../assets/rut-avdrag-logo.png';
 import tryggLogo from '../assets/trygghansa-logo.png';
 import ReviewsIcon from '@mui/icons-material/Reviews';
@@ -105,7 +105,7 @@ const reasons = [
         alt='Trygghansa Logo'
         width={79}
         height={36}
-        style={{ height: 36, objectFit: 'contain' }}
+        style={{ width: 79, height: 36, objectFit: 'contain' }}
       />
     ),
     nameKey: 'about.trygghansa',
@@ -168,6 +168,9 @@ export default function About() {
               height={700}
               src={person}
               alt='Owner of the company - Aleksandra Cislowski'
+              imgWidth={720}
+              imgHeight={960}
+              loading='eager'
             />
           </Grid>
           <Grid item xs={12} md={6}>
@@ -368,8 +371,10 @@ export default function About() {
                 >
                   <ImagePlaceholder
                     height={460}
-                    src={happyperson}
-                    alt='Picture of a happy woman with orange sunglasses.'
+                    src={kitchenshelf}
+                    alt='Picture of a kitchen shelf with blue porcelain.'
+                    imgWidth={640}
+                    imgHeight={800}
                   />
                 </Box>
               </Box>
