@@ -1,5 +1,5 @@
 import { Button, Box } from '@mui/material';
-import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import i18n from '../i18n/config';
 
 type LanguageSwitcherProps = {
@@ -9,12 +9,18 @@ type LanguageSwitcherProps = {
 export default function LanguageSwitcher({
   onLanguageChange,
 }: LanguageSwitcherProps) {
-  const [language, setLanguage] = useState(i18n.language);
+  const { i18n: i18nInstance } = useTranslation();
+  const language = (
+    i18nInstance.resolvedLanguage ||
+    i18nInstance.language ||
+    'en'
+  )
+    .split('-')[0]
+    .toLowerCase();
 
-  const toggleLanguage = () => {
+  const toggleLanguage = async () => {
     const newLng = language === 'en' ? 'sv' : 'en';
-    i18n.changeLanguage(newLng);
-    setLanguage(newLng);
+    await i18n.changeLanguage(newLng);
     onLanguageChange?.();
   };
 
