@@ -6,6 +6,7 @@ import EmailIcon from '@mui/icons-material/Email';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import ImagePlaceholder from './ImagePlaceholder';
 import contactphoto from '../assets/contact-1400.jpg';
+import { handleExternalLinkClick } from '../utils/externalLinkConfirm';
 
 export default function Contact() {
   const { t } = useTranslation();
@@ -196,6 +197,9 @@ export default function Contact() {
                 href={mapOpenUrl}
                 target='_blank'
                 rel='noopener noreferrer'
+                onClick={(event) =>
+                  handleExternalLinkClick(event, t('common.leave_site_confirm'))
+                }
                 aria-label={mapLinkAriaLabel}
                 sx={{
                   mt: 2,

@@ -29,6 +29,7 @@ import pic21 from '../assets/photo gallery/pic21.jpg';
 import pic22 from '../assets/photo gallery/pic22.jpg';
 import pic23 from '../assets/photo gallery/pic23.jpg';
 import pic24 from '../assets/photo gallery/pic24.jpg';
+import { handleExternalLinkClick } from '../utils/externalLinkConfirm';
 
 const galleryImages = [
   pic1,
@@ -348,6 +349,9 @@ export default function GalleryPage() {
                 href={facebookUrl}
                 target='_blank'
                 rel='noopener noreferrer'
+                onClick={(event) =>
+                  handleExternalLinkClick(event, t('common.leave_site_confirm'))
+                }
                 aria-label='Facebook'
                 sx={{
                   color: (theme) => theme.palette.primary.main,

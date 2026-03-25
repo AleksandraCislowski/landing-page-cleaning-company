@@ -10,6 +10,7 @@ import {
 } from '@mui/material';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { useTranslation } from 'react-i18next';
+import { handleExternalLinkClick } from '../../utils/externalLinkConfirm';
 
 export default function ResidentialServiceDialogContent() {
   const { t } = useTranslation();
@@ -132,6 +133,9 @@ export default function ResidentialServiceDialogContent() {
             href={rutInfoLinkHref}
             target='_blank'
             rel='noreferrer'
+            onClick={(event) =>
+              handleExternalLinkClick(event, t('common.leave_site_confirm'))
+            }
             variant='subtitle2'
             sx={{
               display: 'inline-block',

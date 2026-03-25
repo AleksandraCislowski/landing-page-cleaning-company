@@ -15,6 +15,9 @@
     "phone": "Telefon",
     "gallery": "Galleri"
   },
+  "common": {
+    "leave_site_confirm": "Du är på väg att öppna en extern länk och lämna webbplatsen. Vill du fortsätta?"
+  },
   "services": {
     "title": "Tjänster",
     "learn_more": "Läs mer",
