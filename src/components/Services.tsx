@@ -127,7 +127,10 @@ export default function Services() {
               sx={{
                 px: { xs: 2.5, sm: 4 },
                 pt: 0,
-                pb: isResidentialSelected ? 3 : { xs: 11, sm: 10 },
+                pb: {
+                  xs: isResidentialSelected ? 20 : 12,
+                  sm: isResidentialSelected ? 11 : 10,
+                },
               }}
             >
               <Box
