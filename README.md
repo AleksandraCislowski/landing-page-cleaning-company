@@ -1,4 +1,4 @@
-# Aleksandra Cislowski Städfirma — Landing Page
+# Städfirma — Landing Page
 
 > A production-ready commercial website built for a real cleaning company operating in Stockholm, Sweden.
 
