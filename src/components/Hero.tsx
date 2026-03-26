@@ -80,7 +80,8 @@ export default function Hero() {
                 fontWeight: 'bold',
                 fontSize: { xs: '2.5rem', md: '3.5rem' },
                 color: 'white',
-                textShadow: '0 4px 24px rgba(0,0,0,0.95), 0 2px 8px rgba(0,0,0,0.85)',
+                textShadow:
+                  '0 4px 24px rgba(0,0,0,0.95), 0 2px 8px rgba(0,0,0,0.85)',
                 textAlign: { xs: 'center', md: 'left' },
                 opacity: isReady ? 1 : 0,
                 transform: isReady ? 'translateY(0)' : 'translateY(20px)',
@@ -95,7 +96,8 @@ export default function Hero() {
                 mb: 4,
                 fontSize: { xs: '1rem', md: '1.5rem' },
                 color: 'white',
-                textShadow: '0 3px 16px rgba(0,0,0,0.92), 0 1px 6px rgba(0,0,0,0.85)',
+                textShadow:
+                  '0 3px 16px rgba(0,0,0,0.92), 0 1px 6px rgba(0,0,0,0.85)',
                 textAlign: { xs: 'center', md: 'left' },
                 opacity: isReady ? 0.9 : 0,
                 transform: isReady ? 'translateY(0)' : 'translateY(18px)',
@@ -111,7 +113,8 @@ export default function Hero() {
                 mb: 3,
                 fontSize: { xs: '0.95rem', md: '1.05rem' },
                 color: 'rgba(255, 255, 255, 0.98)',
-                textShadow: '0 2px 10px rgba(0,0,0,0.92), 0 1px 6px rgba(0,0,0,0.85)',
+                textShadow:
+                  '0 2px 10px rgba(0,0,0,0.92), 0 1px 6px rgba(0,0,0,0.85)',
                 textAlign: { xs: 'center', md: 'left' },
                 opacity: isReady ? 0.95 : 0,
                 transform: isReady ? 'translateY(0)' : 'translateY(16px)',
