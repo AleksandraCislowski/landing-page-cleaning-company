@@ -3,11 +3,6 @@ import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
 import { useTheme, useMediaQuery } from '@mui/material';
 import heroJpg from '../assets/hero-background-1920.jpg';
-import heroAvif from '../assets/hero-background-1920.avif';
-import heroWebp from '../assets/hero-background-1920.webp';
-import heroMobileJpg from '../assets/hero-background-960.jpg';
-import heroMobileAvif from '../assets/hero-background-960.avif';
-import heroMobileWebp from '../assets/hero-background-960.webp';
 
 export default function Hero() {
   const { t } = useTranslation();
@@ -43,80 +38,38 @@ export default function Hero() {
         alignItems: 'center',
         position: 'relative',
         overflow: 'hidden',
-        '&::before': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: 'rgba(0, 0, 0, 0.4)',
-          zIndex: 1,
-        },
       }}
     >
+      <img
+        src={heroJpg}
+        alt='Hero background cleaning company'
+        fetchPriority='high'
+        loading='eager'
+        decoding='async'
+        width={1920}
+        height={1280}
+        style={{
+          display: 'block',
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          objectPosition: 'center 50%',
+          zIndex: 0,
+          position: 'absolute',
+          inset: 0,
+          filter: 'brightness(0.7)',
+        }}
+      />
+      {/* Overlay */}
       <Box
-        component='picture'
         sx={{
           position: 'absolute',
           inset: 0,
-          zIndex: 0,
-          display: 'block',
-          overflow: 'hidden',
+          zIndex: 1,
+          background: 'rgba(0,0,0,0.45)',
+          pointerEvents: 'none',
         }}
-      >
-        <source
-          media='(max-width: 900px)'
-          srcSet={heroMobileAvif}
-          type='image/avif'
-        />
-        <source
-          media='(max-width: 900px)'
-          srcSet={heroMobileWebp}
-          type='image/webp'
-        />
-        <source
-          media='(max-width: 900px)'
-          srcSet={heroMobileJpg}
-          type='image/jpeg'
-        />
-        <source srcSet={heroAvif} type='image/avif' />
-        <source srcSet={heroWebp} type='image/webp' />
-        <Box
-          component='img'
-          src={heroJpg}
-          alt=''
-          aria-hidden
-          fetchPriority='high'
-          loading='eager'
-          decoding='async'
-          width={1920}
-          height={1280}
-          sx={{
-            display: 'block',
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            objectPosition: 'center 50%',
-            willChange: 'transform',
-            animation: {
-              xs: 'none',
-              md: 'heroImgDrift 18s ease-in-out infinite alternate',
-            },
-            '@keyframes heroImgDrift': {
-              '0%': {
-                transform: 'scale(1.08) translate3d(0, -2.5%, 0)',
-              },
-              '100%': {
-                transform: 'scale(1.08) translate3d(0, 2.5%, 0)',
-              },
-            },
-            '@media (prefers-reduced-motion: reduce)': {
-              animation: 'none',
-            },
-          }}
-        />
-      </Box>
+      />
       <Container maxWidth='lg' sx={{ position: 'relative', zIndex: 2 }}>
         <Grid container spacing={4} alignItems='center'>
           <Grid item xs={12} md={8}>
@@ -127,7 +80,7 @@ export default function Hero() {
                 fontWeight: 'bold',
                 fontSize: { xs: '2.5rem', md: '3.5rem' },
                 color: 'white',
-                textShadow: '0 2px 8px rgba(0,0,0,0.8)',
+                textShadow: '0 4px 24px rgba(0,0,0,0.95), 0 2px 8px rgba(0,0,0,0.85)',
                 textAlign: { xs: 'center', md: 'left' },
                 opacity: isReady ? 1 : 0,
                 transform: isReady ? 'translateY(0)' : 'translateY(20px)',
@@ -142,7 +95,7 @@ export default function Hero() {
                 mb: 4,
                 fontSize: { xs: '1rem', md: '1.5rem' },
                 color: 'white',
-                textShadow: '0 1px 6px rgba(0,0,0,0.8)',
+                textShadow: '0 3px 16px rgba(0,0,0,0.92), 0 1px 6px rgba(0,0,0,0.85)',
                 textAlign: { xs: 'center', md: 'left' },
                 opacity: isReady ? 0.9 : 0,
                 transform: isReady ? 'translateY(0)' : 'translateY(18px)',
@@ -157,8 +110,8 @@ export default function Hero() {
               sx={{
                 mb: 3,
                 fontSize: { xs: '0.95rem', md: '1.05rem' },
-                color: 'rgba(255, 255, 255, 0.95)',
-                textShadow: '0 1px 6px rgba(0,0,0,0.75)',
+                color: 'rgba(255, 255, 255, 0.98)',
+                textShadow: '0 2px 10px rgba(0,0,0,0.92), 0 1px 6px rgba(0,0,0,0.85)',
                 textAlign: { xs: 'center', md: 'left' },
                 opacity: isReady ? 0.95 : 0,
                 transform: isReady ? 'translateY(0)' : 'translateY(16px)',
