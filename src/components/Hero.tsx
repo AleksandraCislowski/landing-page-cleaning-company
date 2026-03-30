@@ -7,7 +7,7 @@ import heroJpg from '../assets/hero-background-1920.jpg';
 export default function Hero() {
   const { t } = useTranslation();
   const [isReady, setIsReady] = useState(false);
-  const quoteEmail = 'cislowski.aleksandra@gmail.com';
+  const quoteEmail = 'aleksandra.stadfirma@gmail.com';
   const quoteMailto = `mailto:${quoteEmail}?subject=${encodeURIComponent(
     t('hero.quote_mail_subject'),
   )}&body=${encodeURIComponent(t('hero.quote_mail_body'))}`;

@@ -14,7 +14,7 @@ export default function Contact() {
   const address = t('contact.gps');
   const phoneDisplay = '+46 (0) 73 333 89 01';
   const phoneHref = 'tel:+46733338901';
-  const email = 'cislowski.aleksandra@gmail.com';
+  const email = 'aleksandra.stadfirma@gmail.com';
   const emailMailto = `mailto:${email}?subject=${encodeURIComponent(
     t('contact.mail_subject'),
   )}&body=${encodeURIComponent(t('contact.mail_body'))}`;

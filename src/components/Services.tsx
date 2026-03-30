@@ -39,7 +39,7 @@ export default function Services() {
     ? serviceDefinitions[selectedServiceId]
     : null;
   const isResidentialSelected = selectedServiceId === 'residential';
-  const contactEmail = 'cislowski.aleksandra@gmail.com';
+  const contactEmail = 'aleksandra.stadfirma@gmail.com';
   const contactMailto = `mailto:${contactEmail}?subject=${encodeURIComponent(
     t('services.mail_subject'),
   )}&body=${encodeURIComponent(t('services.mail_body'))}`;
