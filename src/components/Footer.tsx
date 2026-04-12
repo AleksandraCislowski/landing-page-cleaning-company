@@ -55,11 +55,11 @@ export default function Footer() {
                 style={{ height: '40px', marginRight: '10px' }}
               />
               <Typography variant='h6' sx={{ fontWeight: 'bold' }}>
-                Aleksandra Cislowski Städfirma
+                Aleksandra Städfirma
               </Typography>
             </Box>
             <Typography variant='body2' sx={{ opacity: 0.7 }}>
-              © {currentYear} Aleksandra Cislowski. {t('footer.rights')}
+              © {currentYear} Aleksandra Städfirma. {t('footer.rights')}
             </Typography>
             <Typography
               component={RouterLink}
@@ -82,7 +82,7 @@ export default function Footer() {
           <Stack direction='row' spacing={1}>
             <IconButton
               component='a'
-              href='https://www.facebook.com/people/Aleksandra-Cislowski-St%C3%A4dfirma/100049051159295/?eid=ARAevyTA8p6Ty6yyykAMFlYIMz1Osk5IHiK2JmG_jVgKFb4jiLocIaATKMs9TWhHZ5M9EMPcSoM7zR_e&timeline_context_item_type=intro_card_work&timeline_context_item_source=100007544285132&fref=tag'
+              href='https://www.facebook.com/profile.php?id=100049051159295'
               target='_blank'
               rel='noopener noreferrer'
               onClick={(event) =>

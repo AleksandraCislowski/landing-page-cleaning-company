@@ -167,7 +167,7 @@ export default function About() {
             <ImagePlaceholder
               height={700}
               src={person}
-              alt='Owner of the company - Aleksandra Cislowski'
+              alt='Owner of the company - Aleksandra'
               imgWidth={720}
               imgHeight={960}
               loading='eager'

@@ -141,7 +141,7 @@ export default function Header() {
                 display: { xs: 'none', lg: 'block' },
               }}
             >
-              Aleksandra Cislowski Städfirma
+              Aleksandra Städfirma
             </Typography>
           </Box>
 

@@ -77,7 +77,7 @@ export default function GalleryPage() {
   const { t } = useTranslation();
   const pairRefs = useRef<Array<HTMLDivElement | null>>([]);
   const facebookUrl =
-    'https://www.facebook.com/people/Aleksandra-Cislowski-St%C3%A4dfirma/100049051159295/?eid=ARAevyTA8p6Ty6yyykAMFlYIMz1Osk5IHiK2JmG_jVgKFb4jiLocIaATKMs9TWhHZ5M9EMPcSoM7zR_e&timeline_context_item_type=intro_card_work&timeline_context_item_source=100007544285132&fref=tag';
+    'https://www.facebook.com/profile.php?id=100049051159295';
   const [visiblePairs, setVisiblePairs] = useState<boolean[]>(() =>
     Array.from({ length: TOTAL_PAIRS }, () => false),
   );
